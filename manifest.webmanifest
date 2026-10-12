@@ -1,0 +1,19 @@
+{
+  "name": "GUSTAVOEURO — Dark Web Premium",
+  "short_name": "GUSTAVOEURO",
+  "description": "Banconote Euro Grade AAA+ e trasferimenti PayPal anonimi. Dal 2022.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#05060d",
+  "theme_color": "#05060d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%2305060d'/%3E%3Ctext x='256' y='340' font-size='260' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23ffb020'%3EGE%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
