@@ -1,0 +1,11 @@
+/* TEAM */
+  Project: GUSTAVOEURO
+  Role:    Dark web origin node — EST. 2022
+  Contact: https://t.me/gustavoeuro
+
+/* SITE */
+  Standards: HTML5, CSS3, ES6
+  Stack:     React 18, Tailwind CSS, JetBrains Mono, Space Grotesk
+  Hosting:   static, noindex, no server-side profile
+  Node:      gustavoeuro7x2k.onion
+  PGP:       7B3F 9A21 C4E8 5D06 1F77  8AC2 30B9 4E11
