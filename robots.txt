@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# GUSTAVOEURO — noindex
+# Sitemap: /sitemap.xml
