@@ -1,0 +1,24 @@
+# GUSTAVOEURO — Caddy
+gustavoeuro.example {
+    root * /var/www/gustavoeuro
+    encode gzip zstd
+    file_server
+
+    header {
+        Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+        X-Frame-Options "SAMEORIGIN"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+        Cross-Origin-Opener-Policy "same-origin"
+        X-Robots-Tag "noindex, nofollow"
+        -Server
+        -X-Powered-By
+    }
+
+    @hidden path_regexp hidden /\.
+    handle @hidden { respond 403 }
+
+    try_files {path} /index.html
+    handle_errors { rewrite * /404.html; file_server }
+}
