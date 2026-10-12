@@ -1,0 +1,14 @@
+/node      /index.html   200
+/cash      /index.html   200
+/paypal    /index.html   200
+/quality   /index.html   200
+/trust     /index.html   200
+/feedback  /index.html   200
+/faq       /index.html   200
+/track     /index.html   200
+/checkout  /index.html   200
+/privacy   /index.html   200
+/terms     /index.html   200
+/cookies   /index.html   200
+/.well-known/*  /.well-known/:splat  200
+/*  /index.html  404
