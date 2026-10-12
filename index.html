@@ -1,0 +1,3168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>GUSTAVOEURO — Dark Web Premium · Banconote EUR &amp; Trasferimenti PayPal</title>
+<meta name="description" content="GUSTAVOEURO — dal dark web al tuo portafoglio. Banconote Euro Grade AAA+ e trasferimenti PayPal anonimi. Dal 2022. Prova crittografica, spedizione tracciata, garanzia." />
+<meta name="theme-color" content="#05060d" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta property="og:title" content="GUSTAVOEURO — Dark Web Origin · EST. 2022" />
+<meta property="og:description" content="Banconote Euro Grade AAA+ e trasferimenti PayPal P2P anonimi. Nodo onion, PGP 4096, multi-sig, no KYC." />
+<meta property="og:type" content="website" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2305060d'/%3E%3Ctext x='32' y='44' font-size='34' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%23ffb020'%3EGE%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { bg:'#05060d', fg:'#eef0f8', surface:'#0b0d17', line:'#1d2130',
+                au:'#ffb020', bl:'#3d7bff', tl:'#14e0b0', mg:'#ff3d9a', rs:'#ff5c5c' },
+      fontFamily: { sans:['Space Grotesk','system-ui','sans-serif'], mono:['JetBrains Mono','ui-monospace','monospace'] }
+    } }
+  };
+</script>
+
+<style>
+:root{
+  --bg:#05060d; --fg:#eef0f8; --surface:#0b0d17; --panel:#12141f; --line:#1d2130;
+  --au:#ffb020; --bl:#3d7bff; --tl:#14e0b0; --mg:#ff3d9a; --rs:#ff5c5c;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;
+  min-height:100vh;min-height:100dvh;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+a{color:inherit}
+button{font-family:inherit}
+img{max-width:100%}
+::selection{background:var(--au);color:#0a0a0a}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#070911}
+::-webkit-scrollbar-thumb{background:#2b3348;border-radius:9px}
+
+.mono{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.wrap{position:relative;z-index:3}
+.hr{height:1px;background:var(--line);border:0}
+.safe-b{padding-bottom:env(safe-area-inset-bottom)}
+.safe-t{padding-top:env(safe-area-inset-top)}
+
+/* ================= SFONDO ================= */
+.bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bgfx .blob{position:absolute;border-radius:50%;will-change:transform}
+.bgfx .b1{width:80vw;height:80vw;left:-26vw;top:-26vw;opacity:.9;
+  background:radial-gradient(circle at center,rgba(255,176,32,.22),rgba(255,176,32,0) 62%);
+  animation:drift1 30s ease-in-out infinite}
+.bgfx .b2{width:72vw;height:72vw;right:-24vw;top:14vh;opacity:.85;
+  background:radial-gradient(circle at center,rgba(61,123,255,.22),rgba(61,123,255,0) 62%);
+  animation:drift2 36s ease-in-out infinite}
+.bgfx .b3{width:68vw;height:68vw;left:8vw;bottom:-28vw;opacity:.75;
+  background:radial-gradient(circle at center,rgba(255,61,154,.16),rgba(255,61,154,0) 62%);
+  animation:drift3 42s ease-in-out infinite}
+.bgfx .b4{width:60vw;height:60vw;right:4vw;bottom:-20vw;opacity:.6;
+  background:radial-gradient(circle at center,rgba(20,224,176,.16),rgba(20,224,176,0) 62%);
+  animation:drift1 48s ease-in-out infinite reverse}
+.bgfx .lines{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(to right,rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(circle at 50% 30%,#000 0%,rgba(0,0,0,.5) 45%,transparent 85%);
+  mask-image:radial-gradient(circle at 50% 30%,#000 0%,rgba(0,0,0,.5) 45%,transparent 85%);
+}
+@keyframes drift1{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(7vw,5vh,0) scale(1.15)}}
+@keyframes drift2{0%,100%{transform:translate3d(0,0,0) scale(1.05)}50%{transform:translate3d(-6vw,7vh,0) scale(.92)}}
+@keyframes drift3{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(4vw,-6vh,0) scale(1.12)}}
+
+/* scanlines + vignette */
+.fx-scan{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.55;
+  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.03) 0 1px,transparent 1px 3px)}
+.fx-vig{position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(circle at 50% 42%,transparent 52%,rgba(0,0,0,.6) 100%)}
+
+/* ================= CARD / HUD ================= */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;position:relative}
+.card-br:before,.card-br:after{content:'';position:absolute;width:11px;height:11px;pointer-events:none;opacity:.8}
+.card-br:before{top:-1px;left:-1px;border-top:2px solid var(--au);border-left:2px solid var(--au);border-top-left-radius:14px}
+.card-br:after{bottom:-1px;right:-1px;border-bottom:2px solid var(--au);border-right:2px solid var(--au);border-bottom-right-radius:14px}
+.hud{position:relative}
+.hud:before,.hud:after{content:'';position:absolute;width:16px;height:16px;pointer-events:none;opacity:.9}
+.hud:before{top:-1px;right:-1px;border-top:2px solid var(--tl);border-right:2px solid var(--tl)}
+.hud:after{bottom:-1px;left:-1px;border-bottom:2px solid var(--tl);border-left:2px solid var(--tl)}
+
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--au)}
+.dim{color:#a3abc4}
+.mono2{font-family:'JetBrains Mono',monospace;font-size:11px;color:#7b839c;letter-spacing:.06em}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:44px;padding:0 18px;border-radius:10px;border:1px solid var(--line);
+  background:#0e1120;color:var(--fg);font-weight:600;font-size:14px;cursor:pointer;
+  text-decoration:none;touch-action:manipulation;
+  transition:transform .15s ease,opacity .15s ease,border-color .15s ease,box-shadow .2s ease;will-change:transform}
+.btn:hover{transform:translateY(-1px);border-color:#2b3147}
+.btn:active{transform:translateY(0)}
+.btn-au{background:linear-gradient(135deg,#ffc44d,#ff8a00);color:#0a0a0a;border-color:transparent}
+.btn-au:hover{box-shadow:0 8px 26px rgba(255,138,0,.32)}
+.btn-bl{background:linear-gradient(135deg,#5b93ff,#2a5fd6);color:#04122e;border-color:transparent}
+.btn-tl{background:linear-gradient(135deg,#3df0c4,#0bb892);color:#04241d;border-color:transparent}
+.btn-mg{background:linear-gradient(135deg,#ff6fb6,#d61e78);color:#2b0018;border-color:transparent}
+.btn-ghost{background:transparent}
+.btn-sm{min-height:38px;padding:0 13px;font-size:12px}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+
+.inp{width:100%;background:#0e1120;border:1px solid var(--line);color:var(--fg);
+  border-radius:10px;padding:12px 14px;font-size:16px;outline:none;
+  font-family:'JetBrains Mono',monospace;transition:border-color .15s ease,box-shadow .15s ease}
+.inp:focus{border-color:var(--au);box-shadow:0 0 0 3px rgba(255,176,32,.12)}
+.inp::placeholder{color:#5c6480}
+select.inp{appearance:none}
+
+.pill{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;
+  border:1px solid var(--line);background:#0e1120;font-family:'JetBrains Mono',monospace;
+  font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+
+.dot{width:7px;height:7px;border-radius:50%;background:var(--tl);box-shadow:0 0 10px var(--tl);animation:pulseDot 1.8s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{opacity:1}50%{opacity:.3}}
+.caret{display:inline-block;width:8px;height:15px;background:var(--au);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+.fadeup{animation:fadeUp .5s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.slidein{animation:slideIn .22s cubic-bezier(.2,.8,.3,1) both}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+
+/* glitch + gradient */
+.grad{background:linear-gradient(100deg,#ffc44d,#ff8a00 20%,#ff3d9a 46%,#3d7bff 72%,#14e0b0);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.glitch{position:relative;display:inline-block}
+.glitch:before,.glitch:after{content:attr(data-t);position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none}
+.glitch:before{color:var(--mg);-webkit-text-fill-color:var(--mg);transform:translate(-2px,-1px);opacity:.8;
+  clip-path:inset(0 0 52% 0);animation:gl1 4.2s steps(2) infinite}
+.glitch:after{color:var(--tl);-webkit-text-fill-color:var(--tl);transform:translate(2px,1px);opacity:.8;
+  clip-path:inset(50% 0 0 0);animation:gl2 3.4s steps(2) infinite}
+@keyframes gl1{0%,90%,100%{transform:translate(-2px,-1px)}93%{transform:translate(-6px,-2px)}96%{transform:translate(-1px,1px)}}
+@keyframes gl2{0%,88%,100%{transform:translate(2px,1px)}91%{transform:translate(6px,2px)}95%{transform:translate(1px,-1px)}}
+
+.term{background:#070911;border:1px solid var(--line);border-radius:12px;padding:14px;
+  font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.75;color:#9fe8cd;overflow-x:auto}
+.term .k{color:var(--au)}
+.term .c{color:#7b839c}
+.term .t{color:var(--tl)}
+.term .m{color:var(--mg)}
+
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#070911}
+.marquee-track{display:flex;width:max-content;animation:marquee 34s linear infinite;will-change:transform}
+@keyframes marquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+/* immagini */
+.imgbox{position:relative;overflow:hidden;background:#080a12;border-radius:10px;border:1px solid var(--line)}
+.imgbox img{filter:contrast(1.08) saturate(1.16) brightness(1.05);opacity:0;transition:opacity .45s ease}
+.imgbox img.loaded{opacity:1}
+.imgbox .scanline{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .25s ease;
+  background:linear-gradient(to bottom,transparent 0%,rgba(20,224,176,.18) 46%,rgba(20,224,176,.65) 50%,transparent 54%);
+  animation:scanmove 3.6s linear infinite}
+.imgbox:hover .scanline{opacity:1}
+@keyframes scanmove{from{transform:translateY(-100%)}to{transform:translateY(100%)}}
+
+.nav-desk{display:none}
+@media(min-width:1000px){.nav-desk{display:flex}.burger{display:none!important}}
+.burger{display:inline-flex}
+
+.hoverrow{transition:background .15s ease}
+.hoverrow:hover{background:#101426}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:45}
+
+.vbadge{position:absolute;top:8px;right:8px;z-index:2;background:rgba(255,61,154,.18);
+  border:1px solid var(--mg);color:var(--mg);border-radius:6px;padding:2px 7px;
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em}
+.gbadge{position:absolute;top:8px;left:8px;z-index:2;background:rgba(20,224,176,.15);
+  border:1px solid var(--tl);color:var(--tl);border-radius:6px;padding:2px 7px;
+  font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.14em}
+
+/* radar + bars */
+.radar{width:118px;height:118px;border-radius:50%;position:relative;overflow:hidden;flex:0 0 auto;
+  border:1px solid rgba(20,224,176,.32);background:radial-gradient(circle,rgba(20,224,176,.07),transparent 70%)}
+.radar:before{content:'';position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 0deg,rgba(20,224,176,.55),transparent 58%);animation:spin 3.6s linear infinite}
+.radar:after{content:'';position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3.5px;border-radius:50%;
+  background:var(--tl);box-shadow:0 0 14px var(--tl)}
+.radar i{position:absolute;inset:22%;border-radius:50%;border:1px solid rgba(20,224,176,.18)}
+.radar i+i{inset:40%}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.bars{display:flex;align-items:flex-end;gap:3px;height:22px}
+.bars span{width:4px;background:linear-gradient(to top,var(--bl),var(--tl));border-radius:2px;animation:bar 1.4s ease-in-out infinite}
+@keyframes bar{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+
+.sysbar{background:#070911;border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#7b839c}
+
+.flash{position:fixed;inset:0;z-index:95;pointer-events:none;background:rgba(20,224,176,.05);animation:flash .4s ease both}
+@keyframes flash{from{opacity:1}to{opacity:0}}
+
+#bootfallback{padding:28px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#ffb020;letter-spacing:.14em}
+
+@media (prefers-reduced-motion: reduce){
+  .bgfx .blob,.marquee-track,.dot,.caret,.radar:before,.bars span,.imgbox .scanline{animation:none!important}
+  .glitch:before,.glitch:after{animation:none!important}
+  *{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="root"><div id="bootfallback">BOOTING SECURE PORTAL…</div></div>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script>window.React||document.write('<script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"><\/script>');</script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script>window.ReactDOM||document.write('<script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"><\/script>');</script>
+<script src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"></script>
+<script>window.Babel||document.write('<script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.25.6/babel.min.js"><\/script>');</script>
+
+<script>
+(function(){
+  function show(msg){
+    var r=document.getElementById('root');
+    if(!r||window.__GE_MOUNTED) return;
+    r.innerHTML='<div style="padding:26px;font-family:ui-monospace,monospace;font-size:13px;line-height:1.8;color:#ff5c5c">'+
+      '<div style="color:#ffb020;font-weight:700;letter-spacing:.16em;margin-bottom:12px">GUSTAVOEURO — BOOT ERROR</div>'+
+      String(msg).replace(/&/g,'&amp;').replace(/</g,'&lt;')+
+      '<div style="color:#7b839c;margin-top:14px;font-size:11px">apri la console (Cmd+Opt+C) per il dettaglio</div></div>';
+  }
+  window.addEventListener('error',function(e){ show(e.message||'errore sconosciuto'); });
+  window.addEventListener('unhandledrejection',function(e){ show((e.reason&&e.reason.message)||'promise rejection'); });
+  if('serviceWorker' in navigator){
+    window.addEventListener('load',function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); });
+  }
+})();
+</script>
+
+<script type="text/babel" data-presets="react">
+/* eslint-disable */
+const { useState, useEffect, useMemo, useCallback, useRef, createContext, useContext } = React;
+
+/* ============================================================================
+   PHOTO — BLOCCO UNICO
+   - 20 EUR: SOLO foto da 20 (4 reali)
+   - 50 EUR: le sue 5 foto reali
+   - carte bianche: RIMOSSE
+   - .gif = VIDEO di verifica
+   ============================================================================ */
+const PHOTO = {
+  eur20: {
+    main:'https://i.ibb.co/9mwGD10w/IMG-4949.jpg',
+    gallery:[
+      'https://i.ibb.co/9mwGD10w/IMG-4949.jpg',
+      'https://i.ibb.co/rKysvGxB/IMG-4954.gif',
+      'https://i.ibb.co/35LCKPHm/IMG-4951.jpg',
+      'https://i.ibb.co/6J066JyY/IMG-4953.gif'
+    ]
+  },
+  eur50: {
+    main:'https://i.ibb.co/dwBt6Q78/IMG-4956.jpg',
+    gallery:[
+      'https://i.ibb.co/dwBt6Q78/IMG-4956.jpg',
+      'https://i.ibb.co/vxQQwt6Y/IMG-4958.gif',
+      'https://i.ibb.co/xqvq97nX/IMG-4957.jpg',
+      'https://i.ibb.co/67ZKnsjB/IMG-4960.gif',
+      'https://i.ibb.co/Y74wt404/IMG-4959.gif'
+    ]
+  },
+  fallbacks:[
+    'https://i.ibb.co/9mwGD10w/IMG-4949.jpg',
+    'https://i.ibb.co/dwBt6Q78/IMG-4956.jpg'
+  ]
+};
+const isVid = u => /\.gif$/i.test(u||'');
+
+const TG='https://t.me/gustavoeuro';
+const TG_CH='https://t.me/+gBf54xWnFapjMmRh';
+const PGP='7B3F 9A21 C4E8 5D06 1F77  8AC2 30B9 4E11';
+const ONION='gustavoeuro7x2k.onion';
+const WALLET={
+  USDT:'Rh2z4dzfHqE5Sd3DEV424ZWUE6XkCpNoPD7DgLiFCcV',
+  BTC:'bc1qcjcf7kunlrla8qn6jwxg00hyjj6w8nnr67lk8v',
+  LTC:'ltc1qpayxkexa48s6atp48quev2p2f8xnp79pa8zlkx'
+};
+const PREFIXES=['+39','+34','+33','+44','+49','+41','+43','+351','+32','+31','+1'];
+const HEXCH='0123456789ABCDEF';
+
+/* ------------------------------- utils ----------------------------------- */
+const hex=n=>Array.from({length:n},()=>'0123456789abcdef'[Math.floor(Math.random()*16)]).join('');
+const randCode=n=>Array.from({length:n},()=>'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random()*32)]).join('');
+const fnv=str=>{let h=0x811c9dc5;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,0x01000193)>>>0;}return (h>>>0).toString(16).padStart(8,'0');};
+const eur=v=>'€ '+Number(v||0).toLocaleString('it-IT');
+const hexLine=n=>{let s='';for(let i=0;i<n;i++){s+=HEXCH[Math.floor(Math.random()*16)]+HEXCH[Math.floor(Math.random()*16)]+' ';}return s.trim();};
+
+const lsGet=(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:v;}catch(e){return d;}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,v);}catch(e){}};
+const ssGet=(k,d)=>{try{const v=sessionStorage.getItem(k);return v===null?d:v;}catch(e){return d;}};
+const ssSet=(k,v)=>{try{sessionStorage.setItem(k,v);}catch(e){}};
+const lsArr=k=>{try{const p=JSON.parse(lsGet(k,'[]'));return Array.isArray(p)?p:[];}catch(e){return [];}};
+const reduce=()=>{try{return window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){return false;}};
+
+/* ============================================================================
+   TRADUZIONI
+   ============================================================================ */
+const T = {
+it:{
+  langName:'Italiano',
+  nav:{home:'Home',cash:'Banconote',paypal:'Trasferimenti',quality:'Galleria',trust:'Fiducia',feedback:'Feedback',faq:'FAQ',track:'Tracking',checkout:'Checkout',menu:'MENU',close:'CHIUDI',lang:'LINGUA',legal:'LEGALE'},
+  common:{add:'AGGIUNGI',added:'AGGIUNTO AL CARRELLO',remove:'RIMUOVI',cart:'CARRELLO',empty:'CARRELLO VUOTO',total:'TOTALE',close:'CHIUDI',back:'INDIETRO',cont:'CONTINUA',copy:'COPIA',copied:'COPIATO',pcs:'PEZZI',order:'ORDINE',status:'STATO',qty:'Q.TÀ'},
+  gate:{eyebrow:'ACCESSO RISERVATO',title:'PORTALE AD ACCESSO CONTROLLATO',sub:'Inserisci la chiave per sbloccare il nodo. La chiave ti è stata fornita su Telegram.',ph:'CHIAVE DI ACCESSO',btn:'SBLOCCA PORTALE',err:'CHIAVE NON VALIDA — RIPROVA',hint:'Sessione cifrata · AES-256',lang:'SELEZIONA LINGUA'},
+  boot:{lines:[
+    'initializing secure kernel v4.2.1',
+    'tor circuit (3 hops) ................. OK',
+    'onion relay '+ONION+' .. REACHABLE',
+    'pgp fingerprint match ................ OK',
+    'verifying block #8821 ................ OK',
+    'loading AES-256 keyring .............. OK',
+    'mounting encrypted volume /vault ..... OK',
+    'session handshake .................... ESTABLISHED',
+    'integrity check ...................... 0 ERRORS'
+  ],done:'SISTEMA PRONTO',sid:'SESSION ID'},
+  home:{
+    b1:'DARK WEB ORIGIN',b2:'EST. 2022',b3:'ONLINE',
+    title:'DAL DARK WEB AL TUO PORTAFOGLIO.',
+    p1:'GUSTAVOEURO nasce nel 2022 nei corridoi nascosti del dark web. Da allora distribuiamo banconote Euro Grade AAA+ e trasferimenti PayPal anonimi a chi vuole liquidità reale, senza intermediari e senza burocrazia.',
+    p2:'Abbiamo subito più attacchi, più migrazioni e più silenzi. Ogni volta siamo tornati online più solidi di prima. Oggi il nodo è stabile, la rete è ridondante e il catalogo è verificato uno a uno.',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096','SPEDIZIONE TRACCIATA'],
+    stats:[['ANNI DI ATTIVITÀ','2022 → 2026'],['ORDINI CONSEGNATI','48.200+'],['UPTIME NODO','99.98%'],['TASSE CRYPTO','0%']],
+    denom:'TAGLI DISPONIBILI',denomSub:'Due tagli in catalogo. Un solo standard: Grade AAA+.',preview:'ANTEPRIMA',
+    trust:'PERCHÉ FIDARSI DI NOI',trustSub:'Sei punti concreti, non promesse.',
+    trustItems:[
+      ['GARANZIA DI RIMBORSO','Se il pacco non arriva entro i tempi, rimborsiamo o rispediamo. Nessuna discussione.'],
+      ['SPEDIZIONE TRACCIATA','Ogni ordine riceve un codice di tracking che puoi verificare in autonomia.'],
+      ['FOTO REALI, NON RENDER','Ogni banconota è fotografata sul nostro tavolo, non presa da internet.'],
+      ['VIDEO DI VERIFICA','I VIDEO nella galleria mostrano la verifica in movimento: UV, penna, ologramma.'],
+      ['COLD STORAGE MULTI-SIG','I fondi stanno in cold storage multi-firma. Nessun exchange che può bloccare.'],
+      ['ASSISTENZA 7/7','Rispondiamo su Telegram in poche ore, anche nel weekend.']
+    ],
+    how:'COME FUNZIONA',howSub:'Quattro passi, zero sorprese.',
+    howSteps:[
+      ['01','SCEGLI','Apri il catalogo, scegli il taglio o il pacchetto PayPal e aggiungi al carrello.'],
+      ['02','PAGA','Crypto (0% tasse), bonifico SEPA o buoni Amazon. Ricevi un codice ordine firmato.'],
+      ['03','VERIFICHIAMO','Controlliamo il lotto a mano, con foto e video su richiesta prima di spedire.'],
+      ['04','RICEVI','Spedizione tracciata con corriere. Il tracking lo verifichi tu.']
+    ],
+    proof:'PROVA CRITTOGRAFICA',proofSub:'Non fidarti. Verifica.',
+    proofText:'Ogni ordine è firmato con PGP 4096 e ha un checksum verificabile. Il manifest è pubblico, l\'impronta è tua: puoi controllare tutto in autonomia, senza chiedere permesso a noi.',
+    proofBtn:'APRI IL CENTRO FIDUCIA',
+    live:'ULTIMI ORDINI',
+    guarTitle:'GARANZIA GUSTAVOEURO',
+    guarText:'Dal 2022 non abbiamo mai lasciato un cliente a piedi. Se qualcosa va storto, la prima cosa che facciamo è rispondere: rimborso, rispedizione o completamento su Telegram. Il rischio non è tuo.',
+    cron:'CRONOLOGIA DI RESISTENZA',
+    tl:[
+      ['2022','GENESI','Primo nodo onion attivo. Le prime banconote partono da un tavolo e arrivano in mezza Europa.'],
+      ['2023','PRIMO ATTACCO','Il nodo cade per 9 giorni. Ricostruito da zero, con chiavi nuove e rete ridondante.'],
+      ['2024','ESPANSIONE','Attivati i trasferimenti PayPal P2P e la rete di relay. Tre nuovi corrieri integrati.'],
+      ['2025','SECONDO ATTACCO','DDoS prolungato e tentativo di spoofing PGP. Firma ruotata, uptime riportato al 99.9%.'],
+      ['2026','NODO CORRENTE','Infrastruttura multi-sig, cold storage e catalogo Grade AAA+ verificato foto per foto.']
+    ],
+    marquee:['NODO ONLINE','UPTIME 99.98%','GRADE AAA+','UV 100%','SCANNER PASS','NO KYC','0% TASSE CRYPTO','CONSEGNA 24/72H','PGP 4096','MULTI-SIG','COLD STORAGE'],
+    tele:'TELEMETRIA NODO',teleL:['NODE ID','RELAY ONION','BLOCK HASH','PING','BLOCK','SESSION'],
+    log:'LOG DI SISTEMA',
+    idx:'INDICE',idxItems:[['01','BANCONOTE EUR','/cash'],['02','TRASFERIMENTI PAYPAL','/paypal'],['03','GALLERIA QUALITÀ','/quality'],['04','CENTRO FIDUCIA','/trust'],['05','REGISTRO FEEDBACK','/feedback'],['06','TRACKING ORDINE','/track']],
+    protocols:['TOR v3','PGP 4096','AES-256','TLS 1.3','MULTI-SIG','COLD STORAGE','NO KYC','ESCROW']
+  },
+  cash:{
+    eyebrow:'CATALOGO / BANCONOTE',title:'BANCONOTE EURO GRADE AAA+',
+    sub:'Fibra di cotone 100%, stampa UV completa, superano test UV, penna e scanner. Ogni lotto è ispezionato a mano prima della spedizione.',
+    open:'APRI IL CATALOGO',close:'CHIUDI IL CATALOGO',taglio:'TAGLIO {n} EUR',
+    specs:['MATERIALE','FIBRA','UV','TECNOLOGIA','SCANNER','GARANZIA'],
+    specsV:['Fibra Cotone 100%','Fibra Premium','UV Completa','Tecnologia Gen4 Elite','Scanner 100% Pass','Garanzia Totale'],
+    verify:'VERIFICA QUALITÀ',pieces:'PEZZI',
+    labels:{p1:'ENTRY LEVEL',p2:'SCORTA OPERATIVA',p3:'VOLUME INDUSTRIALE',p4:'PACK STARTER 50',p5:'BANK RESERVE',p6:'POTERE DI SMERCIO ASSOLUTO'},
+    modalTitle:'PROTOCOLLO DI ISPEZIONE',
+    steps:['CONTROLUCE / FILIGRANA','INCLINAZIONE NUMERO','TATTO E RILIEVO','OLOG RAMMA'],
+    modalDesc:['Guarda la banconota in controluce: la filigrana deve essere netta e continua, senza interruzioni.','Inclina la banconota: il numero cambia tonalità grazie all\'inchiostro ottico.','Passa il dito sul rilievo: la stampa è in calcografia, non liscia al tatto.','Muovi la banconota: l\'ologramma cambia immagine con l\'angolo di visione.'],
+    inspecNote:'Tutte le foto sono scattate da noi. I VIDEO mostrano la verifica in movimento.',
+    videoBadge:'VIDEO',photoBadge:'FOTO',
+    noPrice:'PREZZO VISIBILE NEL CARRELLO',
+    tenTitle:'TAGLIO 10 EUR — SU RICHIESTA',
+    tenText:'Il taglio da 10 non è in catalogo fisso: ne abbiamo poca disponibilità. Se lo vuoi, scrivici su Telegram e ti diciamo subito se è disponibile e a che prezzo.',
+    tenBtn:'CHIEDI IL TAGLIO 10',
+    tgTitle:'ORDINI SU TELEGRAM',tgText:'Il catalogo è aggiornato. Per ordini fuori listino, lotti custom o domande scrivici direttamente.',tgBtn:'SCRIVI SU TELEGRAM'
+  },
+  paypal:{
+    eyebrow:'SERVIZIO / TRASFERIMENTI',title:'TRASFERIMENTI PAYPAL P2P',
+    sub:'Routing anonimo tramite exchange terzi. Tu invii, noi giriamo, il tuo saldo arriva pulito.',
+    stats:[['METODO','P2P EXCHANGE'],['TRACCIABILITÀ','ROTTA TERZA'],['TEMPO','2-6H'],['COMMISSIONE','0%']],
+    cost:'COSTO',recv:'RICEVI',choose:'SELEZIONA'
+  },
+  quality:{eyebrow:'GALLERIA',title:'GALLERIA QUALITÀ',sub:'Foto e VIDEO reali, non render. Tocca un elemento per ingrandirlo.',filters:{all:'TUTTI',g20:'20 EUR',g50:'50 EUR'}},
+  trust:{
+    eyebrow:'CENTRO FIDUCIA',title:'FIDUCIA VERIFICABILE',
+    sub:'Non chiediamo fiducia cieca. Ti diamo strumenti, prove e regole scritte: controlli tutto tu, prima e dopo l\'ordine.',
+    blocks:[
+      ['GARANZIA DI RIMBORSO','Se il pacco non arriva entro i tempi dichiarati, rimborsiamo o rispediamo. La scelta è tua, non nostra.'],
+      ['SPEDIZIONE TRACCIATA','Ogni ordine riceve un codice di tracking verificabile in autonomia. Nessun "spedito e spera".'],
+      ['PROVA CRITTOGRAFICA','Ogni ordine è firmato PGP 4096 e ha un checksum verificabile. Se la firma non torna, l\'ordine non è valido.'],
+      ['FOTO E VIDEO REALI','Le immagini sono scattate sul nostro tavolo, non prese da internet. I VIDEO mostrano la verifica in movimento.'],
+      ['NESSUN EXCHANGE DI MEZZO','I fondi stanno in cold storage multi-firma. Nessuna piattaforma che può congelarti il capitale.'],
+      ['ASSISTENZA 7/7','Rispondiamo su Telegram in poche ore, weekend compreso. Il codice ordine basta per essere riconosciuti.']
+    ],
+    verifyTitle:'VERIFICA IN AUTONOMIA',
+    verifySteps:[
+      'Prendi il codice ordine che ti abbiamo dato (formato GST-…).',
+      'Incollalo nella pagina Tracking e controlla che il checksum torni.',
+      'Confronta l\'impronta PGP con quella pubblicata qui sotto.',
+      'Se tutto torna, l\'ordine è autentico e non manomesso.'
+    ],
+    pgpTitle:'CHIAVE PGP UFFICIALE',
+    pgpText:'Questa è l\'unica impronta valida. Se ti scrivono con un\'altra impronta, non siamo noi.',
+    reserveTitle:'PROVA DI RISERVA',
+    reserveText:'Una parte dei fondi è tenuta in cold storage multi-firma per coprire rimborsi immediati. Il merkle root del set di indirizzi è pubblicato e ruota ogni trimestre.',
+    rulesTitle:'REGOLE SCRITTE',
+    rules:['Prezzo valido = prezzo confermato al momento dell\'ordine.','Nessun costo nascosto: la spedizione è inclusa.','Rimborso o rispedizione se il pacco non arriva.','Supporto via Telegram con codice ordine.','Dati solo sul tuo dispositivo, nessun profilo server.'],
+    ctaTitle:'PRONTO A ORDINARE?',ctaBtn:'VAI AL CATALOGO',ctaBtn2:'SCRIVI SU TELEGRAM'
+  },
+  feedback:{eyebrow:'REGISTRO',title:'REGISTRO FEEDBACK',sub:'Recensioni verificate dal canale Telegram ufficiale.',chBtn:'APRI IL CANALE FEEDBACK',verified:'VERIFICATO',reviews:[
+    ['M.R.','Milano','"Terza spedizione con loro. Banconote perfette, passano la penna senza problemi. Nodo sempre online."'],
+    ['K.B.','Berlin','"Trasferimento PayPal arrivato in 4 ore. Nessun collegamento con il mio nome sul mittente. Pulito."'],
+    ['S.T.','Madrid','"Pack da 50 arrivato in 48 ore con BRT. Qualità superiore alle aspettative, ologramma corretto."'],
+    ['L.V.','Paris','"Pensavo fosse troppo bello. Invece sono seri: PGP corretto, risposte rapide su Telegram."'],
+    ['A.D.','Roma','"Dopo il down del 2025 ero preoccupato. Sono tornati più forti e con chiavi nuove. Fiducia totale."'],
+    ['J.P.','Amsterdam','"Il 20 è il mio taglio fisso: ottimo rapporto qualità/prezzo. Scanner pass 100%."']
+  ]},
+  faq:{eyebrow:'SUPPORTO',title:'DOMANDE FREQUENTI',items:[
+    ['Cosa significa Grade AAA+?','Significa che le nostre banconote sono stampate su fibra di cotone 100%, con inchiostro UV completo e ologramma corretto. Superano test alla penna, alla lampada UV e allo scanner automatico. Ogni lotto viene ispezionato a mano, banconota per banconota, prima della spedizione.'],
+    ['Le banconote sono vere?','Sono repliche di altissima qualità, non banconote emesse dalla BCE. Funzionano come contante reale: si accettano nei negozi e si depositano. La differenza è nella carta e nella filigrana, non nell\'uso quotidiano.'],
+    ['Perché il taglio da 10 non è in catalogo?','Ne abbiamo poca disponibilità. Teniamo il catalogo corto per non promettere ciò che non possiamo spedire subito. Se ti serve il 10, scrivici su Telegram e ti diciamo subito se è disponibile.'],
+    ['Quanto costa la spedizione?','La spedizione è inclusa nel prezzo per tutti i tagli. Lavoriamo con POSTE ITALIANE, BRT, GLS, DHL e LOCKER INPOST. Puoi scegliere il corriere in fase di ordine su Telegram.'],
+    ['Come funzionano i trasferimenti PayPal?','Tu paghi l\'importo indicato, noi giriamo il saldo tramite exchange terzi per spezzare la catena tra mittente e destinatario. Il tuo saldo arriva pulito, senza il tuo nome collegato alla transazione originale.'],
+    ['Quali metodi di pagamento accettate?','Crypto (USDT TRC-20, BTC, LTC) con 0% di tasse, bonifico SEPA con +10% di gestione e buoni Amazon con +20% di conversione. Consigliamo crypto: è la via più rapida e tracciabile solo da te.'],
+    ['Cosa succede se il pacco non arriva?','Scrivici su Telegram con il codice ordine. Rimborsiamo o rispediamo: dal 2022 non abbiamo mai lasciato un cliente a piedi.'],
+    ['Come traccio il mio ordine?','Al termine del checkout ricevi un codice ordine tipo GST-1500-250-7K3F. Inseriscilo nella pagina Tracking per vedere stato, articoli e verifica della firma.']
+  ]},
+  track:{eyebrow:'VERIFICA',title:'TRACKING ORDINE',sub:'Inserisci il codice ordine ricevuto alla conferma.',ph:'GST-0000-000-XXXX',btn:'TRACCIA',nf:'CODICE NON TROVATO NEL REGISTRO LOCALE',valid:'SIGNATURE VALID',invalid:'SIGNATURE MISMATCH',found:'ORDINE TROVATO',placed:'EMESSO IL',items:'ARTICOLI',checksum:'CHECKSUM'},
+  legal:{
+    privacy:{t:'PRIVACY POLICY',p:[
+      'GUSTAVOEURO raccoglie il minimo indispensabile. Nessun account, nessuna profilazione, nessun tracciamento pubblicitario.',
+      'I dati di navigazione restano sul tuo dispositivo: la sessione è salvata in sessionStorage, la lingua in localStorage, gli ordini nel registro locale ge-orders. Nulla di tutto questo viene inviato a server esterni.',
+      'Quando effettui un ordine comunichiamo solo ciò che serve alla spedizione: nome, indirizzo, città, CAP, paese e telefono. Se l\'ordine contiene solo trasferimenti PayPal, chiediamo unicamente l\'email.',
+      'Il portale è servito staticamente. I font arrivano da Google Fonts e le immagini da un CDN esterno: sono gli unici terzi coinvolti nella visualizzazione.',
+      'Puoi cancellare tutto in qualsiasi momento svuotando la memoria del browser. Non esiste un profilo server-side che ti riguardi.'
+    ]},
+    terms:{t:'TERMINI DI SERVIZIO',p:[
+      'L\'accesso al portale è riservato e avviene tramite chiave. La chiave può essere ruotata in caso di attacco o migrazione.',
+      'I prezzi del catalogo sono espressi in Euro e possono variare senza preavviso. Il prezzo valido è quello confermato al momento dell\'ordine.',
+      'Le banconote sono repliche Grade AAA+ e vengono vendute come tali. Non sono emesse dalla Banca Centrale Europea.',
+      'I trasferimenti PayPal sono effettuati tramite exchange terzi. Il saldo ricevuto è quello indicato nella scheda del pacchetto scelto.',
+      'La spedizione è inclusa per tutti i tagli. Il corriere può essere scelto in fase di ordine. I tempi indicati sono stime e possono variare.',
+      'In caso di pagamento non andato a buon fine, l\'ordine può essere completato su Telegram con il codice ordine, senza perdere la posizione in coda.'
+    ]},
+    cookies:{t:'COOKIE POLICY',p:[
+      'GUSTAVOEURO non usa cookie di profilazione. Usa solo memoria locale del browser (localStorage e sessionStorage).',
+      'ge-in tiene traccia dell\'accesso alla sessione corrente e si azzera alla chiusura della scheda.',
+      'ge-lang salva la lingua scelta, così il portale si riapre nella lingua giusta.',
+      'ge-cart conserva il carrello tra una visita e l\'altra. ge-orders è il registro locale dei tuoi ordini, usato dalla pagina Tracking.',
+      'Nessuno di questi dati lascia il tuo dispositivo. Puoi svuotarli dalle impostazioni del browser in qualsiasi momento.'
+    ]}
+  },
+  checkout:{
+    eyebrow:'FLUSSO / ORDINE',title:'CHECKOUT',
+    steps:['DATI','VERIFICA','PAGAMENTO','CONFERMA'],
+    console:'ORDER CONSOLE',draft:'ORDER DRAFT ID',session:'SESSION',timestamp:'TIMESTAMP',cartHash:'CART HASH',pgp:'PGP STATUS',node:'ACTIVE NODE',integrity:'INTEGRITY',
+    shipping:'DATI DI SPEDIZIONE',shippingNote:'Richiesti perché il carrello contiene banconote.',
+    emailSec:'EMAIL PAYPAL',emailNote:'Richiesta perché il carrello contiene trasferimenti. Scrivila due volte.',
+    name:'NOME',surname:'COGNOME',address:'INDIRIZZO',city:'CITTÀ',zip:'CAP',country:'PAESE',phone:'TELEFONO',
+    email1:'EMAIL',email2:'CONFERMA EMAIL',
+    emailInvalid:'FORMATO EMAIL NON VALIDO',emailMismatch:'LE DUE EMAIL NON COINCIDONO',required:'COMPLETA I CAMPI OBBLIGATORI',
+    cont:'CONTINUA',back:'INDIETRO',
+    manifest:'ORDER MANIFEST / LEDGER',tot:'TOTALE',payable:'DA PAGARE',
+    signature:'ANTEPRIMA FIRMA PGP',confirm:'CONFERMA ORDINE',
+    method:'METODO DI PAGAMENTO',crypto:'CRYPTO',sepa:'BONIFICO SEPA',amazon:'BUONI AMAZON',
+    recommended:'CONSIGLIATO',fee0:'0% TASSE',fee10:'+10% GESTIONE',fee20:'+20% CONVERSIONE',
+    network:'RETE',address:'INDIRIZZO',amount:'IMPORTO DA INVIARE',memo:'RIFERIMENTO MEMO',confirmations:'CONFIRMATIONS',
+    tx:'ANTEPRIMA TRANSAZIONE',copy:'COPIA',copied:'COPIATO',scan:'SCANSIONA IL QR',
+    iban:'IBAN COMUNICATO SU TELEGRAM',amazonPh:'CODICE BUONO — 15 CIFRE',
+    pay:'PROCEDI AL PAGAMENTO',processing:'ELABORAZIONE IN CORSO',
+    receipt:'CRYPTOGRAPHIC RECEIPT',download:'SCARICA RICEVUTA (.txt)',verifyScript:'VERIFY SCRIPT',
+    done:'ORDINE REGISTRATO',nonce:'NONCE',checksum:'CHECKSUM',orderCode:'CODICE ORDINE',
+    tgTitle:'PAGAMENTO NON ANDATO A BUON FINE?',tgText:'Contatta GUSTAVOEURO su Telegram con il codice ordine e completa l\'ordine in chat.',tgBtn:'CONTATTA SU TELEGRAM',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096'],
+    empty:'IL CARRELLO È VUOTO',goCat:'VAI AL CATALOGO',note:'Nessun dato lascia il tuo dispositivo.',
+    priceNote:'Il prezzo è mostrato qui e al checkout.'
+  },
+  footer:{legal:'LEGALE',session:'SESSION',uptime:'UPTIME',clock:'ORA LOCALE',node:'NODO',rights:'Tutti i diritti riservati.'},
+  notfound:{t:'404 — ROTTA NON TROVATA',b:'TORNA AL NODO'}
+},
+en:{
+  langName:'English',
+  nav:{home:'Home',cash:'Banknotes',paypal:'Transfers',quality:'Gallery',trust:'Trust',feedback:'Feedback',faq:'FAQ',track:'Tracking',checkout:'Checkout',menu:'MENU',close:'CLOSE',lang:'LANGUAGE',legal:'LEGAL'},
+  common:{add:'ADD',added:'ADDED TO CART',remove:'REMOVE',cart:'CART',empty:'CART EMPTY',total:'TOTAL',close:'CLOSE',back:'BACK',cont:'CONTINUE',copy:'COPY',copied:'COPIED',pcs:'PCS',order:'ORDER',status:'STATUS',qty:'QTY'},
+  gate:{eyebrow:'RESTRICTED ACCESS',title:'ACCESS-CONTROLLED PORTAL',sub:'Enter the key to unlock the node. The key was given to you on Telegram.',ph:'ACCESS KEY',btn:'UNLOCK PORTAL',err:'INVALID KEY — TRY AGAIN',hint:'Encrypted session · AES-256',lang:'SELECT LANGUAGE'},
+  boot:{lines:[
+    'initializing secure kernel v4.2.1',
+    'tor circuit (3 hops) ................. OK',
+    'onion relay '+ONION+' .. REACHABLE',
+    'pgp fingerprint match ................ OK',
+    'verifying block #8821 ................ OK',
+    'loading AES-256 keyring .............. OK',
+    'mounting encrypted volume /vault ..... OK',
+    'session handshake .................... ESTABLISHED',
+    'integrity check ...................... 0 ERRORS'
+  ],done:'SYSTEM READY',sid:'SESSION ID'},
+  home:{
+    b1:'DARK WEB ORIGIN',b2:'EST. 2022',b3:'ONLINE',
+    title:'FROM THE DARK WEB TO YOUR WALLET.',
+    p1:'GUSTAVOEURO was born in 2022 in the hidden corridors of the dark web. Since then we have shipped Grade AAA+ Euro banknotes and anonymous PayPal transfers to anyone who wants real liquidity, with no middlemen and no bureaucracy.',
+    p2:'We took more attacks, more migrations and more silence. Every time we came back online stronger than before. Today the node is stable, the network is redundant and the catalogue is verified one by one.',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096','TRACKED SHIPPING'],
+    stats:[['YEARS ACTIVE','2022 → 2026'],['ORDERS DELIVERED','48,200+'],['NODE UPTIME','99.98%'],['CRYPTO FEES','0%']],
+    denom:'AVAILABLE DENOMINATIONS',denomSub:'Two denominations in catalogue. One standard: Grade AAA+.',preview:'PREVIEW',
+    trust:'WHY TRUST US',trustSub:'Six concrete points, not promises.',
+    trustItems:[
+      ['REFUND GUARANTEE','If the parcel does not arrive on time, we refund or reship. Your call, not ours.'],
+      ['TRACKED SHIPPING','Every order gets a tracking code you can verify yourself. No "shipped and hope".'],
+      ['REAL PHOTOS, NOT RENDERS','Every note is photographed on our table, not pulled from the web.'],
+      ['VERIFICATION VIDEO','The VIDEOS in the gallery show the check in motion: UV, pen, hologram.'],
+      ['MULTI-SIG COLD STORAGE','Funds sit in multi-signature cold storage. No exchange that can freeze you.'],
+      ['SUPPORT 7/7','We reply on Telegram within hours, weekends included.']
+    ],
+    how:'HOW IT WORKS',howSub:'Four steps, zero surprises.',
+    howSteps:[
+      ['01','CHOOSE','Open the catalogue, pick the denomination or PayPal pack and add it to the cart.'],
+      ['02','PAY','Crypto (0% fees), SEPA transfer or Amazon vouchers. You get a signed order code.'],
+      ['03','WE VERIFY','We check the batch by hand, with photos and video on request before shipping.'],
+      ['04','YOU RECEIVE','Tracked shipping by carrier. The tracking is yours to verify.']
+    ],
+    proof:'CRYPTOGRAPHIC PROOF',proofSub:'Do not trust. Verify.',
+    proofText:'Every order is signed with PGP 4096 and carries a verifiable checksum. The manifest is public, the fingerprint is yours: you can check everything yourself, without asking us.',
+    proofBtn:'OPEN THE TRUST CENTER',
+    live:'LATEST ORDERS',
+    guarTitle:'GUSTAVOEURO GUARANTEE',
+    guarText:'Since 2022 we have never left a customer hanging. If something goes wrong, the first thing we do is answer: refund, reship or finish it on Telegram. The risk is not yours.',
+    cron:'RESISTANCE TIMELINE',
+    tl:[
+      ['2022','GENESIS','First onion node live. The first notes leave a table and reach half of Europe.'],
+      ['2023','FIRST ATTACK','The node goes down for 9 days. Rebuilt from scratch, with new keys and a redundant network.'],
+      ['2024','EXPANSION','PayPal P2P transfers and the relay network go live. Three new carriers integrated.'],
+      ['2025','SECOND ATTACK','Extended DDoS and a PGP spoofing attempt. Key rotated, uptime restored to 99.9%.'],
+      ['2026','CURRENT NODE','Multi-sig infrastructure, cold storage and a Grade AAA+ catalogue verified photo by photo.']
+    ],
+    marquee:['NODE ONLINE','UPTIME 99.98%','GRADE AAA+','UV 100%','SCANNER PASS','NO KYC','0% CRYPTO FEES','DELIVERY 24/72H','PGP 4096','MULTI-SIG','COLD STORAGE'],
+    tele:'NODE TELEMETRY',teleL:['NODE ID','RELAY ONION','BLOCK HASH','PING','BLOCK','SESSION'],
+    log:'SYSTEM LOG',
+    idx:'INDEX',idxItems:[['01','EURO BANKNOTES','/cash'],['02','PAYPAL TRANSFERS','/paypal'],['03','QUALITY GALLERY','/quality'],['04','TRUST CENTER','/trust'],['05','FEEDBACK LOG','/feedback'],['06','ORDER TRACKING','/track']],
+    protocols:['TOR v3','PGP 4096','AES-256','TLS 1.3','MULTI-SIG','COLD STORAGE','NO KYC','ESCROW']
+  },
+  cash:{
+    eyebrow:'CATALOGUE / BANKNOTES',title:'GRADE AAA+ EURO BANKNOTES',
+    sub:'100% cotton fibre, full UV printing, passes UV, pen and scanner tests. Every batch is inspected by hand before shipping.',
+    open:'OPEN THE CATALOGUE',close:'CLOSE THE CATALOGUE',taglio:'DENOMINATION {n} EUR',
+    specs:['MATERIAL','FIBRE','UV','TECHNOLOGY','SCANNER','WARRANTY'],
+    specsV:['100% Cotton Fibre','Premium Fibre','Full UV','Gen4 Elite Technology','100% Scanner Pass','Full Warranty'],
+    verify:'VERIFY QUALITY',pieces:'PCS',
+    labels:{p1:'ENTRY LEVEL',p2:'OPERATIVE STOCK',p3:'INDUSTRIAL VOLUME',p4:'PACK STARTER 50',p5:'BANK RESERVE',p6:'ABSOLUTE FIREPOWER'},
+    modalTitle:'INSPECTION PROTOCOL',
+    steps:['BACKLIGHT / WATERMARK','NUMBER TILT','TACTILE RELIEF','HOLOGRAM'],
+    modalDesc:['Hold the note against the light: the watermark must be sharp and continuous, with no breaks.','Tilt the note: the number shifts tone thanks to optical ink.','Run your finger over the relief: the print is intaglio, not flat.','Move the note: the hologram changes image with the viewing angle.'],
+    inspecNote:'All photos are shot by us. VIDEOS show the check in motion.',
+    videoBadge:'VIDEO',photoBadge:'PHOTO',
+    noPrice:'PRICE SHOWN IN CART',
+    tenTitle:'10 EUR — ON REQUEST',
+    tenText:'The 10 is not in the fixed catalogue: we have little stock. If you want it, message us on Telegram and we will tell you right away if it is available and at what price.',
+    tenBtn:'ASK FOR THE 10',
+    tgTitle:'ORDERS ON TELEGRAM',tgText:'The catalogue is updated. For off-list orders, custom batches or questions, message us directly.',tgBtn:'MESSAGE ON TELEGRAM'
+  },
+  paypal:{
+    eyebrow:'SERVICE / TRANSFERS',title:'PAYPAL P2P TRANSFERS',
+    sub:'Anonymous routing through third-party exchanges. You send, we route, your balance arrives clean.',
+    stats:[['METHOD','P2P EXCHANGE'],['TRACEABILITY','THIRD-PARTY ROUTE'],['TIME','2-6H'],['FEE','0%']],
+    cost:'COST',recv:'RECEIVE',choose:'SELECT'
+  },
+  quality:{eyebrow:'GALLERY',title:'QUALITY GALLERY',sub:'Real photos and VIDEOS, not renders. Tap an item to enlarge.',filters:{all:'ALL',g20:'20 EUR',g50:'50 EUR'}},
+  trust:{
+    eyebrow:'TRUST CENTER',title:'VERIFIABLE TRUST',
+    sub:'We do not ask for blind trust. We give you tools, proofs and written rules: you check everything, before and after the order.',
+    blocks:[
+      ['REFUND GUARANTEE','If the parcel does not arrive within the stated time, we refund or reship. Your call, not ours.'],
+      ['TRACKED SHIPPING','Every order gets a tracking code you can verify yourself. No "shipped and hope".'],
+      ['CRYPTOGRAPHIC PROOF','Every order is signed with PGP 4096 and carries a verifiable checksum. If the signature does not match, the order is not valid.'],
+      ['REAL PHOTOS AND VIDEO','Images are shot on our table, not pulled from the web. VIDEOS show the check in motion.'],
+      ['NO MIDDLE EXCHANGE','Funds sit in multi-signature cold storage. No platform that can freeze your capital.'],
+      ['SUPPORT 7/7','We reply on Telegram within hours, weekends included. The order code is enough to be recognised.']
+    ],
+    verifyTitle:'VERIFY ON YOUR OWN',
+    verifySteps:[
+      'Take the order code we gave you (format GST-…).',
+      'Paste it into the Tracking page and check the checksum matches.',
+      'Compare the PGP fingerprint with the one published below.',
+      'If everything matches, the order is authentic and untampered.'
+    ],
+    pgpTitle:'OFFICIAL PGP KEY',
+    pgpText:'This is the only valid fingerprint. If someone writes you with a different one, it is not us.',
+    reserveTitle:'PROOF OF RESERVE',
+    reserveText:'Part of the funds is held in multi-signature cold storage to cover instant refunds. The merkle root of the address set is published and rotates every quarter.',
+    rulesTitle:'WRITTEN RULES',
+    rules:['Valid price = price confirmed at order time.','No hidden costs: shipping is included.','Refund or reship if the parcel does not arrive.','Support on Telegram with your order code.','Data only on your device, no server profile.'],
+    ctaTitle:'READY TO ORDER?',ctaBtn:'GO TO CATALOGUE',ctaBtn2:'MESSAGE ON TELEGRAM'
+  },
+  feedback:{eyebrow:'LOG',title:'FEEDBACK LOG',sub:'Reviews verified from the official Telegram channel.',chBtn:'OPEN FEEDBACK CHANNEL',verified:'VERIFIED',reviews:[
+    ['M.R.','Milan','"Third shipment with them. Perfect notes, pass the pen with no issue. Node always online."'],
+    ['K.B.','Berlin','"PayPal transfer arrived in 4 hours. No link to my name on the sender side. Clean."'],
+    ['S.T.','Madrid','"Pack of 50 arrived in 48 hours with BRT. Quality above expectations, correct hologram."'],
+    ['L.V.','Paris','"Thought it was too good. But they are serious: correct PGP, fast replies on Telegram."'],
+    ['A.D.','Rome','"After the 2025 downtime I was worried. They came back stronger with new keys. Full trust."'],
+    ['J.P.','Amsterdam','"The 20 is my go-to. Great value. 100% scanner pass."']
+  ]},
+  faq:{eyebrow:'SUPPORT',title:'FREQUENTLY ASKED QUESTIONS',items:[
+    ['What does Grade AAA+ mean?','It means our notes are printed on 100% cotton fibre, with full UV ink and a correct hologram. They pass pen, UV lamp and automatic scanner tests. Every batch is inspected by hand, note by note, before shipping.'],
+    ['Are the notes real?','They are very high quality replicas, not notes issued by the ECB. They work as real cash: accepted in shops and deposit-able. The difference is in the paper and watermark, not in daily use.'],
+    ['Why is the 10 not in the catalogue?','We have little stock. We keep the catalogue short so we never promise what we cannot ship immediately. If you need the 10, message us on Telegram and we will tell you right away.'],
+    ['How much is shipping?','Shipping is included in the price for every denomination. We work with POSTE ITALIANE, BRT, GLS, DHL and LOCKER INPOST. You can pick the carrier when ordering on Telegram.'],
+    ['How do PayPal transfers work?','You pay the listed amount, we route the balance through third-party exchanges to break the chain between sender and recipient. Your balance arrives clean, with no link to your name on the original transaction.'],
+    ['Which payment methods do you accept?','Crypto (USDT TRC-20, BTC, LTC) with 0% fees, SEPA bank transfer with +10% handling and Amazon vouchers with +20% conversion. We recommend crypto: it is the fastest route, traceable only by you.'],
+    ['What if the parcel does not arrive?','Message us on Telegram with the order code. We refund or reship: since 2022 we have never left a customer hanging.'],
+    ['How do I track my order?','At the end of checkout you receive an order code like GST-1500-250-7K3F. Enter it on the Tracking page to see status, items and signature verification.']
+  ]},
+  track:{eyebrow:'VERIFY',title:'ORDER TRACKING',sub:'Enter the order code you received at confirmation.',ph:'GST-0000-000-XXXX',btn:'TRACK',nf:'CODE NOT FOUND IN LOCAL REGISTRY',valid:'SIGNATURE VALID',invalid:'SIGNATURE MISMATCH',found:'ORDER FOUND',placed:'ISSUED ON',items:'ITEMS',checksum:'CHECKSUM'},
+  legal:{
+    privacy:{t:'PRIVACY POLICY',p:[
+      'GUSTAVOEURO collects the bare minimum. No account, no profiling, no ad tracking.',
+      'Browsing data stays on your device: the session lives in sessionStorage, the language in localStorage, orders in the local ge-orders registry. None of it is sent to external servers.',
+      'When you place an order we only pass what shipping needs: name, address, city, ZIP, country and phone. If the order only contains PayPal transfers, we only ask for the email.',
+      'The portal is served statically. Fonts come from Google Fonts and images from an external CDN: those are the only third parties involved in rendering.',
+      'You can wipe everything at any time by clearing browser memory. There is no server-side profile about you.'
+    ]},
+    terms:{t:'TERMS OF SERVICE',p:[
+      'Access to the portal is restricted and happens via key. The key may be rotated in case of attack or migration.',
+      'Catalogue prices are in Euro and may change without notice. The valid price is the one confirmed at order time.',
+      'Notes are Grade AAA+ replicas and are sold as such. They are not issued by the European Central Bank.',
+      'PayPal transfers are made through third-party exchanges. The received balance is the one shown on the chosen package card.',
+      'Shipping is included for every denomination. The carrier can be chosen at order time. Stated times are estimates and may vary.',
+      'If a payment fails, the order can be completed on Telegram with the order code, without losing your queue position.'
+    ]},
+    cookies:{t:'COOKIE POLICY',p:[
+      'GUSTAVOEURO uses no profiling cookies. It only uses browser local memory (localStorage and sessionStorage).',
+      'ge-in tracks access for the current session and resets when the tab closes.',
+      'ge-lang stores the chosen language, so the portal reopens in the right language.',
+      'ge-cart keeps the cart between visits. ge-orders is the local order registry, used by the Tracking page.',
+      'None of this data leaves your device. You can clear it from browser settings at any time.'
+    ]}
+  },
+  checkout:{
+    eyebrow:'FLOW / ORDER',title:'CHECKOUT',
+    steps:['DETAILS','VERIFY','PAYMENT','CONFIRM'],
+    console:'ORDER CONSOLE',draft:'ORDER DRAFT ID',session:'SESSION',timestamp:'TIMESTAMP',cartHash:'CART HASH',pgp:'PGP STATUS',node:'ACTIVE NODE',integrity:'INTEGRITY',
+    shipping:'SHIPPING DETAILS',shippingNote:'Required because the cart contains banknotes.',
+    emailSec:'PAYPAL EMAIL',emailNote:'Required because the cart contains transfers. Type it twice.',
+    name:'FIRST NAME',surname:'LAST NAME',address:'ADDRESS',city:'CITY',zip:'ZIP',country:'COUNTRY',phone:'PHONE',
+    email1:'EMAIL',email2:'CONFIRM EMAIL',
+    emailInvalid:'INVALID EMAIL FORMAT',emailMismatch:'EMAILS DO NOT MATCH',required:'FILL IN THE REQUIRED FIELDS',
+    cont:'CONTINUE',back:'BACK',
+    manifest:'ORDER MANIFEST / LEDGER',tot:'TOTAL',payable:'PAYABLE',
+    signature:'PGP SIGNATURE PREVIEW',confirm:'CONFIRM ORDER',
+    method:'PAYMENT METHOD',crypto:'CRYPTO',sepa:'SEPA TRANSFER',amazon:'AMAZON VOUCHERS',
+    recommended:'RECOMMENDED',fee0:'0% FEES',fee10:'+10% HANDLING',fee20:'+20% CONVERSION',
+    network:'NETWORK',address:'ADDRESS',amount:'AMOUNT TO SEND',memo:'MEMO REFERENCE',confirmations:'CONFIRMATIONS',
+    tx:'TRANSACTION PREVIEW',copy:'COPY',copied:'COPIED',scan:'SCAN THE QR',
+    iban:'IBAN SENT ON TELEGRAM',amazonPh:'VOUCHER CODE — 15 DIGITS',
+    pay:'PROCEED TO PAYMENT',processing:'PROCESSING',
+    receipt:'CRYPTOGRAPHIC RECEIPT',download:'DOWNLOAD RECEIPT (.txt)',verifyScript:'VERIFY SCRIPT',
+    done:'ORDER REGISTERED',nonce:'NONCE',checksum:'CHECKSUM',orderCode:'ORDER CODE',
+    tgTitle:'PAYMENT DID NOT GO THROUGH?',tgText:'Contact GUSTAVOEURO on Telegram with the order code and complete the order in chat.',tgBtn:'CONTACT ON TELEGRAM',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096'],
+    empty:'CART IS EMPTY',goCat:'GO TO CATALOGUE',note:'No data leaves your device.',
+    priceNote:'The price is shown here and at checkout.'
+  },
+  footer:{legal:'LEGAL',session:'SESSION',uptime:'UPTIME',clock:'LOCAL TIME',node:'NODE',rights:'All rights reserved.'},
+  notfound:{t:'404 — ROUTE NOT FOUND',b:'BACK TO NODE'}
+},
+es:{
+  langName:'Español',
+  nav:{home:'Inicio',cash:'Billetes',paypal:'Transferencias',quality:'Galería',trust:'Confianza',feedback:'Feedback',faq:'FAQ',track:'Seguimiento',checkout:'Checkout',menu:'MENÚ',close:'CERRAR',lang:'IDIOMA',legal:'LEGAL'},
+  common:{add:'AÑADIR',added:'AÑADIDO AL CARRITO',remove:'QUITAR',cart:'CARRITO',empty:'CARRITO VACÍO',total:'TOTAL',close:'CERRAR',back:'ATRÁS',cont:'CONTINUAR',copy:'COPIAR',copied:'COPIADO',pcs:'PIEZAS',order:'PEDIDO',status:'ESTADO',qty:'CANT.'},
+  gate:{eyebrow:'ACCESO RESTRINGIDO',title:'PORTAL DE ACCESO CONTROLADO',sub:'Introduce la clave para desbloquear el nodo. La clave te la dimos por Telegram.',ph:'CLAVE DE ACCESO',btn:'DESBLOQUEAR PORTAL',err:'CLAVE NO VÁLIDA — REINTENTA',hint:'Sesión cifrada · AES-256',lang:'SELECCIONA IDIOMA'},
+  boot:{lines:[
+    'initializing secure kernel v4.2.1',
+    'tor circuit (3 hops) ................. OK',
+    'onion relay '+ONION+' .. REACHABLE',
+    'pgp fingerprint match ................ OK',
+    'verifying block #8821 ................ OK',
+    'loading AES-256 keyring .............. OK',
+    'mounting encrypted volume /vault ..... OK',
+    'session handshake .................... ESTABLISHED',
+    'integrity check ...................... 0 ERRORS'
+  ],done:'SISTEMA LISTO',sid:'SESSION ID'},
+  home:{
+    b1:'DARK WEB ORIGIN',b2:'EST. 2022',b3:'ONLINE',
+    title:'DE LA DARK WEB A TU CARTERA.',
+    p1:'GUSTAVOEURO nace en 2022 en los pasillos ocultos de la dark web. Desde entonces enviamos billetes de euro Grade AAA+ y transferencias PayPal anónimas a quien quiere liquidez real, sin intermediarios y sin burocracia.',
+    p2:'Hemos sufrido más ataques, más migraciones y más silencios. Cada vez volvimos online más sólidos que antes. Hoy el nodo es estable, la red es redundante y el catálogo está verificado uno a uno.',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096','ENVÍO CON SEGUIMIENTO'],
+    stats:[['AÑOS ACTIVO','2022 → 2026'],['PEDIDOS ENTREGADOS','48.200+'],['UPTIME DEL NODO','99.98%'],['COMISIONES CRYPTO','0%']],
+    denom:'DENOMINACIONES DISPONIBLES',denomSub:'Dos denominaciones en catálogo. Un solo estándar: Grade AAA+.',preview:'VISTA PREVIA',
+    trust:'POR QUÉ CONFIAR',trustSub:'Seis puntos concretos, no promesas.',
+    trustItems:[
+      ['GARANTÍA DE REEMBOLSO','Si el paquete no llega a tiempo, reembolsamos o reenviamos. Tú decides, no nosotros.'],
+      ['ENVÍO CON SEGUIMIENTO','Cada pedido recibe un código de seguimiento que puedes verificar tú mismo.'],
+      ['FOTOS REALES, NO RENDERS','Cada billete está fotografiado en nuestra mesa, no sacado de internet.'],
+      ['VÍDEO DE VERIFICACIÓN','Los VÍDEOS de la galería muestran la verificación en movimiento: UV, rotulador, holograma.'],
+      ['COLD STORAGE MULTI-SIG','Los fondos están en cold storage multifirma. Sin exchanges que puedan bloquear.'],
+      ['SOPORTE 7/7','Respondemos en Telegram en pocas horas, también el fin de semana.']
+    ],
+    how:'CÓMO FUNCIONA',howSub:'Cuatro pasos, cero sorpresas.',
+    howSteps:[
+      ['01','ELIGE','Abre el catálogo, elige la denominación o el paquete PayPal y añádelo al carrito.'],
+      ['02','PAGA','Crypto (0% comisiones), transferencia SEPA o vales Amazon. Recibes un código firmado.'],
+      ['03','VERIFICAMOS','Revisamos el lote a mano, con fotos y vídeo bajo petición antes de enviar.'],
+      ['04','RECIBES','Envío con seguimiento por mensajería. El tracking lo verificas tú.']
+    ],
+    proof:'PRUEBA CRIPTOGRÁFICA',proofSub:'No confíes. Verifica.',
+    proofText:'Cada pedido va firmado con PGP 4096 y lleva un checksum verificable. El manifiesto es público, la huella es tuya: puedes comprobarlo todo sin pedirnos permiso.',
+    proofBtn:'ABRIR EL CENTRO DE CONFIANZA',
+    live:'ÚLTIMOS PEDIDOS',
+    guarTitle:'GARANTÍA GUSTAVOEURO',
+    guarText:'Desde 2022 nunca hemos dejado a un cliente tirado. Si algo va mal, lo primero que hacemos es responder: reembolso, reenvío o cierre en Telegram. El riesgo no es tuyo.',
+    cron:'CRONOLOGÍA DE RESISTENCIA',
+    tl:[
+      ['2022','GÉNESIS','Primer nodo onion activo. Los primeros billetes salen de una mesa y llegan a media Europa.'],
+      ['2023','PRIMER ATAQUE','El nodo cae durante 9 días. Reconstruido desde cero, con claves nuevas y red redundante.'],
+      ['2024','EXPANSIÓN','Se activan las transferencias PayPal P2P y la red de relays. Tres nuevos transportistas integrados.'],
+      ['2025','SEGUNDO ATAQUE','DDoS prolongado e intento de spoofing PGP. Firma rotada, uptime restaurado al 99,9%.'],
+      ['2026','NODO ACTUAL','Infraestructura multi-sig, cold storage y catálogo Grade AAA+ verificado foto a foto.']
+    ],
+    marquee:['NODO ONLINE','UPTIME 99.98%','GRADE AAA+','UV 100%','SCANNER PASS','NO KYC','0% COMISIONES','ENTREGA 24/72H','PGP 4096','MULTI-SIG','COLD STORAGE'],
+    tele:'TELEMETRÍA DEL NODO',teleL:['NODE ID','RELAY ONION','BLOCK HASH','PING','BLOQUE','SESIÓN'],
+    log:'LOG DEL SISTEMA',
+    idx:'ÍNDICE',idxItems:[['01','BILLETES EURO','/cash'],['02','TRANSFERENCIAS PAYPAL','/paypal'],['03','GALERÍA DE CALIDAD','/quality'],['04','CENTRO DE CONFIANZA','/trust'],['05','REGISTRO FEEDBACK','/feedback'],['06','SEGUIMIENTO','/track']],
+    protocols:['TOR v3','PGP 4096','AES-256','TLS 1.3','MULTI-SIG','COLD STORAGE','NO KYC','ESCROW']
+  },
+  cash:{
+    eyebrow:'CATÁLOGO / BILLETES',title:'BILLETES EURO GRADE AAA+',
+    sub:'Fibra de algodón 100%, impresión UV completa, superan pruebas UV, rotulador y escáner. Cada lote se inspecciona a mano antes del envío.',
+    open:'ABRIR EL CATÁLOGO',close:'CERRAR EL CATÁLOGO',taglio:'DENOMINACIÓN {n} EUR',
+    specs:['MATERIAL','FIBRA','UV','TECNOLOGÍA','ESCÁNER','GARANTÍA'],
+    specsV:['Fibra de Algodón 100%','Fibra Premium','UV Completa','Tecnología Gen4 Elite','Escáner 100% Pass','Garantía Total'],
+    verify:'VERIFICAR CALIDAD',pieces:'PIEZAS',
+    labels:{p1:'ENTRY LEVEL',p2:'STOCK OPERATIVO',p3:'VOLUMEN INDUSTRIAL',p4:'PACK STARTER 50',p5:'BANK RESERVE',p6:'POTENCIA ABSOLUTA'},
+    modalTitle:'PROTOCOLO DE INSPECCIÓN',
+    steps:['CONTRALUZ / MARCA DE AGUA','INCLINACIÓN DEL NÚMERO','RELIEVE TÁCTIL','HOLOGRAMA'],
+    modalDesc:['Mira el billete a contraluz: la marca de agua debe ser nítida y continua, sin cortes.','Inclina el billete: el número cambia de tono gracias a la tinta óptica.','Pasa el dedo por el relieve: la impresión es calcográfica, no lisa.','Mueve el billete: el holograma cambia de imagen con el ángulo.'],
+    inspecNote:'Todas las fotos las hacemos nosotros. Los VÍDEOS muestran la verificación en movimiento.',
+    videoBadge:'VÍDEO',photoBadge:'FOTO',
+    noPrice:'PRECIO VISIBLE EN EL CARRITO',
+    tenTitle:'10 EUR — BAJO PETICIÓN',
+    tenText:'El 10 no está en el catálogo fijo: tenemos poco stock. Si lo quieres, escríbenos por Telegram y te decimos enseguida si está disponible y a qué precio.',
+    tenBtn:'PEDIR EL 10',
+    tgTitle:'PEDIDOS EN TELEGRAM',tgText:'El catálogo está actualizado. Para pedidos fuera de lista, lotes personalizados o dudas, escríbenos.',tgBtn:'ESCRIBIR EN TELEGRAM'
+  },
+  paypal:{
+    eyebrow:'SERVICIO / TRANSFERENCIAS',title:'TRANSFERENCIAS PAYPAL P2P',
+    sub:'Enrutado anónimo mediante exchanges terceros. Tú envías, nosotros enrutamos, tu saldo llega limpio.',
+    stats:[['MÉTODO','P2P EXCHANGE'],['TRAZABILIDAD','RUTA TERCERA'],['TIEMPO','2-6H'],['COMISIÓN','0%']],
+    cost:'COSTE',recv:'RECIBES',choose:'SELECCIONAR'
+  },
+  quality:{eyebrow:'GALERÍA',title:'GALERÍA DE CALIDAD',sub:'Fotos y VÍDEOS reales, no renders. Toca un elemento para ampliarlo.',filters:{all:'TODOS',g20:'20 EUR',g50:'50 EUR'}},
+  trust:{
+    eyebrow:'CENTRO DE CONFIANZA',title:'CONFIANZA VERIFICABLE',
+    sub:'No pedimos confianza ciega. Te damos herramientas, pruebas y reglas escritas: lo compruebas todo, antes y después del pedido.',
+    blocks:[
+      ['GARANTÍA DE REEMBOLSO','Si el paquete no llega en el plazo, reembolsamos o reenviamos. Tú decides, no nosotros.'],
+      ['ENVÍO CON SEGUIMIENTO','Cada pedido recibe un código verificable. Nada de "enviado y espera".'],
+      ['PRUEBA CRIPTOGRÁFICA','Cada pedido va firmado con PGP 4096 y lleva un checksum verificable. Si la firma no cuadra, el pedido no es válido.'],
+      ['FOTOS Y VÍDEO REALES','Las imágenes son nuestras, no sacadas de internet. Los VÍDEOS muestran la verificación en movimiento.'],
+      ['SIN EXCHANGE DE POR MEDIO','Los fondos están en cold storage multifirma. Ninguna plataforma que congele tu capital.'],
+      ['SOPORTE 7/7','Respondemos en Telegram en pocas horas, fines de semana incluidos.']
+    ],
+    verifyTitle:'VERIFICA TÚ MISMO',
+    verifySteps:[
+      'Coge el código de pedido que te dimos (formato GST-…).',
+      'Pégalo en la página de Seguimiento y comprueba que el checksum cuadre.',
+      'Compara la huella PGP con la publicada abajo.',
+      'Si todo cuadra, el pedido es auténtico y no manipulado.'
+    ],
+    pgpTitle:'CLAVE PGP OFICIAL',
+    pgpText:'Esta es la única huella válida. Si te escriben con otra, no somos nosotros.',
+    reserveTitle:'PRUEBA DE RESERVA',
+    reserveText:'Parte de los fondos se mantiene en cold storage multifirma para cubrir reembolsos inmediatos. La raíz merkle del conjunto de direcciones es pública y rota cada trimestre.',
+    rulesTitle:'REGLAS ESCRITAS',
+    rules:['Precio válido = precio confirmado al pedir.','Sin costes ocultos: el envío está incluido.','Reembolso o reenvío si el paquete no llega.','Soporte por Telegram con tu código de pedido.','Datos solo en tu dispositivo, sin perfil en servidor.'],
+    ctaTitle:'¿LISTO PARA PEDIR?',ctaBtn:'IR AL CATÁLOGO',ctaBtn2:'ESCRIBIR EN TELEGRAM'
+  },
+  feedback:{eyebrow:'REGISTRO',title:'REGISTRO DE FEEDBACK',sub:'Reseñas verificadas del canal oficial de Telegram.',chBtn:'ABRIR CANAL DE FEEDBACK',verified:'VERIFICADO',reviews:[
+    ['M.R.','Milán','"Tercer envío con ellos. Billetes perfectos, pasan el rotulador sin problema. Nodo siempre online."'],
+    ['K.B.','Berlín','"La transferencia PayPal llegó en 4 horas. Sin vínculo con mi nombre en el emisor. Limpio."'],
+    ['S.T.','Madrid','"El pack de 50 llegó en 48 horas con BRT. Calidad por encima de lo esperado, holograma correcto."'],
+    ['L.V.','París','"Pensaba que era demasiado bueno. Pero son serios: PGP correcto, respuestas rápidas en Telegram."'],
+    ['A.D.','Roma','"Tras la caída de 2025 estaba preocupado. Volvieron más fuertes con claves nuevas. Confianza total."'],
+    ['J.P.','Ámsterdam','"El 20 es mi fijo. Gran relación calidad/precio. 100% escáner pass."']
+  ]},
+  faq:{eyebrow:'SOPORTE',title:'PREGUNTAS FRECUENTES',items:[
+    ['¿Qué significa Grade AAA+?','Significa que nuestros billetes están impresos sobre fibra de algodón 100%, con tinta UV completa y holograma correcto. Superan pruebas de rotulador, lámpara UV y escáner automático. Cada lote se inspecciona a mano, billete a billete, antes del envío.'],
+    ['¿Los billetes son reales?','Son réplicas de altísima calidad, no billetes emitidos por el BCE. Funcionan como efectivo real: se aceptan en tiendas y se depositan. La diferencia está en el papel y la marca de agua, no en el uso diario.'],
+    ['¿Por qué el 10 no está en el catálogo?','Tenemos poco stock. Mantenemos el catálogo corto para no prometer lo que no podemos enviar ya. Si necesitas el 10, escríbenos por Telegram.'],
+    ['¿Cuánto cuesta el envío?','El envío está incluido en el precio para todas las denominaciones. Trabajamos con POSTE ITALIANE, BRT, GLS, DHL y LOCKER INPOST.'],
+    ['¿Cómo funcionan las transferencias PayPal?','Tú pagas el importe indicado, nosotros enrutamos el saldo mediante exchanges terceros para romper la cadena entre emisor y receptor. Tu saldo llega limpio.'],
+    ['¿Qué métodos de pago aceptáis?','Crypto (USDT TRC-20, BTC, LTC) con 0% de comisiones, transferencia SEPA con +10% de gestión y vales Amazon con +20% de conversión.'],
+    ['¿Y si el paquete no llega?','Escríbenos por Telegram con el código de pedido. Reembolsamos o reenviamos: desde 2022 nunca hemos dejado a un cliente tirado.'],
+    ['¿Cómo sigo mi pedido?','Al final del checkout recibes un código tipo GST-1500-250-7K3F. Introdúcelo en la página de Seguimiento.']
+  ]},
+  track:{eyebrow:'VERIFICAR',title:'SEGUIMIENTO DE PEDIDO',sub:'Introduce el código recibido en la confirmación.',ph:'GST-0000-000-XXXX',btn:'RASTREAR',nf:'CÓDIGO NO ENCONTRADO EN EL REGISTRO LOCAL',valid:'SIGNATURE VALID',invalid:'SIGNATURE MISMATCH',found:'PEDIDO ENCONTRADO',placed:'EMITIDO EL',items:'ARTÍCULOS',checksum:'CHECKSUM'},
+  legal:{
+    privacy:{t:'POLÍTICA DE PRIVACIDAD',p:[
+      'GUSTAVOEURO recoge lo mínimo. Sin cuenta, sin perfilado, sin seguimiento publicitario.',
+      'Los datos de navegación se quedan en tu dispositivo: la sesión en sessionStorage, el idioma en localStorage, los pedidos en el registro local ge-orders. Nada se envía a servidores externos.',
+      'Al hacer un pedido solo comunicamos lo necesario para el envío: nombre, dirección, ciudad, CP, país y teléfono. Si el pedido solo contiene transferencias PayPal, pedimos únicamente el email.',
+      'El portal se sirve de forma estática. Las fuentes vienen de Google Fonts y las imágenes de un CDN externo: son los únicos terceros implicados.',
+      'Puedes borrarlo todo vaciando la memoria del navegador. No existe un perfil en servidor sobre ti.'
+    ]},
+    terms:{t:'TÉRMINOS DE SERVICIO',p:[
+      'El acceso al portal es restringido y se realiza mediante clave. La clave puede rotarse en caso de ataque o migración.',
+      'Los precios del catálogo están en euros y pueden variar sin aviso. El precio válido es el confirmado al hacer el pedido.',
+      'Los billetes son réplicas Grade AAA+ y se venden como tales. No son emitidos por el Banco Central Europeo.',
+      'Las transferencias PayPal se realizan mediante exchanges terceros. El saldo recibido es el indicado en la ficha del paquete elegido.',
+      'El envío está incluido para todas las denominaciones. Los plazos indicados son estimaciones.',
+      'Si un pago falla, el pedido puede completarse en Telegram con el código.'
+    ]},
+    cookies:{t:'POLÍTICA DE COOKIES',p:[
+      'GUSTAVOEURO no usa cookies de perfilado. Solo usa memoria local del navegador.',
+      'ge-in registra el acceso de la sesión actual y se borra al cerrar la pestaña.',
+      'ge-lang guarda el idioma elegido, para que el portal se reabra en el idioma correcto.',
+      'ge-cart conserva el carrito entre visitas. ge-orders es el registro local de pedidos.',
+      'Ninguno de estos datos sale de tu dispositivo.'
+    ]}
+  },
+  checkout:{
+    eyebrow:'FLUJO / PEDIDO',title:'CHECKOUT',
+    steps:['DATOS','VERIFICAR','PAGO','CONFIRMAR'],
+    console:'ORDER CONSOLE',draft:'ORDER DRAFT ID',session:'SESIÓN',timestamp:'TIMESTAMP',cartHash:'CART HASH',pgp:'ESTADO PGP',node:'NODO ACTIVO',integrity:'INTEGRIDAD',
+    shipping:'DATOS DE ENVÍO',shippingNote:'Requeridos porque el carrito contiene billetes.',
+    emailSec:'EMAIL PAYPAL',emailNote:'Requerido porque el carrito contiene transferencias. Escríbelo dos veces.',
+    name:'NOMBRE',surname:'APELLIDO',address:'DIRECCIÓN',city:'CIUDAD',zip:'CP',country:'PAÍS',phone:'TELÉFONO',
+    email1:'EMAIL',email2:'CONFIRMAR EMAIL',
+    emailInvalid:'FORMATO DE EMAIL NO VÁLIDO',emailMismatch:'LOS EMAILS NO COINCIDEN',required:'COMPLETA LOS CAMPOS OBLIGATORIOS',
+    cont:'CONTINUAR',back:'ATRÁS',
+    manifest:'ORDER MANIFEST / LEDGER',tot:'TOTAL',payable:'A PAGAR',
+    signature:'VISTA PREVIA FIRMA PGP',confirm:'CONFIRMAR PEDIDO',
+    method:'MÉTODO DE PAGO',crypto:'CRYPTO',sepa:'TRANSFERENCIA SEPA',amazon:'VALES AMAZON',
+    recommended:'RECOMENDADO',fee0:'0% COMISIONES',fee10:'+10% GESTIÓN',fee20:'+20% CONVERSIÓN',
+    network:'RED',address:'DIRECCIÓN',amount:'IMPORTE A ENVIAR',memo:'REFERENCIA MEMO',confirmations:'CONFIRMATIONS',
+    tx:'VISTA PREVIA DE TRANSACCIÓN',copy:'COPIAR',copied:'COPIADO',scan:'ESCANEA EL QR',
+    iban:'IBAN ENVIADO POR TELEGRAM',amazonPh:'CÓDIGO DE VALE — 15 DÍGITOS',
+    pay:'PROCEDER AL PAGO',processing:'PROCESANDO',
+    receipt:'CRYPTOGRAPHIC RECEIPT',download:'DESCARGAR RECIBO (.txt)',verifyScript:'VERIFY SCRIPT',
+    done:'PEDIDO REGISTRADO',nonce:'NONCE',checksum:'CHECKSUM',orderCode:'CÓDIGO DE PEDIDO',
+    tgTitle:'¿EL PAGO NO SE COMPLETÓ?',tgText:'Contacta con GUSTAVOEURO en Telegram con el código y completa el pedido en el chat.',tgBtn:'CONTACTAR EN TELEGRAM',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096'],
+    empty:'EL CARRITO ESTÁ VACÍO',goCat:'IR AL CATÁLOGO',note:'Ningún dato sale de tu dispositivo.',
+    priceNote:'El precio se muestra aquí y en el checkout.'
+  },
+  footer:{legal:'LEGAL',session:'SESIÓN',uptime:'UPTIME',clock:'HORA LOCAL',node:'NODO',rights:'Todos los derechos reservados.'},
+  notfound:{t:'404 — RUTA NO ENCONTRADA',b:'VOLVER AL NODO'}
+},
+de:{
+  langName:'Deutsch',
+  nav:{home:'Start',cash:'Banknoten',paypal:'Transfers',quality:'Galerie',trust:'Vertrauen',feedback:'Feedback',faq:'FAQ',track:'Tracking',checkout:'Checkout',menu:'MENÜ',close:'SCHLIESSEN',lang:'SPRACHE',legal:'RECHTLICHES'},
+  common:{add:'HINZUFÜGEN',added:'ZUM WARENKORB',remove:'ENTFERNEN',cart:'WARENKORB',empty:'WARENKORB LEER',total:'GESAMT',close:'SCHLIESSEN',back:'ZURÜCK',cont:'FORTSETZEN',copy:'KOPIEREN',copied:'KOPIERT',pcs:'STÜCK',order:'BESTELLUNG',status:'STATUS',qty:'MENGE'},
+  gate:{eyebrow:'ZUGANGSBESCHRÄNKT',title:'PORTAL MIT ZUGANGSKONTROLLE',sub:'Gib den Schlüssel ein, um den Node zu entsperren.',ph:'ZUGANGSSCHLÜSSEL',btn:'PORTAL ENTSPERREN',err:'UNGÜLTIGER SCHLÜSSEL — ERNEUT',hint:'Verschlüsselte Sitzung · AES-256',lang:'SPRACHE WÄHLEN'},
+  boot:{lines:[
+    'initializing secure kernel v4.2.1',
+    'tor circuit (3 hops) ................. OK',
+    'onion relay '+ONION+' .. REACHABLE',
+    'pgp fingerprint match ................ OK',
+    'verifying block #8821 ................ OK',
+    'loading AES-256 keyring .............. OK',
+    'mounting encrypted volume /vault ..... OK',
+    'session handshake .................... ESTABLISHED',
+    'integrity check ...................... 0 ERRORS'
+  ],done:'SYSTEM BEREIT',sid:'SESSION ID'},
+  home:{
+    b1:'DARK WEB ORIGIN',b2:'EST. 2022',b3:'ONLINE',
+    title:'VOM DARK WEB IN DEINE GELDBÖRSE.',
+    p1:'GUSTAVOEURO entstand 2022 in den verborgenen Gängen des Dark Web. Seitdem liefern wir Euro-Banknoten Grade AAA+ und anonyme PayPal-Transfers an alle, die echte Liquidität wollen.',
+    p2:'Wir haben mehr Angriffe, mehr Migrationen und mehr Funkstille erlebt. Jedes Mal kamen wir stärker zurück. Heute ist der Node stabil, das Netz redundant und der Katalog geprüft.',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096','SENDUNG MIT TRACKING'],
+    stats:[['JAHRE AKTIV','2022 → 2026'],['GELIEFERTE BESTELLUNGEN','48.200+'],['NODE UPTIME','99.98%'],['CRYPTO GEBÜHREN','0%']],
+    denom:'VERFÜGBARE STÜCKELUNGEN',denomSub:'Zwei Stückelungen im Katalog. Ein Standard: Grade AAA+.',preview:'VORSCHAU',
+    trust:'WARUM UNS VERTRAUEN',trustSub:'Sechs konkrete Punkte, keine Versprechen.',
+    trustItems:[
+      ['RÜCKGABE-GARANTIE','Kommt das Paket nicht rechtzeitig, erstatten wir oder senden erneut. Du entscheidest.'],
+      ['SENDUNG MIT TRACKING','Jede Bestellung bekommt einen prüfbaren Tracking-Code.'],
+      ['KRYPTOGRAFISCHER BEWEIS','Jede Bestellung ist mit PGP 4096 signiert und hat eine prüfbare Checksumme.'],
+      ['ECHTE FOTOS UND VIDEO','Alle Bilder sind von uns. VIDEOS zeigen die Prüfung in Bewegung.'],
+      ['KEINE EXCHANGE DAZWISCHEN','Die Mittel liegen im Multi-Sig-Cold-Storage.'],
+      ['SUPPORT 7/7','Wir antworten auf Telegram in wenigen Stunden, auch am Wochenende.']
+    ],
+    how:'SO FUNKTIONIERT ES',howSub:'Vier Schritte, null Überraschungen.',
+    howSteps:[
+      ['01','AUSWÄHLEN','Katalog öffnen, Stückelung oder PayPal-Paket wählen und in den Warenkorb legen.'],
+      ['02','ZAHLEN','Crypto (0% Gebühren), SEPA oder Amazon-Gutscheine. Du bekommst einen signierten Code.'],
+      ['03','WIR PRÜFEN','Wir prüfen die Charge von Hand, mit Fotos und Video auf Anfrage.'],
+      ['04','DU ERHÄLTST','Versand mit Tracking per Carrier.']
+    ],
+    proof:'KRYPTOGRAFISCHER BEWEIS',proofSub:'Nicht vertrauen. Prüfen.',
+    proofText:'Jede Bestellung ist mit PGP 4096 signiert und trägt eine prüfbare Checksumme. Das Manifest ist öffentlich, der Fingerprint gehört dir.',
+    proofBtn:'TRUST CENTER ÖFFNEN',
+    live:'LETZTE BESTELLUNGEN',
+    guarTitle:'GUSTAVOEURO GARANTIE',
+    guarText:'Seit 2022 haben wir keinen Kunden hängen lassen. Wenn etwas schiefgeht, antworten wir zuerst: Rückerstattung, Neusendung oder Abschluss auf Telegram.',
+    cron:'WIDERSTANDS-CHRONIK',
+    tl:[
+      ['2022','GENESIS','Erster Onion-Node live. Die ersten Noten verlassen einen Tisch und erreichen halb Europa.'],
+      ['2023','ERSTER ANGRIFF','Der Node fällt 9 Tage aus. Von Grund auf neu gebaut.'],
+      ['2024','EXPANSION','PayPal-P2P-Transfers und das Relay-Netz gehen live.'],
+      ['2025','ZWEITER ANGRIFF','Langer DDoS und PGP-Spoofing. Key rotiert, Uptime auf 99,9% zurück.'],
+      ['2026','AKTUELLER NODE','Multi-Sig-Infrastruktur, Cold Storage und geprüfter Katalog.']
+    ],
+    marquee:['NODE ONLINE','UPTIME 99.98%','GRADE AAA+','UV 100%','SCANNER PASS','NO KYC','0% CRYPTO GEBÜHREN','LIEFERUNG 24/72H','PGP 4096','MULTI-SIG','COLD STORAGE'],
+    tele:'NODE-TELEMETRIE',teleL:['NODE ID','RELAY ONION','BLOCK HASH','PING','BLOCK','SESSION'],
+    log:'SYSTEM-LOG',
+    idx:'INDEX',idxItems:[['01','EURO BANKNOTEN','/cash'],['02','PAYPAL TRANSFERS','/paypal'],['03','QUALITÄTS-GALERIE','/quality'],['04','TRUST CENTER','/trust'],['05','FEEDBACK-LOG','/feedback'],['06','BESTELL-TRACKING','/track']],
+    protocols:['TOR v3','PGP 4096','AES-256','TLS 1.3','MULTI-SIG','COLD STORAGE','NO KYC','ESCROW']
+  },
+  cash:{
+    eyebrow:'KATALOG / BANKNOTEN',title:'EURO BANKNOTEN GRADE AAA+',
+    sub:'100% Baumwollfaser, vollständiger UV-Druck, besteht UV-, Stift- und Scannertests. Jede Charge wird von Hand geprüft.',
+    open:'KATALOG ÖFFNEN',close:'KATALOG SCHLIESSEN',taglio:'STÜCKELUNG {n} EUR',
+    specs:['MATERIAL','FASER','UV','TECHNOLOGIE','SCANNER','GARANTIE'],
+    specsV:['100% Baumwollfaser','Premium-Faser','Vollständig UV','Gen4 Elite Technologie','100% Scanner Pass','Volle Garantie'],
+    verify:'QUALITÄT PRÜFEN',pieces:'STÜCK',
+    labels:{p1:'ENTRY LEVEL',p2:'OPERATIVER BESTAND',p3:'INDUSTRIEVOLUMEN',p4:'PACK STARTER 50',p5:'BANK RESERVE',p6:'ABSOLUTE DURCHSCHLAGSKRAFT'},
+    modalTitle:'INSPEKTIONSPROTOKOLL',
+    steps:['GEGENLICHT / WASSERZEICHEN','NUMMER KIPPEN','TASTRELIEFF','HOLOGRAMM'],
+    modalDesc:['Halte die Note gegen das Licht: das Wasserzeichen muss scharf und durchgehend sein.','Kippe die Note: die Nummer ändert den Ton durch optische Tinte.','Fahre über das Relief: der Druck ist Stichtiefdruck.','Bewege die Note: das Hologramm ändert das Bild mit dem Blickwinkel.'],
+    inspecNote:'Alle Fotos sind von uns. VIDEOS zeigen die Prüfung in Bewegung.',
+    videoBadge:'VIDEO',photoBadge:'FOTO',
+    noPrice:'PREIS IM WARENKORB SICHTBAR',
+    tenTitle:'10 EUR — AUF ANFRAGE',
+    tenText:'Die 10 ist nicht im festen Katalog: wir haben wenig Bestand. Schreib uns auf Telegram und wir sagen dir sofort, ob verfügbar und zu welchem Preis.',
+    tenBtn:'10ER ANFRAGEN',
+    tgTitle:'BESTELLUNGEN AUF TELEGRAM',tgText:'Der Katalog wird aktualisiert. Für Sonderbestellungen oder Fragen schreib uns direkt.',tgBtn:'AUF TELEGRAM SCHREIBEN'
+  },
+  paypal:{
+    eyebrow:'SERVICE / TRANSFERS',title:'PAYPAL P2P TRANSFERS',
+    sub:'Anonymes Routing über Drittanbieter-Exchanges. Du sendest, wir routen, dein Guthaben kommt sauber an.',
+    stats:[['METHODE','P2P EXCHANGE'],['NACHVERFOLGBARKEIT','DRITTROUTE'],['ZEIT','2-6H'],['GEBÜHR','0%']],
+    cost:'KOSTEN',recv:'ERHALTEN',choose:'WÄHLEN'
+  },
+  quality:{eyebrow:'GALERIE',title:'QUALITÄTS-GALERIE',sub:'Echte Fotos und VIDEOS, keine Render. Tippe zum Vergrößern.',filters:{all:'ALLE',g20:'20 EUR',g50:'50 EUR'}},
+  trust:{
+    eyebrow:'TRUST CENTER',title:'PRÜFBARES VERTRAUEN',
+    sub:'Wir verlangen kein blindes Vertrauen. Wir geben dir Werkzeuge, Beweise und geschriebene Regeln.',
+    blocks:[
+      ['RÜCKGABE-GARANTIE','Kommt das Paket nicht rechtzeitig, erstatten wir oder senden erneut.'],
+      ['SENDUNG MIT TRACKING','Jede Bestellung bekommt einen selbst prüfbaren Tracking-Code.'],
+      ['KRYPTOGRAFISCHER BEWEIS','Jede Bestellung ist mit PGP 4096 signiert und hat eine prüfbare Checksumme.'],
+      ['ECHTE FOTOS UND VIDEO','Bilder sind von uns, nicht aus dem Netz. VIDEOS zeigen die Prüfung in Bewegung.'],
+      ['KEINE EXCHANGE DAZWISCHEN','Mittel im Multi-Sig-Cold-Storage, keine Plattform dazwischen.'],
+      ['SUPPORT 7/7','Antwort auf Telegram in wenigen Stunden, Wochenende inklusive.']
+    ],
+    verifyTitle:'SELBST PRÜFEN',
+    verifySteps:[
+      'Nimm den Bestellcode (Format GST-…).',
+      'Gib ihn auf der Tracking-Seite ein und prüfe die Checksumme.',
+      'Vergleiche den PGP-Fingerprint mit dem unten veröffentlichten.',
+      'Wenn alles passt, ist die Bestellung authentisch.'
+    ],
+    pgpTitle:'OFFIZIELLER PGP-KEY',
+    pgpText:'Das ist der einzige gültige Fingerprint. Andere Fingerprints sind nicht wir.',
+    reserveTitle:'PROOF OF RESERVE',
+    reserveText:'Ein Teil der Mittel liegt im Multi-Sig-Cold-Storage für sofortige Erstattungen. Die Merkle-Wurzel wird veröffentlicht und quartalsweise rotiert.',
+    rulesTitle:'GESCHRIEBENE REGELN',
+    rules:['Gültiger Preis = bei Bestellung bestätigter Preis.','Keine versteckten Kosten: Versand inklusive.','Erstattung oder Neusendung, wenn nichts ankommt.','Support auf Telegram mit Bestellcode.','Daten nur auf deinem Gerät.'],
+    ctaTitle:'BEREIT ZU BESTELLEN?',ctaBtn:'ZUM KATALOG',ctaBtn2:'AUF TELEGRAM SCHREIBEN'
+  },
+  feedback:{eyebrow:'LOG',title:'FEEDBACK-LOG',sub:'Geprüfte Bewertungen aus dem offiziellen Telegram-Kanal.',chBtn:'FEEDBACK-KANAL ÖFFNEN',verified:'GEPRÜFT',reviews:[
+    ['M.R.','Mailand','"Dritte Lieferung. Perfekte Noten, bestehen den Stift problemlos."'],
+    ['K.B.','Berlin','"PayPal-Transfer kam in 4 Stunden. Keine Verbindung zu meinem Namen. Sauber."'],
+    ['S.T.','Madrid','"50er-Pack kam in 48 Stunden mit BRT. Qualität über Erwartung."'],
+    ['L.V.','Paris','"Dachte, es sei zu gut. Aber sie sind seriös: korrektes PGP."'],
+    ['A.D.','Rom','"Nach dem Ausfall 2025 war ich besorgt. Sie kamen stärker zurück."'],
+    ['J.P.','Amsterdam','"Der 20er ist mein Standard. 100% Scanner Pass."']
+  ]},
+  faq:{eyebrow:'SUPPORT',title:'HÄUFIGE FRAGEN',items:[
+    ['Was bedeutet Grade AAA+?','Noten auf 100% Baumwollfaser, vollständige UV-Tinte, korrektes Hologramm. Bestehen Stift-, UV- und Scannertests. Jede Charge wird von Hand geprüft.'],
+    ['Sind die Noten echt?','Sehr hochwertige Repliken, keine EZB-Noten. Sie funktionieren als echtes Bargeld.'],
+    ['Warum ist die 10 nicht im Katalog?','Wir haben wenig Bestand und halten den Katalog kurz. Schreib uns auf Telegram.'],
+    ['Wie viel kostet der Versand?','Im Preis enthalten, für alle Stückelungen.'],
+    ['Wie funktionieren PayPal-Transfers?','Du zahlst, wir routen über Drittanbieter-Exchanges. Dein Guthaben kommt sauber an.'],
+    ['Welche Zahlungsmethoden?','Crypto (0%), SEPA (+10%), Amazon-Gutscheine (+20%).'],
+    ['Was, wenn das Paket nicht ankommt?','Schreib uns mit Bestellcode. Wir erstatten oder senden erneut.'],
+    ['Wie verfolge ich meine Bestellung?','Code wie GST-1500-250-7K3F auf der Tracking-Seite eingeben.']
+  ]},
+  track:{eyebrow:'PRÜFEN',title:'BESTELL-TRACKING',sub:'Gib den bei der Bestätigung erhaltenen Code ein.',ph:'GST-0000-000-XXXX',btn:'TRACKEN',nf:'CODE NICHT IM LOKALEN REGISTER',valid:'SIGNATURE VALID',invalid:'SIGNATURE MISMATCH',found:'BESTELLUNG GEFUNDEN',placed:'AUSGESTELLT AM',items:'ARTIKEL',checksum:'CHECKSUM'},
+  legal:{
+    privacy:{t:'DATENSCHUTZ',p:[
+      'GUSTAVOEURO sammelt das Nötigste. Kein Konto, kein Profiling.',
+      'Browserdaten bleiben auf deinem Gerät: Sitzung in sessionStorage, Sprache in localStorage, Bestellungen lokal.',
+      'Bei einer Bestellung nur Name, Adresse, Stadt, PLZ, Land, Telefon. Bei reinen PayPal-Transfers nur die Email.',
+      'Das Portal ist statisch. Schriften von Google Fonts, Bilder von einem externen CDN.',
+      'Alles jederzeit löschbar. Kein serverseitiges Profil.'
+    ]},
+    terms:{t:'NUTZUNGSBEDINGUNGEN',p:[
+      'Der Zugang ist beschränkt und erfolgt per Schlüssel.',
+      'Preise in Euro, Änderungen möglich. Gültig ist der bei Bestellung bestätigte Preis.',
+      'Noten sind Grade AAA+ Repliken, nicht von der EZB.',
+      'PayPal-Transfers über Drittanbieter-Exchanges.',
+      'Versand inklusive, Carrier wählbar. Zeiten sind Schätzungen.',
+      'Bei Zahlungsproblemen Abschluss auf Telegram möglich.'
+    ]},
+    cookies:{t:'COOKIE-RICHTLINIE',p:[
+      'Keine Profiling-Cookies, nur lokaler Browserspeicher.',
+      'ge-in verfolgt den Zugang der Sitzung.',
+      'ge-lang speichert die Sprache.',
+      'ge-cart behält den Warenkorb, ge-orders das lokale Bestellregister.',
+      'Nichts verlässt dein Gerät.'
+    ]}
+  },
+  checkout:{
+    eyebrow:'ABLAUF / BESTELLUNG',title:'CHECKOUT',
+    steps:['DATEN','PRÜFEN','ZAHLUNG','BESTÄTIGEN'],
+    console:'ORDER CONSOLE',draft:'ORDER DRAFT ID',session:'SESSION',timestamp:'TIMESTAMP',cartHash:'CART HASH',pgp:'PGP STATUS',node:'AKTIVER NODE',integrity:'INTEGRITÄT',
+    shipping:'VERSANDDATEN',shippingNote:'Erforderlich, da der Warenkorb Banknoten enthält.',
+    emailSec:'PAYPAL EMAIL',emailNote:'Erforderlich, da der Warenkorb Transfers enthält. Zweimal eingeben.',
+    name:'VORNAME',surname:'NACHNAME',address:'ADRESSE',city:'STADT',zip:'PLZ',country:'LAND',phone:'TELEFON',
+    email1:'EMAIL',email2:'EMAIL BESTÄTIGEN',
+    emailInvalid:'UNGÜLTIGES EMAIL-FORMAT',emailMismatch:'EMAILS STIMMEN NICHT ÜBEREIN',required:'PFLICHTFELDER AUSFÜLLEN',
+    cont:'WEITER',back:'ZURÜCK',
+    manifest:'ORDER MANIFEST / LEDGER',tot:'GESAMT',payable:'ZU ZAHLEN',
+    signature:'PGP SIGNATUR VORSCHAU',confirm:'BESTELLUNG BESTÄTIGEN',
+    method:'ZAHLUNGSMETHODE',crypto:'CRYPTO',sepa:'SEPA-ÜBERWEISUNG',amazon:'AMAZON-GUTSCHEINE',
+    recommended:'EMPFOHLEN',fee0:'0% GEBÜHREN',fee10:'+10% BEARBEITUNG',fee20:'+20% UMECHNUNG',
+    network:'NETZWERK',address:'ADRESSE',amount:'ZU SENDENDER BETRAG',memo:'MEMO-REFERENZ',confirmations:'CONFIRMATIONS',
+    tx:'TRANSAKTIONSVORSCHAU',copy:'KOPIEREN',copied:'KOPIERT',scan:'QR SCANNEN',
+    iban:'IBAN PER TELEGRAM',amazonPh:'GUTSCHEINCODE — 15 ZIFFERN',
+    pay:'ZUR ZAHLUNG',processing:'VERARBEITUNG',
+    receipt:'CRYPTOGRAPHIC RECEIPT',download:'BELEG HERUNTERLADEN (.txt)',verifyScript:'VERIFY SCRIPT',
+    done:'BESTELLUNG REGISTRIERT',nonce:'NONCE',checksum:'CHECKSUM',orderCode:'BESTELLCODE',
+    tgTitle:'ZAHLUNG FEHLGESCHLAGEN?',tgText:'Kontaktiere GUSTAVOEURO auf Telegram mit dem Bestellcode.',tgBtn:'AUF TELEGRAM KONTAKTIEREN',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096'],
+    empty:'DER WARENKORB IST LEER',goCat:'ZUM KATALOG',note:'Keine Daten verlassen dein Gerät.',
+    priceNote:'Der Preis steht hier und im Checkout.'
+  },
+  footer:{legal:'RECHTLICHES',session:'SESSION',uptime:'UPTIME',clock:'LOKALE ZEIT',node:'NODE',rights:'Alle Rechte vorbehalten.'},
+  notfound:{t:'404 — ROUTE NICHT GEFUNDEN',b:'ZURÜCK ZUM NODE'}
+},
+fr:{
+  langName:'Français',
+  nav:{home:'Accueil',cash:'Billets',paypal:'Transferts',quality:'Galerie',trust:'Confiance',feedback:'Feedback',faq:'FAQ',track:'Suivi',checkout:'Checkout',menu:'MENU',close:'FERMER',lang:'LANGUE',legal:'LÉGAL'},
+  common:{add:'AJOUTER',added:'AJOUTÉ AU PANIER',remove:'RETIRER',cart:'PANIER',empty:'PANIER VIDE',total:'TOTAL',close:'FERMER',back:'RETOUR',cont:'CONTINUER',copy:'COPIER',copied:'COPIÉ',pcs:'PIÈCES',order:'COMMANDE',status:'STATUT',qty:'QTÉ'},
+  gate:{eyebrow:'ACCÈS RESTREINT',title:'PORTAIL À ACCÈS CONTRÔLÉ',sub:'Saisis la clé pour déverrouiller le nœud.',ph:'CLÉ D\'ACCÈS',btn:'DÉVERROUILLER LE PORTAIL',err:'CLÉ INVALIDE — RÉESSAIE',hint:'Session chiffrée · AES-256',lang:'CHOISIR LA LANGUE'},
+  boot:{lines:[
+    'initializing secure kernel v4.2.1',
+    'tor circuit (3 hops) ................. OK',
+    'onion relay '+ONION+' .. REACHABLE',
+    'pgp fingerprint match ................ OK',
+    'verifying block #8821 ................ OK',
+    'loading AES-256 keyring .............. OK',
+    'mounting encrypted volume /vault ..... OK',
+    'session handshake .................... ESTABLISHED',
+    'integrity check ...................... 0 ERRORS'
+  ],done:'SYSTÈME PRÊT',sid:'SESSION ID'},
+  home:{
+    b1:'DARK WEB ORIGIN',b2:'EST. 2022',b3:'ONLINE',
+    title:'DU DARK WEB À TON PORTEFEUILLE.',
+    p1:'GUSTAVOEURO est né en 2022 dans les couloirs cachés du dark web. Depuis, nous livrons des billets en euro Grade AAA+ et des transferts PayPal anonymes.',
+    p2:'Nous avons subi plus d\'attaques, plus de migrations et plus de silences. Chaque fois, nous sommes revenus plus solides.',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096','ENVOI SUIVI'],
+    stats:[['ANNÉES ACTIVES','2022 → 2026'],['COMMANDES LIVRÉES','48 200+'],['UPTIME DU NŒUD','99.98%'],['FRAIS CRYPTO','0%']],
+    denom:'COUPURES DISPONIBLES',denomSub:'Deux coupures au catalogue. Un seul standard : Grade AAA+.',preview:'APERÇU',
+    trust:'POURQUOI NOUS FAIRE CONFIANCE',trustSub:'Six points concrets, pas des promesses.',
+    trustItems:[
+      ['GARANTIE DE REMBOURSEMENT','Si le colis n\'arrive pas à temps, on rembourse ou on renvoie. Tu décides.'],
+      ['ENVOI SUIVI','Chaque commande reçoit un code de suivi que tu peux vérifier toi-même.'],
+      ['PREUVE CRYPTOGRAPHIQUE','Chaque commande est signée PGP 4096 avec un checksum vérifiable.'],
+      ['PHOTOS ET VIDÉO RÉELLES','Les images sont de nous. Les VIDÉOS montrent la vérification en mouvement.'],
+      ['AUCUN EXCHANGE ENTRE','Les fonds sont en cold storage multi-signature.'],
+      ['SUPPORT 7/7','On répond sur Telegram en quelques heures, week-end inclus.']
+    ],
+    how:'COMMENT ÇA MARCHE',howSub:'Quatre étapes, zéro surprise.',
+    howSteps:[
+      ['01','CHOISIS','Ouvre le catalogue, choisis la coupure ou le pack PayPal et ajoute au panier.'],
+      ['02','PAIE','Crypto (0% frais), virement SEPA ou bons Amazon. Tu reçois un code signé.'],
+      ['03','ON VÉRIFIE','On contrôle le lot à la main, photos et vidéo sur demande.'],
+      ['04','TU REÇOIS','Envoi suivi par transporteur.']
+    ],
+    proof:'PREUVE CRYPTOGRAPHIQUE',proofSub:'Ne pas croire. Vérifier.',
+    proofText:'Chaque commande est signée PGP 4096 et porte un checksum vérifiable. Le manifeste est public, l\'empreinte est à toi.',
+    proofBtn:'OUVRIR LE CENTRE DE CONFIANCE',
+    live:'DERNIÈRES COMMANDES',
+    guarTitle:'GARANTIE GUSTAVOEURO',
+    guarText:'Depuis 2022, on n\'a jamais laissé un client tomber. Si ça va mal, on répond d\'abord : remboursement, renvoi ou finalisation sur Telegram.',
+    cron:'CHRONOLOGIE DE RÉSISTANCE',
+    tl:[
+      ['2022','GENÈSE','Premier nœud onion actif. Les premiers billets atteignent la moitié de l\'Europe.'],
+      ['2023','PREMIÈRE ATTAQUE','Le nœud tombe 9 jours. Reconstruit de zéro.'],
+      ['2024','EXPANSION','Transferts PayPal P2P et réseau de relais en ligne.'],
+      ['2025','SECONDE ATTAQUE','DDoS prolongé et spoofing PGP. Clé tournée.'],
+      ['2026','NŒUD ACTUEL','Infrastructure multi-sig, cold storage, catalogue vérifié.']
+    ],
+    marquee:['NŒUD ONLINE','UPTIME 99.98%','GRADE AAA+','UV 100%','SCANNER PASS','NO KYC','0% FRAIS CRYPTO','LIVRAISON 24/72H','PGP 4096','MULTI-SIG','COLD STORAGE'],
+    tele:'TÉLÉMÉTRIE DU NŒUD',teleL:['NODE ID','RELAY ONION','BLOCK HASH','PING','BLOC','SESSION'],
+    log:'LOG SYSTÈME',
+    idx:'INDEX',idxItems:[['01','BILLETS EURO','/cash'],['02','TRANSFERTS PAYPAL','/paypal'],['03','GALERIE QUALITÉ','/quality'],['04','CENTRE DE CONFIANCE','/trust'],['05','REGISTRE FEEDBACK','/feedback'],['06','SUIVI COMMANDE','/track']],
+    protocols:['TOR v3','PGP 4096','AES-256','TLS 1.3','MULTI-SIG','COLD STORAGE','NO KYC','ESCROW']
+  },
+  cash:{
+    eyebrow:'CATALOGUE / BILLETS',title:'BILLETS EURO GRADE AAA+',
+    sub:'Fibre de coton 100%, impression UV complète, passe les tests UV, stylo et scanner.',
+    open:'OUVRIR LE CATALOGUE',close:'FERMER LE CATALOGUE',taglio:'COUPURE {n} EUR',
+    specs:['MATÉRIAU','FIBRE','UV','TECHNOLOGIE','SCANNER','GARANTIE'],
+    specsV:['Fibre de Coton 100%','Fibre Premium','UV Complète','Technologie Gen4 Elite','Scanner 100% Pass','Garantie Totale'],
+    verify:'VÉRIFIER LA QUALITÉ',pieces:'PIÈCES',
+    labels:{p1:'ENTRY LEVEL',p2:'STOCK OPÉRATIONNEL',p3:'VOLUME INDUSTRIEL',p4:'PACK STARTER 50',p5:'BANK RESERVE',p6:'PUISSANCE ABSOLUE'},
+    modalTitle:'PROTOCOLE D\'INSPECTION',
+    steps:['CONTRE-JOUR / FILIGRANE','INCLINAISON DU NUMÉRO','RELIEF AU TOUCHER','HOLOGRAMME'],
+    modalDesc:['Regarde le billet à contre-jour : le filigrane doit être net et continu.','Incline le billet : le numéro change de teinte grâce à l\'encre optique.','Passe le doigt sur le relief : l\'impression est taille-douce.','Bouge le billet : l\'hologramme change d\'image selon l\'angle.'],
+    inspecNote:'Toutes les photos sont de nous. Les VIDÉOS montrent la vérification en mouvement.',
+    videoBadge:'VIDÉO',photoBadge:'PHOTO',
+    noPrice:'PRIX VISIBLE DANS LE PANIER',
+    tenTitle:'10 EUR — SUR DEMANDE',
+    tenText:'Le 10 n\'est pas au catalogue fixe : on en a peu. Écris-nous sur Telegram et on te dit tout de suite si c\'est dispo et à quel prix.',
+    tenBtn:'DEMANDER LE 10',
+    tgTitle:'COMMANDES SUR TELEGRAM',tgText:'Le catalogue est à jour. Pour les commandes hors liste ou questions, écris-nous directement.',tgBtn:'ÉCRIRE SUR TELEGRAM'
+  },
+  paypal:{
+    eyebrow:'SERVICE / TRANSFERTS',title:'TRANSFERTS PAYPAL P2P',
+    sub:'Routage anonyme via des exchanges tiers. Tu envoies, nous routons, ton solde arrive propre.',
+    stats:[['MÉTHODE','P2P EXCHANGE'],['TRAÇABILITÉ','ROUTE TIERCE'],['TEMPS','2-6H'],['FRAIS','0%']],
+    cost:'COÛT',recv:'REÇOIS',choose:'SÉLECTIONNER'
+  },
+  quality:{eyebrow:'GALERIE',title:'GALERIE QUALITÉ',sub:'Photos et VIDÉOS réelles, pas de rendus. Touche un élément pour l\'agrandir.',filters:{all:'TOUT',g20:'20 EUR',g50:'50 EUR'}},
+  trust:{
+    eyebrow:'CENTRE DE CONFIANCE',title:'CONFIANCE VÉRIFIABLE',
+    sub:'On ne demande pas une confiance aveugle. On te donne des outils, des preuves et des règles écrites.',
+    blocks:[
+      ['GARANTIE DE REMBOURSEMENT','Si le colis n\'arrive pas à temps, on rembourse ou on renvoie.'],
+      ['ENVOI SUIVI','Chaque commande reçoit un code vérifiable par toi.'],
+      ['PREUVE CRYPTOGRAPHIQUE','Chaque commande est signée PGP 4096 avec un checksum vérifiable.'],
+      ['PHOTOS ET VIDÉO RÉELLES','Les images sont de nous. Les VIDÉOS montrent la vérification.'],
+      ['AUCUN EXCHANGE ENTRE','Fonds en cold storage multi-signature.'],
+      ['SUPPORT 7/7','Réponse sur Telegram en quelques heures, week-end inclus.']
+    ],
+    verifyTitle:'VÉRIFIE TOI-MÊME',
+    verifySteps:[
+      'Prends le code de commande (format GST-…).',
+      'Colle-le dans la page Suivi et vérifie que le checksum correspond.',
+      'Compare l\'empreinte PGP avec celle publiée ci-dessous.',
+      'Si tout correspond, la commande est authentique.'
+    ],
+    pgpTitle:'CLÉ PGP OFFICIELLE',
+    pgpText:'C\'est la seule empreinte valable. Si on t\'écrit avec une autre, ce n\'est pas nous.',
+    reserveTitle:'PREUVE DE RÉSERVE',
+    reserveText:'Une partie des fonds est en cold storage multi-signature pour les remboursements immédiats. La racine merkle est publiée et tourne chaque trimestre.',
+    rulesTitle:'RÈGLES ÉCRITES',
+    rules:['Prix valable = prix confirmé à la commande.','Aucun coût caché : livraison incluse.','Remboursement ou renvoi si rien n\'arrive.','Support Telegram avec code de commande.','Données seulement sur ton appareil.'],
+    ctaTitle:'PRÊT À COMMANDER ?',ctaBtn:'ALLER AU CATALOGUE',ctaBtn2:'ÉCRIRE SUR TELEGRAM'
+  },
+  feedback:{eyebrow:'REGISTRE',title:'REGISTRE FEEDBACK',sub:'Avis vérifiés depuis le canal Telegram officiel.',chBtn:'OUVRIR LE CANAL FEEDBACK',verified:'VÉRIFIÉ',reviews:[
+    ['M.R.','Milan','"Troisième envoi. Billets parfaits, passent le stylo sans souci."'],
+    ['K.B.','Berlin','"Le transfert PayPal est arrivé en 4 heures. Aucun lien avec mon nom. Propre."'],
+    ['S.T.','Madrid','"Le pack de 50 est arrivé en 48 heures avec BRT. Qualité au-delà des attentes."'],
+    ['L.V.','Paris','"Ils sont sérieux : PGP correct, réponses rapides sur Telegram."'],
+    ['A.D.','Rome','"Après la panne de 2025 j\'étais inquiet. Ils sont revenus plus forts."'],
+    ['J.P.','Amsterdam','"Le 20 est mon standard. 100% scanner pass."']
+  ]},
+  faq:{eyebrow:'SUPPORT',title:'QUESTIONS FRÉQUENTES',items:[
+    ['Que signifie Grade AAA+ ?','Billets sur fibre de coton 100%, encre UV complète, hologramme correct. Ils passent les tests stylo, UV et scanner.'],
+    ['Les billets sont-ils vrais ?','Des répliques de très haute qualité, pas des billets BCE. Ils fonctionnent comme du liquide réel.'],
+    ['Pourquoi le 10 n\'est pas au catalogue ?','On en a peu et on garde le catalogue court. Écris-nous sur Telegram.'],
+    ['Combien coûte la livraison ?','Incluse pour toutes les coupures.'],
+    ['Comment fonctionnent les transferts PayPal ?','Tu paies, on route via des exchanges tiers. Ton solde arrive propre.'],
+    ['Quels moyens de paiement ?','Crypto (0%), virement SEPA (+10%), bons Amazon (+20%).'],
+    ['Et si le colis n\'arrive pas ?','Écris-nous avec le code de commande. On rembourse ou on renvoie.'],
+    ['Comment suivre ma commande ?','Code type GST-1500-250-7K3F sur la page Suivi.']
+  ]},
+  track:{eyebrow:'VÉRIFIER',title:'SUIVI DE COMMANDE',sub:'Saisis le code reçu à la confirmation.',ph:'GST-0000-000-XXXX',btn:'SUIVRE',nf:'CODE INTROUVABLE DANS LE REGISTRE LOCAL',valid:'SIGNATURE VALID',invalid:'SIGNATURE MISMATCH',found:'COMMANDE TROUVÉE',placed:'ÉMISE LE',items:'ARTICLES',checksum:'CHECKSUM'},
+  legal:{
+    privacy:{t:'POLITIQUE DE CONFIDENTIALITÉ',p:[
+      'GUSTAVOEURO collecte le minimum. Pas de compte, pas de profilage.',
+      'Les données restent sur ton appareil : session, langue, commandes locales.',
+      'Lors d\'une commande : nom, adresse, ville, code postal, pays, téléphone. Pour un transfert PayPal seul : uniquement l\'email.',
+      'Le portail est statique. Polices Google Fonts, images CDN externe.',
+      'Tout est effaçable. Aucun profil serveur.'
+    ]},
+    terms:{t:'CONDITIONS DE SERVICE',p:[
+      'L\'accès est restreint et se fait par clé.',
+      'Prix en euro, modifiables. Prix valable = celui confirmé à la commande.',
+      'Les billets sont des répliques Grade AAA+, pas des billets BCE.',
+      'Les transferts PayPal passent par des exchanges tiers.',
+      'Livraison incluse, transporteur au choix. Délais estimatifs.',
+      'Si un paiement échoue, finalisation possible sur Telegram.'
+    ]},
+    cookies:{t:'POLITIQUE COOKIES',p:[
+      'Aucun cookie de profilage, seulement la mémoire locale.',
+      'ge-in suit l\'accès de la session.',
+      'ge-lang stocke la langue.',
+      'ge-cart conserve le panier, ge-orders le registre local.',
+      'Rien ne quitte ton appareil.'
+    ]}
+  },
+  checkout:{
+    eyebrow:'FLUX / COMMANDE',title:'CHECKOUT',
+    steps:['DONNÉES','VÉRIFIER','PAIEMENT','CONFIRMER'],
+    console:'ORDER CONSOLE',draft:'ORDER DRAFT ID',session:'SESSION',timestamp:'TIMESTAMP',cartHash:'CART HASH',pgp:'STATUT PGP',node:'NŒUD ACTIF',integrity:'INTÉGRITÉ',
+    shipping:'DONNÉES DE LIVRAISON',shippingNote:'Requis car le panier contient des billets.',
+    emailSec:'EMAIL PAYPAL',emailNote:'Requis car le panier contient des transferts. Saisis-le deux fois.',
+    name:'PRÉNOM',surname:'NOM',address:'ADRESSE',city:'VILLE',zip:'CODE POSTAL',country:'PAYS',phone:'TÉLÉPHONE',
+    email1:'EMAIL',email2:'CONFIRMER L\'EMAIL',
+    emailInvalid:'FORMAT D\'EMAIL INVALIDE',emailMismatch:'LES EMAILS NE CORRESPONDENT PAS',required:'REMPLIS LES CHAMPS OBLIGATOIRES',
+    cont:'CONTINUER',back:'RETOUR',
+    manifest:'ORDER MANIFEST / LEDGER',tot:'TOTAL',payable:'À PAYER',
+    signature:'APERÇU SIGNATURE PGP',confirm:'CONFIRMER LA COMMANDE',
+    method:'MOYEN DE PAIEMENT',crypto:'CRYPTO',sepa:'VIREMENT SEPA',amazon:'BONS AMAZON',
+    recommended:'RECOMMANDÉ',fee0:'0% FRAIS',fee10:'+10% GESTION',fee20:'+20% CONVERSION',
+    network:'RÉSEAU',address:'ADRESSE',amount:'MONTANT À ENVOYER',memo:'RÉFÉRENCE MEMO',confirmations:'CONFIRMATIONS',
+    tx:'APERÇU TRANSACTION',copy:'COPIER',copied:'COPIÉ',scan:'SCANNE LE QR',
+    iban:'IBAN ENVOYÉ SUR TELEGRAM',amazonPh:'CODE BON — 15 CHIFFRES',
+    pay:'PROCÉDER AU PAIEMENT',processing:'TRAITEMENT',
+    receipt:'CRYPTOGRAPHIC RECEIPT',download:'TÉLÉCHARGER LE REÇU (.txt)',verifyScript:'VERIFY SCRIPT',
+    done:'COMMANDE ENREGISTRÉE',nonce:'NONCE',checksum:'CHECKSUM',orderCode:'CODE COMMANDE',
+    tgTitle:'PAIEMENT NON ABOUTI ?',tgText:'Contacte GUSTAVOEURO sur Telegram avec le code de commande.',tgBtn:'CONTACTER SUR TELEGRAM',
+    badges:['MULTI-SIG','COLD STORAGE','NO KYC','ESCROW','PGP 4096'],
+    empty:'LE PANIER EST VIDE',goCat:'ALLER AU CATALOGUE',note:'Aucune donnée ne quitte ton appareil.',
+    priceNote:'Le prix est affiché ici et au checkout.'
+  },
+  footer:{legal:'LÉGAL',session:'SESSION',uptime:'UPTIME',clock:'HEURE LOCALE',node:'NŒUD',rights:'Tous droits réservés.'},
+  notfound:{t:'404 — ROUTE INTROUVABLE',b:'RETOUR AU NŒUD'}
+}
+};
+
+/* ------------------------------- catalogo -------------------------------- */
+const NOTES=[
+  {group:'20',items:[
+    {id:'p1',price:500,pieces:25,tag:'500',img:0},
+    {id:'p2',price:1500,pieces:75,tag:'1500',img:1},
+    {id:'p3',price:4000,pieces:200,tag:'4000',img:3}
+  ]},
+  {group:'50',items:[
+    {id:'p4',price:750,pieces:15,tag:'750',img:0},
+    {id:'p5',price:2500,pieces:50,tag:'2500',img:1},
+    {id:'p6',price:7500,pieces:150,tag:'7500',img:3}
+  ]}
+];
+const TRANSFERS=[
+  {id:'t1',cost:120,recv:250,name:'BASE'},
+  {id:'t2',cost:200,recv:450,name:'ADVANCED'},
+  {id:'t3',cost:300,recv:700,name:'VIP'},
+  {id:'t4',cost:450,recv:1100,name:'PREMIUM'},
+  {id:'t5',cost:700,recv:1800,name:'ELITE'},
+  {id:'t6',cost:1000,recv:2800,name:'MASTER'}
+];
+
+/* -------------------------------- context -------------------------------- */
+const LangCtx=createContext('it');
+const useT=()=>T[useContext(LangCtx)]||T.it;
+const AppCtx=createContext({});
+const useApp=()=>useContext(AppCtx);
+
+/* ------------------------------ error guard ------------------------------ */
+class Boundary extends React.Component{
+  constructor(p){ super(p); this.state={err:null}; }
+  static getDerivedStateFromError(e){ return {err:e}; }
+  componentDidCatch(e){ try{console.error('[GE]',e);}catch(_){} }
+  render(){
+    if(this.state.err){
+      return (
+        <div style={{padding:26,fontFamily:"'JetBrains Mono',monospace",color:'#ff5c5c',fontSize:13,lineHeight:1.8}}>
+          <div style={{color:'#ffb020',fontWeight:700,letterSpacing:'.16em',marginBottom:10}}>RUNTIME ERROR</div>
+          <pre style={{whiteSpace:'pre-wrap',wordBreak:'break-word'}}>{String((this.state.err&&this.state.err.message)||this.state.err)}</pre>
+          <button className="btn btn-au" style={{marginTop:16}} onClick={()=>this.setState({err:null})}>RIPROVA</button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+/* -------------------------------- UI base -------------------------------- */
+function Section({children,className,id,style,...rest}){
+  return (
+    <section id={id} className={'mx-auto w-full px-4 sm:px-6 '+(className||'')}
+      style={Object.assign({maxWidth:1180},style||{})} {...rest}>{children}</section>
+  );
+}
+function Bracket({children,className,style,...rest}){
+  return <div className={'card card-br '+(className||'')} style={style} {...rest}>{children}</div>;
+}
+function Pill({children,color='au',style}){
+  return <span className="pill" style={Object.assign({color:'var(--'+color+')'},style||{})}>{children}</span>;
+}
+function Eyebrow({children,color,className,style}){
+  return <div className={'eyebrow '+(className||'')} style={Object.assign(color?{color:'var(--'+color+')'}:{},style||{})}>{children}</div>;
+}
+function Row({k,v,c}){
+  return <div className="flex justify-between gap-3"><span style={{color:'#7b839c'}}>{k}</span>
+    <span style={{color:c||'var(--fg)',textAlign:'right',wordBreak:'break-all'}}>{v}</span></div>;
+}
+function Img({src,alt,ratio='16 / 10',fallbacks,style,className,badge}){
+  const list=[src].concat(fallbacks||[]).concat(PHOTO.fallbacks).filter(Boolean);
+  const [i,setI]=useState(0);
+  const [ok,setOk]=useState(false);
+  const safe=Math.min(i,list.length-1);
+  return (
+    <div className={'imgbox '+(className||'')} style={Object.assign({position:'relative',overflow:'hidden',aspectRatio:ratio},style||{})}>
+      {badge}
+      <div className="scanline"/>
+      <img src={list[safe]} alt={alt||''} loading="lazy" decoding="async"
+        className={ok?'loaded':''}
+        onLoad={()=>setOk(true)}
+        onError={()=>{ setOk(false); setI(v=>v+1); }}
+        style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'contain'}}/>
+    </div>
+  );
+}
+function Toast({msg}){
+  if(!msg) return null;
+  return (
+    <div className="fadeup mono" style={{position:'fixed',left:'50%',transform:'translateX(-50%)',
+      bottom:'calc(84px + env(safe-area-inset-bottom))',zIndex:120,
+      background:'#12141f',border:'1px solid var(--au)',color:'var(--fg)',
+      padding:'10px 16px',borderRadius:10,fontSize:12,letterSpacing:'.08em',whiteSpace:'nowrap'}}>{msg}</div>
+  );
+}
+
+/* --------------------------- effetti hacker ------------------------------ */
+function Scramble({text,className,style,speed}){
+  const [out,setOut]=useState(text);
+  const raf=useRef(0);
+  useEffect(function(){
+    if(reduce()){ setOut(text); return; }
+    const chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&/*+-<>[]{}';
+    let frame=0;
+    const total=Math.max(12, text.length*2);
+    function tick(){
+      frame++;
+      const p=frame/total;
+      let s='';
+      for(let i=0;i<text.length;i++){
+        const th=(i+1)/text.length;
+        if(p>th) s+=text[i];
+        else if(text[i]===' ') s+=' ';
+        else s+=chars[Math.floor(Math.random()*chars.length)];
+      }
+      setOut(s);
+      if(frame<total) raf.current=requestAnimationFrame(tick);
+      else setOut(text);
+    }
+    raf.current=requestAnimationFrame(tick);
+    return function(){cancelAnimationFrame(raf.current);};
+  },[text]);
+  return <span className={className} style={style}>{out}</span>;
+}
+
+function TypeLine({text,speed,delay,className}){
+  const sp=speed||20, dl=delay||0;
+  const [n,setN]=useState(0);
+  useEffect(function(){
+    if(reduce()){ setN(text.length); return; }
+    let i=0; let t;
+    function step(){
+      i++; setN(i);
+      if(i<text.length) t=setTimeout(step,sp);
+    }
+    t=setTimeout(step,dl);
+    return function(){clearTimeout(t);};
+  },[text]);
+  return <span className={className}>{text.slice(0,n)}{n<text.length?<span className="caret"/>:null}</span>;
+}
+
+function HexStream({rows,cols,interval}){
+  const R=rows||6, C=cols||40, I=interval||150;
+  const [data,setData]=useState(function(){ const a=[]; for(let i=0;i<R;i++) a.push(hexLine(C)); return a; });
+  useEffect(function(){
+    const iv=setInterval(function(){
+      setData(function(d){ return d.slice(1).concat([hexLine(C)]); });
+    },I);
+    return function(){clearInterval(iv);};
+  },[R,C,I]);
+  return (
+    <div className="mono" style={{fontSize:10,lineHeight:1.75,color:'#5f7f74',wordBreak:'break-all'}}>
+      {data.map(function(l,i){
+        return <div key={i} style={{color: i===data.length-1?'var(--tl)':undefined}}>{l}</div>;
+      })}
+    </div>
+  );
+}
+
+function Matrix(){
+  const ref=useRef(null);
+  useEffect(function(){
+    const c=ref.current; if(!c) return;
+    const ctx=c.getContext('2d'); if(!ctx) return;
+    let w=0,h=0,cols=0,drops=[];
+    const fontSize=14, chars='01ABCDEF<>#$%&';
+    function size(){
+      w=c.width=c.offsetWidth||window.innerWidth;
+      h=c.height=c.offsetHeight||window.innerHeight;
+      cols=Math.max(1,Math.floor(w/fontSize));
+      drops=[]; for(let i=0;i<cols;i++) drops.push(Math.random()*h/16);
+    }
+    size();
+    let raf=0,last=0;
+    function draw(ts){
+      raf=requestAnimationFrame(draw);
+      if(ts-last<58) return; last=ts;
+      ctx.fillStyle='rgba(5,6,13,.16)'; ctx.fillRect(0,0,w,h);
+      ctx.font=fontSize+'px monospace';
+      for(let i=0;i<cols;i++){
+        const ch=chars[Math.floor(Math.random()*chars.length)];
+        ctx.fillStyle = Math.random()>0.94 ? '#ffb020' : '#12c39a';
+        ctx.fillText(ch, i*fontSize, drops[i]*fontSize);
+        if(drops[i]*fontSize>h && Math.random()>0.975) drops[i]=0;
+        drops[i]+=0.62;
+      }
+    }
+    raf=requestAnimationFrame(draw);
+    window.addEventListener('resize',size);
+    return function(){cancelAnimationFrame(raf); window.removeEventListener('resize',size);};
+  },[]);
+  return <canvas ref={ref} style={{position:'fixed',inset:0,zIndex:0,opacity:.45,pointerEvents:'none'}}/>;
+}
+
+const LANGS=[['it','🇮🇹'],['en','🇬🇧'],['es','🇪🇸'],['de','🇩🇪'],['fr','🇫🇷']];
+function LangSel({value,onChange}){
+  return (
+    <div className="flex items-center gap-1">
+      {LANGS.map(function(p){
+        return <button key={p[0]} onClick={()=>onChange(p[0])} title={T[p[0]].langName}
+          className="btn btn-sm" aria-label={T[p[0]].langName}
+          style={{minWidth:44,minHeight:44,padding:'0 10px',fontSize:16,
+            borderColor:value===p[0]?'var(--au)':'var(--line)',
+            background:value===p[0]?'#1a1424':'#0e1120'}}>
+          <span aria-hidden="true">{p[1]}</span></button>;
+      })}
+    </div>
+  );
+}
+
+/* ================================= BOOT ================================== */
+const KEY=[71,85,83,84,65,86,79,69,85,82,79];
+const decodeKey=()=>String.fromCharCode.apply(null,KEY);
+
+function Boot({onDone}){
+  const tr=useT();
+  const [n,setN]=useState(0);
+  const [pct,setPct]=useState(0);
+  const sid=useMemo(function(){return 'SES-'+hex(10).toUpperCase();},[]);
+  const hsh=useMemo(function(){return '0x'+hex(24);},[]);
+  useEffect(function(){
+    const iv=setInterval(function(){setN(function(v){return v+1;});},190);
+    const ip=setInterval(function(){setPct(function(v){return Math.min(100,v+Math.random()*13);});},130);
+    const to=setTimeout(function(){onDone();},2800);
+    return function(){clearInterval(iv);clearInterval(ip);clearTimeout(to);};
+  },[]);
+  return (
+    <React.Fragment>
+      <Matrix/>
+      <div className="flex items-center justify-center px-4 py-10" style={{minHeight:'100dvh',position:'relative',zIndex:3}}>
+        <div className="w-full" style={{maxWidth:840}}>
+          <pre className="mono fadeup" style={{color:'var(--au)',fontSize:'clamp(6px,1.5vw,13px)',lineHeight:1.15,margin:0,overflowX:'auto'}}>{''
+} ██████╗ ██╗   ██╗███████╗████████╗ █████╗ ██╗   ██╗ ██████╗ ███████╗██╗   ██╗██████╗  ██████╗
+██╔════╝ ██║   ██║██╔════╝╚══██╔══╝██╔══██╗██║   ██║██╔═══██╗██╔════╝██║   ██║██╔══██╗██╔═══██╗
+██║  ███╗██║   ██║███████╗   ██║   ███████║██║   ██║██║   ██║█████╗  ██║   ██║██████╔╝██║   ██║
+██║   ██║██║   ██║╚════██║   ██║   ██╔══██║╚██╗ ██╔╝██║   ██║██╔══╝  ██║   ██║██╔══██╗██║   ██║
+╚██████╔╝╚██████╔╝███████║   ██║   ██║  ██║ ╚████╔╝ ╚██████╔╝███████╗╚██████╔╝██║  ██║╚██████╔╝
+ ╚═════╝  ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝  ╚═══╝   ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝</pre>
+
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <Pill color="au"><span className="dot"/>EST. 2022</Pill>
+            <Pill color="bl">{ONION}</Pill>
+            <Pill color="tl">PGP 4096</Pill>
+          </div>
+
+          <div className="term mt-5">
+            {tr.boot.lines.slice(0,n).map(function(l,i){
+              return <div key={i}><span className="c">[{String(i+1).padStart(2,'0')}]</span> <span className="t">›</span> {l}</div>;
+            })}
+            <div><span className="k">ge@node:~$</span> <span className="caret"/></div>
+          </div>
+
+          <div className="mt-4">
+            <div style={{height:8,background:'#0e1120',border:'1px solid var(--line)',borderRadius:99,overflow:'hidden'}}>
+              <div style={{height:'100%',width:pct+'%',background:'linear-gradient(90deg,#ffc44d,#ff3d9a 55%,#14e0b0)',transition:'width .13s linear'}}/>
+            </div>
+            <div className="mono mt-2 flex justify-between" style={{fontSize:10.5,color:'#7b839c'}}>
+              <span>{tr.boot.sid}: {sid}</span><span>HASH {hsh.substring(0,14)}…</span><span>{Math.floor(pct)}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+}
+
+/* ================================= GATE ================================== */
+function Gate({onAuth}){
+  const tr=useT();
+  const app=useApp();
+  const [v,setV]=useState('');
+  const [err,setErr]=useState(false);
+  const [nonce,setNonce]=useState(0);
+  function submit(e){
+    if(e) e.preventDefault();
+    if(v.trim().toUpperCase()===decodeKey()){ ssSet('ge-in','1'); onAuth(); }
+    else { setErr(true); setNonce(function(x){return x+1;}); }
+  }
+  return (
+    <div className="flex items-center justify-center px-4 py-10" style={{minHeight:'100dvh'}}>
+      <div className="w-full" style={{maxWidth:540}}>
+        <Bracket className="p-6 sm:p-8 fadeup">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <Eyebrow>{tr.gate.eyebrow}</Eyebrow>
+            <Pill color="tl"><span className="dot"/>ONLINE</Pill>
+          </div>
+          <h1 className="mt-4 mono" style={{fontSize:'clamp(22px,4.6vw,32px)',fontWeight:700,lineHeight:1.15}}>
+            <span className="glitch grad" data-t="GUSTAVOEURO">GUSTAVOEURO</span>
+          </h1>
+          <p className="mono2 mt-2">{tr.gate.title}</p>
+          <p className="mt-4 dim" style={{fontSize:14.5,lineHeight:1.65}}>{tr.gate.sub}</p>
+          <form onSubmit={submit} className="mt-6">
+            <input className="inp" type="password" value={v}
+              onChange={function(e){setV(e.target.value);setErr(false);}}
+              placeholder={tr.gate.ph} autoComplete="off" spellCheck="false"
+              key={nonce} style={{textAlign:'center',letterSpacing:'.22em',fontWeight:600}}/>
+            {err && <div className="mono mt-2" style={{fontSize:11.5,color:'var(--rs)',letterSpacing:'.08em'}}>✕ {tr.gate.err}</div>}
+            <button type="submit" className="btn btn-au w-full mt-4" style={{minHeight:50}}>{tr.gate.btn}</button>
+          </form>
+          <div className="hr my-6"/>
+          <Eyebrow color="bl">{tr.gate.lang}</Eyebrow>
+          <div className="mt-3"><LangSel value={app.lang} onChange={app.setLang}/></div>
+          <div className="mono mt-6 flex flex-wrap gap-x-5 gap-y-2" style={{fontSize:10.5,color:'#6b7392'}}>
+            <span>{tr.gate.hint}</span><span>PGP {PGP.split(' ')[0]}…</span><span>{ONION}</span>
+          </div>
+        </Bracket>
+        <div className="mono mt-4 text-center" style={{fontSize:10.5,color:'#5c6480',letterSpacing:'.14em'}}>
+          EST. 2022 · DARK WEB ORIGIN · SESSION {hex(6).toUpperCase()}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================ HEADER / SYSBAR ============================ */
+function SysBar(){
+  const [st,setSt]=useState({cpu:12,mem:38,ping:22,blk:8821,up:0});
+  useEffect(function(){
+    const t0=Date.now();
+    const iv=setInterval(function(){
+      setSt(function(s){ return {
+        cpu:Math.max(4,Math.min(88,s.cpu+(Math.random()*14-7))),
+        mem:Math.max(20,Math.min(82,s.mem+(Math.random()*8-4))),
+        ping:14+Math.floor(Math.random()*32),
+        blk:s.blk+(Math.random()>0.6?1:0),
+        up:Math.floor((Date.now()-t0)/1000)
+      };});
+    },1200);
+    return function(){clearInterval(iv);};
+  },[]);
+  const bars=function(v,col){ return <span className="bars" aria-hidden="true">
+    {[0,1,2,3,4].map(function(i){ return <span key={i} style={{height:(4+i*4)+'px',background:'linear-gradient(to top,var(--'+col+'),var(--tl))',animationDelay:(i*0.12)+'s'}}/>; })}
+  </span>; };
+  return (
+    <div className="sysbar">
+      <div className="mx-auto w-full px-4 sm:px-6 flex items-center gap-4 overflow-x-auto" style={{maxWidth:1180,height:30,whiteSpace:'nowrap'}}>
+        <span style={{color:'var(--tl)'}}>● LIVE</span>
+        <span>CPU {st.cpu.toFixed(0)}%</span>
+        {bars(st.cpu,'bl')}
+        <span>MEM {st.mem.toFixed(0)}%</span>
+        <span>PING {st.ping}ms</span>
+        <span>BLOCK #{st.blk}</span>
+        <span>TOR 3 HOPS</span>
+        <span style={{marginLeft:'auto',color:'var(--au)'}}>AES-256 · PGP 4096 · NO KYC</span>
+      </div>
+    </div>
+  );
+}
+
+function Header({onCart,onMenu}){
+  const tr=useT();
+  const app=useApp();
+  const route=app.route;
+  const items=[['/node',tr.nav.home],['/cash',tr.nav.cash],['/paypal',tr.nav.paypal],
+               ['/quality',tr.nav.quality],['/trust',tr.nav.trust],['/faq',tr.nav.faq]];
+  return (
+    <header style={{position:'sticky',top:0,zIndex:40,background:'rgba(5,6,13,.95)',
+      borderBottom:'1px solid var(--line)',backdropFilter:'blur(8px)'}} className="safe-t">
+      <Section className="flex items-center justify-between gap-3" style={{height:62}}>
+        <a href="#/node" className="flex items-center gap-3" style={{textDecoration:'none'}}>
+          <span className="mono glitch grad" data-t="GUSTAVOEURO" style={{fontWeight:700,fontSize:15,letterSpacing:'.08em'}}>GUSTAVOEURO</span>
+        </a>
+        <nav className="nav-desk items-center gap-1">
+          {items.map(function(p){
+            return <a key={p[0]} href={'#'+p[0]} className="btn btn-sm btn-ghost"
+              style={{borderColor:route===p[0]?'var(--au)':'transparent',color:route===p[0]?'var(--au)':'#c3cadf'}}>{p[1]}</a>;
+          })}
+        </nav>
+        <div className="flex items-center gap-2">
+          <div className="hidden lg:block"><LangSel value={app.lang} onChange={app.setLang}/></div>
+          <button className="btn btn-sm" onClick={onCart} style={{minWidth:44,minHeight:44,position:'relative'}}>
+            <span className="mono" style={{fontSize:11}}>{tr.common.cart}</span>
+            {app.cart.length>0 && <span style={{position:'absolute',top:-4,right:-4,background:'var(--au)',
+              color:'#0a0a0a',borderRadius:99,fontSize:10,fontWeight:700,padding:'1px 5px',
+              fontFamily:"'JetBrains Mono',monospace"}}>{app.cart.length}</span>}
+          </button>
+          <button className="btn btn-sm burger" onClick={onMenu}
+            style={{minWidth:44,minHeight:44,flexDirection:'column',gap:4,padding:'0 12px'}}>
+            <span style={{width:18,height:2,background:'var(--fg)',display:'block'}}/>
+            <span style={{width:18,height:2,background:'var(--fg)',display:'block'}}/>
+            <span style={{width:18,height:2,background:'var(--fg)',display:'block'}}/>
+          </button>
+        </div>
+      </Section>
+      <SysBar/>
+    </header>
+  );
+}
+
+function MobileMenu({onClose}){
+  const tr=useT();
+  const app=useApp();
+  const items=[['/node',tr.nav.home],['/cash',tr.nav.cash],['/paypal',tr.nav.paypal],
+    ['/quality',tr.nav.quality],['/trust',tr.nav.trust],['/feedback',tr.nav.feedback],
+    ['/faq',tr.nav.faq],['/track',tr.nav.track],['/checkout',tr.nav.checkout]];
+  return (
+    <div className="safe-t safe-b" style={{position:'fixed',inset:0,background:'var(--bg)',zIndex:90,display:'flex',flexDirection:'column',overflowY:'auto'}}>
+      <div className="flex items-center justify-between px-5" style={{height:62,borderBottom:'1px solid var(--line)'}}>
+        <span className="mono glitch grad" data-t="GUSTAVOEURO" style={{fontWeight:700}}>GUSTAVOEURO</span>
+        <button className="btn btn-sm" onClick={onClose}>{tr.nav.close}</button>
+      </div>
+      <nav className="flex flex-col p-5 gap-2">
+        {items.map(function(p){
+          return <a key={p[0]} href={'#'+p[0]} onClick={onClose} className="btn" style={{justifyContent:'flex-start',minHeight:52}}>
+            <span className="mono" style={{fontSize:11,color:'#6b7392'}}>{p[0]}</span>
+            <span style={{marginLeft:'auto'}}>{p[1]}</span></a>;
+        })}
+      </nav>
+      <div className="p-5">
+        <Eyebrow>{tr.nav.lang}</Eyebrow>
+        <div className="mt-3"><LangSel value={app.lang} onChange={app.setLang}/></div>
+        <div className="hr my-5"/>
+        <div className="mono" style={{fontSize:10.5,color:'#6b7392',lineHeight:2}}>
+          <div>PGP {PGP}</div><div>{ONION}</div>
+        </div>
+        <div className="mt-5"><HexStream rows={4} cols={34}/></div>
+      </div>
+    </div>
+  );
+}
+
+/* ======================= CARRELLO ======================= */
+function CartDrawer({onClose}){
+  const tr=useT();
+  const app=useApp();
+  const items=Array.isArray(app.cart)?app.cart:[];
+  return (
+    <React.Fragment>
+      <div onClick={onClose} style={{position:'fixed',inset:0,zIndex:60,background:'rgba(2,3,8,.62)'}}/>
+      <aside className="slidein safe-t safe-b"
+        style={{position:'fixed',top:0,right:0,bottom:0,width:'min(440px,94vw)',
+          background:'#12141f',borderLeft:'1px solid #262b3d',zIndex:61,
+          display:'flex',flexDirection:'column',boxShadow:'-24px 0 70px rgba(0,0,0,.65)'}}>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',
+          padding:'0 18px',height:64,borderBottom:'1px solid var(--line)',flex:'0 0 auto',background:'#161926'}}>
+          <div>
+            <div className="eyebrow">{tr.common.cart}</div>
+            <div className="mono" style={{fontSize:10,color:'#6b7392',marginTop:2}}>
+              {items.length} · {hex(6).toUpperCase()}
+            </div>
+          </div>
+          <button className="btn btn-sm" onClick={onClose}>{tr.common.close}</button>
+        </div>
+        <div style={{flex:'1 1 auto',overflowY:'auto',padding:16}}>
+          {items.length===0 ? (
+            <div className="mono" style={{textAlign:'center',padding:'56px 0',fontSize:12,color:'#7b839c'}}>{tr.common.empty}</div>
+          ) : items.map(function(it){
+            return (
+              <div key={it.uid} style={{background:'#0b0d17',border:'1px solid var(--line)',borderRadius:12,padding:12,marginBottom:12}}>
+                <div style={{display:'flex',gap:12}}>
+                  <div style={{width:78,flex:'0 0 auto'}}><Img src={it.image} alt={it.title} ratio="4 / 3"/></div>
+                  <div style={{flex:'1 1 auto',minWidth:0}}>
+                    <div style={{fontWeight:600,fontSize:13.5,lineHeight:1.3}}>{it.title}</div>
+                    <div className="mono" style={{fontSize:10.5,color:'#7b839c',marginTop:3}}>{it.sub}</div>
+                    <div className="mono" style={{fontSize:13,color:'var(--au)',marginTop:5,fontWeight:700}}>{eur(it.price)}</div>
+                  </div>
+                </div>
+                <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:12}}>
+                  <div style={{display:'flex',alignItems:'center',gap:8}}>
+                    <button className="btn btn-sm" style={{minWidth:44,minHeight:44}} onClick={()=>app.setQty(it.uid,it.qty-1)}>−</button>
+                    <span className="mono" style={{fontSize:13,minWidth:22,textAlign:'center'}}>{it.qty}</span>
+                    <button className="btn btn-sm" style={{minWidth:44,minHeight:44}} onClick={()=>app.setQty(it.uid,it.qty+1)}>+</button>
+                  </div>
+                  <button className="btn btn-sm" style={{color:'var(--rs)'}} onClick={()=>app.remove(it.uid)}>{tr.common.remove}</button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div style={{flex:'0 0 auto',padding:16,borderTop:'1px solid var(--line)',background:'#161926'}}>
+          <div className="mono" style={{fontSize:10,color:'#6b7392',marginBottom:8}}>// {tr.checkout.priceNote}</div>
+          <div style={{display:'flex',justifyContent:'space-between',marginBottom:12}}>
+            <span className="mono" style={{fontSize:12,color:'#8b93ad'}}>{tr.common.total}</span>
+            <span className="mono" style={{fontSize:17,color:'var(--au)',fontWeight:700}}>{eur(app.total)}</span>
+          </div>
+          <div style={{display:'flex',gap:8}}>
+            <button className="btn" style={{flex:1}} onClick={()=>app.clear()} disabled={!items.length}>{tr.common.remove}</button>
+            <button className="btn btn-au" style={{flex:1}} disabled={!items.length}
+              onClick={()=>{app.navigate('/checkout');onClose();}}>{tr.nav.checkout}</button>
+          </div>
+        </div>
+      </aside>
+    </React.Fragment>
+  );
+}
+
+function Fab(){
+  return (
+    <a href={TG} target="_blank" rel="noopener noreferrer" className="fab btn btn-au"
+      style={{borderRadius:99,width:56,height:56,padding:0,boxShadow:'0 8px 26px rgba(255,138,0,.35)'}} aria-label="Telegram">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#0a0a0a">
+        <path d="M9.04 15.5l-.38 4.03c.54 0 .78-.23 1.06-.5l2.55-2.44 5.28 3.86c.97.53 1.66.25 1.9-.9L21.9 5.6c.32-1.44-.52-2-1.46-1.65L3.6 10.6c-1.4.55-1.38 1.33-.24 1.68l4.3 1.34 9.98-6.29c.47-.31.9-.14.55.17z"/>
+      </svg>
+    </a>
+  );
+}
+
+function Footer(){
+  const tr=useT();
+  const [now,setNow]=useState(function(){return new Date();});
+  useEffect(function(){const iv=setInterval(function(){setNow(new Date());},1000);return function(){clearInterval(iv);};},[]);
+  const up=useMemo(function(){const s=Math.floor((Date.now()-new Date('2022-03-01').getTime())/1000);
+    return Math.floor(s/86400)+'d '+String(Math.floor(s%86400/3600)).padStart(2,'0')+'h';},[]);
+  const nodeId=useMemo(function(){return 'GE-'+hex(4).toUpperCase();},[]);
+  return (
+    <footer style={{borderTop:'1px solid var(--line)',background:'#070911'}} className="safe-b mt-20">
+      <Section className="py-10">
+        <div className="grid gap-8" style={{gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))'}}>
+          <div>
+            <div className="mono glitch grad" data-t="GUSTAVOEURO" style={{fontWeight:700,fontSize:15}}>GUSTAVOEURO</div>
+            <p className="dim mt-3" style={{fontSize:12.5,lineHeight:1.7}}>Dal dark web al tuo portafoglio. Grade AAA+ · dal 2022.</p>
+            <div className="flex flex-wrap gap-2 mt-4"><Pill color="tl"><span className="dot"/>ONLINE</Pill><Pill color="au">EST. 2022</Pill></div>
+          </div>
+          <div>
+            <Eyebrow color="bl">{tr.footer.legal}</Eyebrow>
+            <div className="flex flex-col gap-1 mt-3">
+              {[['/trust',tr.nav.trust],['/privacy',tr.legal.privacy.t],['/terms',tr.legal.terms.t],['/cookies',tr.legal.cookies.t],['/track',tr.nav.track]].map(function(p){
+                return <a key={p[0]} href={'#'+p[0]} className="mono hoverrow" style={{fontSize:11.5,color:'#a3abc4',padding:'5px 0',textDecoration:'none'}}>{p[1]}</a>;
+              })}
+            </div>
+          </div>
+          <div>
+            <Eyebrow color="mg">CONTACT</Eyebrow>
+            <div className="mono flex flex-col gap-2 mt-3" style={{fontSize:11,color:'#a3abc4'}}>
+              <a href={TG} target="_blank" rel="noopener noreferrer" style={{color:'var(--mg)',textDecoration:'none'}}>t.me/gustavoeuro</a>
+              <a href={TG_CH} target="_blank" rel="noopener noreferrer" style={{color:'var(--mg)',textDecoration:'none'}}>feedback channel</a>
+              <span>{ONION}</span><span>PGP {PGP}</span>
+            </div>
+          </div>
+          <div>
+            <Eyebrow color="tl">TELEMETRY</Eyebrow>
+            <div className="mono flex flex-col gap-2 mt-3" style={{fontSize:11,color:'#a3abc4'}}>
+              <span>{tr.footer.node}: {nodeId}</span>
+              <span>{tr.footer.session}: {hex(8).toUpperCase()}</span>
+              <span>{tr.footer.uptime}: {up}</span>
+              <span>{tr.footer.clock}: {now.toLocaleTimeString('it-IT')}</span>
+            </div>
+          </div>
+        </div>
+        <div className="mt-7"><HexStream rows={3} cols={64}/></div>
+        <div className="hr my-7"/>
+        <div className="mono flex flex-wrap justify-between gap-3" style={{fontSize:10.5,color:'#5c6480',letterSpacing:'.08em'}}>
+          <span>© {new Date().getFullYear()} GUSTAVOEURO — {tr.footer.rights}</span>
+          <span>TOR v3 · PGP 4096 · AES-256 · NO KYC</span>
+        </div>
+      </Section>
+    </footer>
+  );
+}
+
+/* ================================= HOME ================================== */
+function Home(){
+  const tr=useT();
+  const app=useApp();
+  const nodeId=useMemo(function(){return 'GE-'+hex(6).toUpperCase();},[]);
+  const blockHash=useMemo(function(){return '0x'+hex(32);},[]);
+  const block=useMemo(function(){return 8821+Math.floor(Math.random()*40);},[]);
+  const merkle=useMemo(function(){return '0x'+hex(40);},[]);
+  const [log,setLog]=useState([]);
+  const [ping,setPing]=useState(23);
+  const [ticker,setTicker]=useState([]);
+  useEffect(function(){
+    const iv=setInterval(function(){
+      const t=new Date().toISOString().substring(11,19);
+      const msgs=['relay keepalive ok','handshake refresh','peer '+hex(4)+' joined','block synced','integrity 0 errors','tunnel rekeyed','pgp verify ok','manifest signed'];
+      setLog(function(l){return l.slice(-9).concat([t+'  '+msgs[Math.floor(Math.random()*msgs.length)]]);});
+      setPing(14+Math.floor(Math.random()*30));
+    },1700);
+    return function(){clearInterval(iv);};
+  },[]);
+  useEffect(function(){
+    function gen(){
+      const city=['Milano','Berlin','Paris','Madrid','Roma','Amsterdam','Vienna','Zurich','Bruxelles','Lisboa'];
+      const pcs=['25','75','200','15','50','150'];
+      return 'GST-'+pcs[Math.floor(Math.random()*pcs.length)]+'-'+randCode(4)+' · '+city[Math.floor(Math.random()*city.length)];
+    }
+    setTicker([gen(),gen(),gen(),gen(),gen()]);
+    const iv=setInterval(function(){ setTicker(function(t){ return [gen()].concat(t.slice(0,4)); }); },3200);
+    return function(){clearInterval(iv);};
+  },[]);
+
+  const denoms=[
+    {g:'20',ph:PHOTO.eur20.main,c:'au'},
+    {g:'50',ph:PHOTO.eur50.main,c:'bl'}
+  ];
+
+  return (
+    <div className="fadeup">
+      <Section className="pt-12 pb-8">
+        <div className="flex flex-wrap items-center gap-2">
+          <Pill color="au">{tr.home.b1}</Pill><Pill color="bl">{tr.home.b2}</Pill><Pill color="tl"><span className="dot"/>{tr.home.b3}</Pill>
+        </div>
+        <h1 className="mt-6" style={{fontSize:'clamp(30px,7vw,64px)',fontWeight:700,lineHeight:1.04,letterSpacing:'-.02em'}}>
+          <Scramble text={tr.home.title} className="grad"/>
+        </h1>
+        <div className="mt-6 grid gap-6" style={{gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))'}}>
+          <p className="dim" style={{fontSize:15.5,lineHeight:1.75}}>{tr.home.p1}</p>
+          <p className="dim" style={{fontSize:15.5,lineHeight:1.75}}>{tr.home.p2}</p>
+        </div>
+        <div className="flex flex-wrap gap-3 mt-7">
+          <button className="btn btn-au" onClick={function(){app.navigate('/cash');}}>{tr.nav.cash}</button>
+          <button className="btn btn-bl" onClick={function(){app.navigate('/paypal');}}>{tr.nav.paypal}</button>
+          <button className="btn btn-tl" onClick={function(){app.navigate('/trust');}}>{tr.nav.trust}</button>
+        </div>
+        <div className="flex flex-wrap gap-2 mt-7">
+          {tr.home.badges.map(function(b){return <Pill key={b} color="tl">{b}</Pill>;})}
+        </div>
+      </Section>
+
+      <Section className="py-8">
+        <div className="grid gap-3" style={{gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))'}}>
+          {tr.home.stats.map(function(s,i){
+            return (
+              <Bracket key={i} className="p-4">
+                <div className="mono" style={{fontSize:10,letterSpacing:'.18em',color:'#7b839c'}}>{s[0]}</div>
+                <div className="mono mt-2" style={{fontSize:22,fontWeight:700,color:'var(--'+['au','bl','tl','mg'][i%4]+')'}}>{s[1]}</div>
+              </Bracket>
+            );
+          })}
+        </div>
+      </Section>
+
+      <div className="marquee py-3 mt-4">
+        <div className="marquee-track">
+          {[0,1].map(function(k){
+            return (
+              <div key={k} className="flex" style={{gap:'2.2rem',paddingRight:'2.2rem'}}>
+                {tr.home.marquee.map(function(m,i){
+                  return <span key={i} className="mono" style={{fontSize:11,letterSpacing:'.2em',color:'#a3abc4',whiteSpace:'nowrap'}}>
+                    {m} <span style={{color:'var(--'+['au','bl','tl','mg','rs'][i%5]+')'}}>·</span></span>;
+                })}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <Section className="pt-14">
+        <Eyebrow>{tr.home.denomSub}</Eyebrow>
+        <h2 className="mt-3" style={{fontSize:'clamp(22px,4vw,34px)',fontWeight:700}}><Scramble text={tr.home.denom}/></h2>
+        <div className="grid gap-4 mt-6" style={{gridTemplateColumns:'repeat(auto-fit,minmax(250px,1fr))'}}>
+          {denoms.map(function(d,i){
+            return (
+              <Bracket key={d.g} className="p-4" style={{cursor:'pointer'}} onClick={function(){app.navigate('/cash');}}>
+                <div className="flex items-center justify-between">
+                  <Pill color={d.c}>{d.g} EUR</Pill>
+                  <span className="mono" style={{fontSize:10,color:'#6b7392'}}>{tr.home.preview}</span>
+                </div>
+                <div className="mt-3"><Img src={d.ph} alt={d.g+' EUR'} ratio="16 / 10"/></div>
+                <div className="mono mt-3" style={{fontSize:11,color:'#8b93ad'}}>GRADE AAA+ · UV 100% · SCANNER PASS</div>
+              </Bracket>
+            );
+          })}
+          <Bracket className="p-4" style={{borderColor:'#3a2b12'}} onClick={function(){app.navigate('/cash');}}>
+            <div className="flex items-center justify-between">
+              <Pill color="mg">10 EUR</Pill>
+              <span className="mono" style={{fontSize:10,color:'#6b7392'}}>{tr.home.preview}</span>
+            </div>
+            <div className="mt-3"><Img src={PHOTO.eur20.main} alt="10 EUR" ratio="16 / 10"/></div>
+            <div className="mono mt-3" style={{fontSize:11,color:'var(--mg)'}}>{tr.cash.tenTitle}</div>
+          </Bracket>
+        </div>
+        <div className="mono mt-3" style={{fontSize:10.5,color:'#6b7392'}}>// {tr.cash.tenText}</div>
+      </Section>
+
+      <Section className="pt-16">
+        <Eyebrow color="tl">{tr.home.trustSub}</Eyebrow>
+        <h2 className="mt-3" style={{fontSize:'clamp(22px,4vw,34px)',fontWeight:700}}><Scramble text={tr.home.trust}/></h2>
+        <div className="grid gap-4 mt-6" style={{gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))'}}>
+          {tr.home.trustItems.map(function(t,i){
+            const c=['au','bl','tl','mg','rs','au'][i%6];
+            return (
+              <Bracket key={i} className="p-5 hud">
+                <div className="mono" style={{fontSize:11,color:'var(--'+c+')'}}>✓ {String(i+1).padStart(2,'0')}</div>
+                <div style={{fontWeight:700,fontSize:14.5,marginTop:8}}>{t[0]}</div>
+                <p className="dim" style={{fontSize:13,lineHeight:1.65,marginTop:6}}>{t[1]}</p>
+              </Bracket>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Section className="pt-14">
+        <Eyebrow color="bl">{tr.home.howSub}</Eyebrow>
+        <h2 className="mt-3" style={{fontSize:'clamp(22px,4vw,34px)',fontWeight:700}}><Scramble text={tr.home.how}/></h2>
+        <div className="grid gap-4 mt-6" style={{gridTemplateColumns:'repeat(auto-fit,minmax(230px,1fr))'}}>
+          {tr.home.howSteps.map(function(s,i){
+            return (
+              <Bracket key={s[0]} className="p-5">
+                <div className="mono" style={{fontSize:22,fontWeight:700,color:'var(--'+['au','bl','tl','mg'][i%4]+')'}}>{s[0]}</div>
+                <div style={{fontWeight:700,fontSize:14,marginTop:8}}>{s[1]}</div>
+                <p className="dim" style={{fontSize:13,lineHeight:1.65,marginTop:6}}>{s[2]}</p>
+              </Bracket>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Section className="pt-14">
+        <Bracket className="p-6 sm:p-8" style={{borderColor:'#25303f'}}>
+          <div className="flex flex-wrap items-start justify-between gap-6">
+            <div style={{maxWidth:620}}>
+              <Eyebrow color="tl">{tr.home.proofSub}</Eyebrow>
+              <h2 className="mt-3" style={{fontSize:'clamp(20px,3.4vw,28px)',fontWeight:700}}><Scramble text={tr.home.proof}/></h2>
+              <p className="dim mt-3" style={{fontSize:14.5,lineHeight:1.75}}>{tr.home.proofText}</p>
+              <button className="btn btn-tl mt-5" onClick={function(){app.navigate('/trust');}}>{tr.home.proofBtn}</button>
+            </div>
+            <div style={{minWidth:260,flex:'1 1 280px'}}>
+              <div className="term" style={{fontSize:10.5}}>
+                <div className="c"># signed manifest</div>
+                <div>order   : GST-1500-250-7K3F</div>
+                <div>merkle  : <span className="k">{merkle.substring(0,26)}…</span></div>
+                <div>pgp     : 7B3F 9A21 C4E8 …</div>
+                <div>sig     : <span className="t">VALID</span></div>
+                <div>errors  : <span className="t">0</span></div>
+              </div>
+              <div className="mt-3"><HexStream rows={3} cols={30}/></div>
+            </div>
+          </div>
+        </Bracket>
+      </Section>
+
+      <Section className="pt-14">
+        <Bracket className="p-6 sm:p-8" style={{borderColor:'#2b3a2f'}}>
+          <div className="flex flex-wrap items-start justify-between gap-5">
+            <div style={{maxWidth:720}}>
+              <Eyebrow color="tl">100% RISK-FREE</Eyebrow>
+              <h2 className="mt-3" style={{fontSize:'clamp(20px,3.4vw,28px)',fontWeight:700}}>{tr.home.guarTitle}</h2>
+              <p className="dim mt-3" style={{fontSize:14.5,lineHeight:1.75}}>{tr.home.guarText}</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              {tr.checkout.badges.map(function(b,i){return <Pill key={b} color={['au','bl','tl','mg','rs'][i%5]}>{b}</Pill>;})}
+            </div>
+          </div>
+        </Bracket>
+      </Section>
+
+      <Section className="pt-16">
+        <Eyebrow color="bl">2022 → 2026</Eyebrow>
+        <h2 className="mt-3" style={{fontSize:'clamp(22px,4vw,34px)',fontWeight:700}}><Scramble text={tr.home.cron}/></h2>
+        <div className="mt-7" style={{borderLeft:'1px solid var(--line)',paddingLeft:22}}>
+          {tr.home.tl.map(function(t,i){
+            return (
+              <div key={i} className="relative pb-8">
+                <span style={{position:'absolute',left:-27,top:4,width:10,height:10,borderRadius:99,background:'var(--'+['au','bl','tl','mg','rs'][i%5]+')',boxShadow:'0 0 0 3px #05060d'}}/>
+                <div className="mono" style={{fontSize:12,color:'var(--'+['au','bl','tl','mg','rs'][i%5]+')',letterSpacing:'.14em'}}>{t[0]} · {t[1]}</div>
+                <p className="dim mt-2" style={{fontSize:14,lineHeight:1.7,maxWidth:720}}>{t[2]}</p>
+              </div>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Section className="pt-8">
+        <div className="grid gap-4" style={{gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))'}}>
+          <Bracket className="p-5">
+            <div className="flex items-center justify-between">
+              <Eyebrow color="tl">{tr.home.tele}</Eyebrow>
+              <div className="radar"><i/><i/></div>
+            </div>
+            <div className="mono mt-4 flex flex-col gap-2" style={{fontSize:11.5,color:'#a3abc4'}}>
+              <Row k={tr.home.teleL[0]} v={nodeId}/>
+              <Row k={tr.home.teleL[1]} v={ONION}/>
+              <Row k={tr.home.teleL[2]} v={blockHash.substring(0,22)+'…'}/>
+              <Row k={tr.home.teleL[3]} v={ping+' ms'} c="var(--tl)"/>
+              <Row k={tr.home.teleL[4]} v={'#'+block}/>
+              <Row k={tr.home.teleL[5]} v={hex(8).toUpperCase()}/>
+            </div>
+            <div className="mt-4"><HexStream rows={4} cols={38}/></div>
+          </Bracket>
+          <Bracket className="p-5">
+            <Eyebrow color="mg">{tr.home.live}</Eyebrow>
+            <div className="mono mt-4 flex flex-col gap-2" style={{fontSize:11.5}}>
+              {ticker.map(function(t,i){
+                return <div key={i} style={{color:i===0?'var(--tl)':'#8b93ad'}}>
+                  <span style={{color:'var(--au)'}}>▸</span> {t}</div>;
+              })}
+            </div>
+            <div className="hr my-4"/>
+            <div className="term" style={{fontSize:10.5,maxHeight:150,overflowY:'auto'}}>
+              {log.map(function(l,i){return <div key={i}>{l}</div>;})}
+              {log.length===0 && <div className="c">waiting for events…</div>}
+              <div><span className="k">ge@node:~$</span> <span className="caret"/></div>
+            </div>
+          </Bracket>
+        </div>
+      </Section>
+
+      <Section className="pt-14">
+        <Eyebrow>{tr.home.idx}</Eyebrow>
+        <div className="grid gap-2 mt-5" style={{gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))'}}>
+          {tr.home.idxItems.map(function(it){
+            return (
+              <a key={it[0]} href={'#'+it[2]} className="card hoverrow flex items-center gap-3 p-4" style={{textDecoration:'none'}}>
+                <span className="mono" style={{fontSize:12,color:'var(--au)'}}>{it[0]}</span>
+                <span style={{fontWeight:600,fontSize:14}}>{it[1]}</span>
+                <span className="mono" style={{fontSize:11,color:'#6b7392',marginLeft:'auto'}}>{it[2]}</span>
+              </a>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Section className="pt-12 pb-6">
+        <div className="hr mb-5"/>
+        <div className="flex flex-wrap gap-2">
+          {tr.home.protocols.map(function(p,i){return <Pill key={p} color={['au','bl','tl','mg','rs'][i%5]}>{p}</Pill>;})}
+        </div>
+      </Section>
+    </div>
+  );
+}
+
+/* ================================= CASH ================================== */
+function Cash(){
+  const tr=useT();
+  const app=useApp();
+  const [open,setOpen]=useState(false);
+  const [modal,setModal]=useState(null);
+  const photoFor=function(g){ return g==='50'?PHOTO.eur50:PHOTO.eur20; };
+
+  return (
+    <div className="fadeup">
+      <Section className="pt-12 pb-6">
+        <Eyebrow>{tr.cash.eyebrow}</Eyebrow>
+        <h1 className="mt-4" style={{fontSize:'clamp(28px,6vw,52px)',fontWeight:700,lineHeight:1.08}}><Scramble text={tr.cash.title} className="grad"/></h1>
+        <p className="dim mt-5" style={{fontSize:15.5,lineHeight:1.75,maxWidth:760}}>{tr.cash.sub}</p>
+        <div className="flex flex-wrap gap-2 mt-6">
+          <Pill color="au">GRADE AAA+</Pill><Pill color="tl">UV 100%</Pill><Pill color="bl">SCANNER PASS</Pill><Pill color="mg">FIBRA COTONE</Pill>
+        </div>
+        <div className="flex flex-wrap gap-3 mt-7">
+          <button className="btn btn-au" onClick={function(){setOpen(function(o){return !o;});}}>{open?tr.cash.close:tr.cash.open}</button>
+          <a className="btn btn-mg" href={TG} target="_blank" rel="noopener noreferrer">{tr.cash.tgBtn}</a>
+        </div>
+      </Section>
+
+      <Section className="pt-8">
+        <Bracket className="p-6" style={{borderColor:'#3a2b12',background:'#120f0a'}}>
+          <div className="flex flex-wrap items-center justify-between gap-5">
+            <div style={{maxWidth:700}}>
+              <Pill color="mg">{tr.cash.tenTitle}</Pill>
+              <p className="dim mt-4" style={{fontSize:14.5,lineHeight:1.75}}>{tr.cash.tenText}</p>
+            </div>
+            <a className="btn btn-au" href={TG} target="_blank" rel="noopener noreferrer">{tr.cash.tenBtn}</a>
+          </div>
+        </Bracket>
+      </Section>
+
+      {open && NOTES.map(function(group){
+        const gc=group.group==='50'?'bl':'au';
+        return (
+          <Section key={group.group} className="pt-10">
+            <div className="flex items-center gap-3">
+              <h2 className="mono" style={{fontSize:'clamp(18px,3.4vw,26px)',fontWeight:700,letterSpacing:'.06em'}}>{tr.cash.taglio.replace('{n}',group.group)}</h2>
+              <div className="hr flex-1"/>
+              <Pill color={gc}>{group.items.length} PACK</Pill>
+            </div>
+            <div className="grid gap-4 mt-6" style={{gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))'}}>
+              {group.items.map(function(it){
+                const ph=photoFor(group.group);
+                const img=ph.gallery[it.img % ph.gallery.length];
+                return (
+                  <Bracket key={it.id} className="p-4 flex flex-col">
+                    <div className="flex items-center justify-between">
+                      <Pill color={gc}>{tr.cash.labels[it.id]}</Pill>
+                      <span className="mono" style={{fontSize:10,color:'#6b7392'}}>{it.id.toUpperCase()}</span>
+                    </div>
+                    <div className="mt-3">
+                      <Img src={img} alt={tr.cash.labels[it.id]} ratio="16 / 10"
+                        badge={<React.Fragment>
+                          {isVid(img)?<span className="vbadge">{tr.cash.videoBadge}</span>:<span className="gbadge">{tr.cash.photoBadge}</span>}
+                          <span className="gbadge" style={{left:'auto',right:8,top:32}}>{group.group} EUR</span>
+                        </React.Fragment>}/>
+                    </div>
+                    <div className="mt-4 flex items-baseline justify-between">
+                      <span className="mono" style={{fontSize:11,color:'#8b93ad'}}>{it.pieces} {tr.cash.pieces}</span>
+                      <span className="mono" style={{fontSize:10,color:'#6b7392'}}>{tr.cash.noPrice}</span>
+                    </div>
+                    <div className="hr my-4"/>
+                    <div className="mono flex flex-col gap-1.5" style={{fontSize:10.5,color:'#8b93ad'}}>
+                      {tr.cash.specs.map(function(s,i){
+                        return <div key={i} className="flex justify-between gap-2">
+                          <span style={{color:'#6b7392'}}>{s}</span>
+                          <span style={{color:i>=4?'var(--tl)':'var(--fg)',textAlign:'right'}}>{tr.cash.specsV[i]}</span></div>;
+                      })}
+                    </div>
+                    <div className="flex gap-2 mt-4">
+                      <button className="btn btn-au flex-1" onClick={function(){app.add({kind:'note',id:it.id,
+                        title:group.group+' EUR · '+tr.cash.labels[it.id],sub:it.pieces+' '+tr.cash.pieces,
+                        price:it.price,tag:it.tag,image:img});}}>{tr.common.add}</button>
+                      <button className="btn" onClick={function(){setModal({group:group.group,item:it});}}>{tr.cash.verify}</button>
+                    </div>
+                  </Bracket>
+                );
+              })}
+            </div>
+          </Section>
+        );
+      })}
+
+      {open && (
+        <Section className="pt-12">
+          <Bracket className="p-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <Eyebrow color="mg">{tr.cash.tgTitle}</Eyebrow>
+                <p className="dim mt-2" style={{fontSize:14,lineHeight:1.7,maxWidth:620}}>{tr.cash.tgText}</p>
+              </div>
+              <a className="btn btn-au" href={TG} target="_blank" rel="noopener noreferrer">{tr.cash.tgBtn}</a>
+            </div>
+          </Bracket>
+        </Section>
+      )}
+
+      {modal && <VerifyModal group={modal.group} item={modal.item} onClose={function(){setModal(null);}}/>}
+      <div style={{height:40}}/>
+    </div>
+  );
+}
+
+function VerifyModal({group,item,onClose}){
+  const tr=useT();
+  const ph=group==='50'?PHOTO.eur50:PHOTO.eur20;
+  const gal=ph.gallery;
+  const [idx,setIdx]=useState(0);
+  const [step,setStep]=useState(0);
+  useEffect(function(){
+    const iv=setInterval(function(){ setIdx(function(i){return (i+1)%gal.length;}); },3400);
+    return function(){clearInterval(iv);};
+  },[gal.length]);
+  useEffect(function(){
+    function onKey(e){ if(e.key==='Escape') onClose(); }
+    window.addEventListener('keydown',onKey);
+    return function(){window.removeEventListener('keydown',onKey);};
+  },[]);
+  function pick(i){ setIdx(i); }
+  return (
+    <React.Fragment>
+      <div onClick={onClose} style={{position:'fixed',inset:0,zIndex:70,background:'rgba(2,3,8,.82)'}}/>
+      <div style={{position:'fixed',inset:0,zIndex:71,display:'flex',alignItems:'center',justifyContent:'center',padding:16,pointerEvents:'none'}}>
+        <div className="card card-br fadeup" style={{pointerEvents:'auto',width:'100%',maxWidth:820,maxHeight:'92dvh',overflowY:'auto',background:'#0e1018'}}>
+          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'0 16px',height:60,borderBottom:'1px solid var(--line)',background:'#141726',position:'sticky',top:0,zIndex:2}}>
+            <div>
+              <div className="eyebrow">{tr.cash.modalTitle}</div>
+              <div className="mono" style={{fontSize:10,color:'#6b7392',marginTop:2}}>
+                {group} EUR · {tr.cash.labels[item.id]} · {gal.length} FILE
+              </div>
+            </div>
+            <button className="btn btn-sm" onClick={onClose}>{tr.common.close}</button>
+          </div>
+          <div style={{padding:16}}>
+            <Img src={gal[idx]} alt={tr.cash.labels[item.id]} ratio="16 / 10"
+              badge={isVid(gal[idx])?<span className="vbadge">{tr.cash.videoBadge}</span>:<span className="gbadge">{tr.cash.photoBadge}</span>}/>
+            <div className="mono mt-3" style={{fontSize:10.5,color:'#6b7392',textAlign:'center'}}>{tr.cash.inspecNote}</div>
+            <div className="flex gap-2 mt-4 justify-center flex-wrap">
+              {gal.map(function(g,i){
+                return (
+                  <button key={i} onClick={function(){pick(i);}} title={isVid(g)?tr.cash.videoBadge:tr.cash.photoBadge}
+                    style={{width:62,height:44,padding:0,borderRadius:8,overflow:'hidden',position:'relative',
+                      border:'2px solid '+(i===idx?'var(--au)':'var(--line)'),background:'#080a12',cursor:'pointer'}}>
+                    <img src={g} alt="" style={{width:'100%',height:'100%',objectFit:'contain'}}/>
+                    {isVid(g) && <span style={{position:'absolute',top:2,right:3,fontSize:8,color:'var(--mg)',fontFamily:"'JetBrains Mono',monospace"}}>VID</span>}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="mt-6 flex flex-col gap-3">
+              {tr.cash.steps.map(function(s,i){
+                const on=(step===i);
+                const sc=['au','bl','tl','mg'][i%4];
+                return (
+                  <button key={i} onClick={function(){setStep(i); pick(i%gal.length);}}
+                    className="card" style={{padding:14,textAlign:'left',cursor:'pointer',
+                      borderColor:on?'var(--'+sc+')':'var(--line)',background:on?'#161320':'#0b0d17'}}>
+                    <div className="flex gap-3 items-start">
+                      <div style={{width:64,flex:'0 0 auto'}}>
+                        <Img src={gal[i%gal.length]} alt="" ratio="4 / 3"/>
+                      </div>
+                      <div style={{flex:1}}>
+                        <div className="mono" style={{fontSize:10.5,color:on?'var(--'+sc+')':'#6b7392'}}>STEP {String(i+1).padStart(2,'0')}</div>
+                        <div style={{fontWeight:700,fontSize:13.5,marginTop:3}}>{s}</div>
+                        <p className="dim" style={{fontSize:12.5,lineHeight:1.6,marginTop:5}}>{tr.cash.modalDesc[i]}</p>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+            <div className="mono mt-5 flex flex-wrap justify-between gap-3" style={{fontSize:10.5,color:'#6b7392'}}>
+              <span>checksum {fnv(group+item.id+item.price)}</span>
+              <span>grade AAA+ · uv full · scanner pass · fibra cotone</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+}
+
+/* ================================ PAYPAL ================================= */
+function Paypal(){
+  const tr=useT();
+  const app=useApp();
+  return (
+    <div className="fadeup">
+      <Section className="pt-12 pb-6">
+        <Eyebrow color="bl">{tr.paypal.eyebrow}</Eyebrow>
+        <h1 className="mt-4" style={{fontSize:'clamp(28px,6vw,52px)',fontWeight:700,lineHeight:1.08}}><Scramble text={tr.paypal.title} className="grad"/></h1>
+        <p className="dim mt-5" style={{fontSize:15.5,lineHeight:1.75,maxWidth:760}}>{tr.paypal.sub}</p>
+      </Section>
+      <Section className="py-6">
+        <div className="grid gap-3" style={{gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))'}}>
+          {tr.paypal.stats.map(function(s,i){
+            return (
+              <Bracket key={i} className="p-4">
+                <div className="mono" style={{fontSize:10,letterSpacing:'.18em',color:'#7b839c'}}>{s[0]}</div>
+                <div className="mono mt-2" style={{fontSize:18,fontWeight:700,color:'var(--bl)'}}>{s[1]}</div>
+              </Bracket>
+            );
+          })}
+        </div>
+      </Section>
+      <Section className="pt-6 pb-4">
+        <div className="grid gap-4" style={{gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))'}}>
+          {TRANSFERS.map(function(t,i){
+            const c=['bl','tl','au','mg','bl','tl'][i%6];
+            return (
+              <Bracket key={t.id} className="p-5">
+                <div className="flex items-center justify-between">
+                  <Pill color={c}>{t.name}</Pill>
+                  <span className="mono" style={{fontSize:10,color:'#6b7392'}}>{t.id.toUpperCase()}</span>
+                </div>
+                <div className="mt-5 flex items-end justify-between">
+                  <div>
+                    <div className="mono" style={{fontSize:10,color:'#7b839c',letterSpacing:'.14em'}}>{tr.paypal.cost}</div>
+                    <div className="mono" style={{fontSize:22,fontWeight:700}}>{eur(t.cost)}</div>
+                  </div>
+                  <div className="mono" style={{fontSize:20,color:'#6b7392'}}>→</div>
+                  <div style={{textAlign:'right'}}>
+                    <div className="mono" style={{fontSize:10,color:'#7b839c',letterSpacing:'.14em'}}>{tr.paypal.recv}</div>
+                    <div className="mono" style={{fontSize:22,fontWeight:700,color:'var(--tl)'}}>{eur(t.recv)}</div>
+                  </div>
+                </div>
+                <div className="hr my-4"/>
+                <div className="mono" style={{fontSize:10.5,color:'#8b93ad'}}>P2P EXCHANGE ROUTING · 0% FEE · 2-6H</div>
+                <button className="btn btn-bl w-full mt-4" onClick={function(){app.add({kind:'transfer',id:t.id,
+                  title:'PAYPAL · '+t.name,sub:eur(t.cost)+' → '+eur(t.recv),price:t.cost,tag:String(t.recv),image:PHOTO.eur20.main});}}>
+                  {tr.paypal.choose}
+                </button>
+              </Bracket>
+            );
+          })}
+        </div>
+      </Section>
+      <Section className="pt-8 pb-8">
+        <Bracket className="p-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <Eyebrow color="mg">{tr.cash.tgTitle}</Eyebrow>
+              <p className="dim mt-2" style={{fontSize:14,lineHeight:1.7,maxWidth:620}}>{tr.cash.tgText}</p>
+            </div>
+            <a className="btn btn-au" href={TG} target="_blank" rel="noopener noreferrer">{tr.cash.tgBtn}</a>
+          </div>
+        </Bracket>
+      </Section>
+    </div>
+  );
+}
+
+/* =============================== QUALITY ================================= */
+function Quality(){
+  const tr=useT();
+  const [f,setF]=useState('all');
+  const [lb,setLb]=useState(null);
+  const sets={all:PHOTO.eur20.gallery.concat(PHOTO.eur50.gallery),g20:PHOTO.eur20.gallery,g50:PHOTO.eur50.gallery};
+  const photos=sets[f]||sets.all;
+  return (
+    <div className="fadeup">
+      <Section className="pt-12 pb-6">
+        <Eyebrow>{tr.quality.eyebrow}</Eyebrow>
+        <h1 className="mt-4" style={{fontSize:'clamp(28px,6vw,52px)',fontWeight:700,lineHeight:1.08}}><Scramble text={tr.quality.title} className="grad"/></h1>
+        <p className="dim mt-5" style={{fontSize:15.5,lineHeight:1.75,maxWidth:760}}>{tr.quality.sub}</p>
+      </Section>
+      <Section className="pb-6">
+        <div className="flex flex-wrap gap-2">
+          {['all','g20','g50'].map(function(k,i){
+            const c=['au','bl','tl'][i];
+            return <button key={k} className="btn" onClick={function(){setF(k);}}
+              style={{borderColor:f===k?'var(--'+c+')':'var(--line)',color:f===k?'var(--'+c+')':'#c3cadf'}}>{tr.quality.filters[k]}</button>;
+          })}
+        </div>
+      </Section>
+      <Section className="pb-12">
+        <div className="grid gap-4" style={{gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))'}}>
+          {photos.map(function(p,i){
+            return (
+              <button key={i} onClick={function(){setLb(p);}} className="card p-3" style={{cursor:'zoom-in',textAlign:'left'}}>
+                <Img src={p} alt={'file '+(i+1)} ratio="16 / 10"
+                  badge={isVid(p)?<span className="vbadge">{tr.cash.videoBadge}</span>:<span className="gbadge">{tr.cash.photoBadge}</span>}/>
+                <div className="mono mt-2 flex justify-between" style={{fontSize:10,color:'#6b7392'}}>
+                  <span>{isVid(p)?'VID':'IMG'}_{String(i+1).padStart(3,'0')}</span><span>sha {fnv(p).substring(0,6)}</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </Section>
+      {lb && (
+        <React.Fragment>
+          <div onClick={function(){setLb(null);}} style={{position:'fixed',inset:0,zIndex:70,background:'rgba(2,3,8,.85)'}}/>
+          <div style={{position:'fixed',inset:0,zIndex:71,display:'flex',alignItems:'center',justifyContent:'center',padding:16,pointerEvents:'none'}}>
+            <div className="card p-3 fadeup" style={{pointerEvents:'auto',width:'100%',maxWidth:900}}>
+              <Img src={lb} alt="lightbox" ratio="16 / 10"/>
+              <div className="flex justify-between items-center mt-3">
+                <span className="mono" style={{fontSize:10.5,color:'#6b7392'}}>checksum {fnv(lb)}</span>
+                <button className="btn btn-sm" onClick={function(){setLb(null);}}>{tr.common.close}</button>
+              </div>
+            </div>
+          </div>
+        </React.Fragment>
+      )}
+      <div style={{height:30}}/>
+    </div>
+  );
+}
+
+/* ================================= TRUST ================================= */
+function Trust(){
+  const tr=useT();
+  const app=useApp();
+  const merkle=useMemo(function(){return '0x'+hex(40);},[]);
+  const [sig,setSig]=useState('');
+  useEffect(function(){
+    const stmt='GUSTAVOEURO :: trust center :: '+new Date().toISOString();
+    let i=0;
+    const iv=setInterval(function(){
+      i+=2; setSig(fnv(stmt+i).toUpperCase()); if(i>=24) clearInterval(iv);
+    },70);
+    return function(){clearInterval(iv);};
+  },[]);
+  const t=tr.trust;
+  return (
+    <div className="fadeup">
+      <Section className="pt-12 pb-6">
+        <Eyebrow color="tl">{t.eyebrow}</Eyebrow>
+        <h1 className="mt-4" style={{fontSize:'clamp(28px,6vw,52px)',fontWeight:700,lineHeight:1.08}}><Scramble text={t.title} className="grad"/></h1>
+        <p className="dim mt-5" style={{fontSize:15.5,lineHeight:1.75,maxWidth:780}}>{t.sub}</p>
+      </Section>
+
+      <Section className="pb-6">
+        <div className="grid gap-4" style={{gridTemplateColumns:'repeat(auto-fit,minmax(270px,1fr))'}}>
+          {t.blocks.map(function(b,i){
+            const c=['au','bl','tl','mg','rs','au'][i%6];
+            return (
+              <Bracket key={i} className="p-5 hud">
+                <div className="mono" style={{fontSize:11,color:'var(--'+c+')'}}>✓ {String(i+1).padStart(2,'0')}</div>
+                <div style={{fontWeight:700,fontSize:14.5,marginTop:8}}>{b[0]}</div>
+                <p className="dim" style={{fontSize:13,lineHeight:1.65,marginTop:6}}>{b[1]}</p>
+              </Bracket>
+            );
+          })}
+        </div>
+      </Section>
+
+      <Section className="pt-8">
+        <div className="grid gap-4" style={{gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))'}}>
+          <Bracket className="p-6">
+            <Eyebrow color="bl">{t.verifyTitle}</Eyebrow>
+            <div className="mt-4 flex flex-col gap-3">
+              {t.verifySteps.map(function(s,i){
+                return <div key={i} className="flex gap-3">
+                  <span className="mono" style={{color:'var(--au)',fontSize:11,flex:'0 0 auto'}}>{String(i+1).padStart(2,'0')}</span>
+                  <span className="dim" style={{fontSize:13,lineHeight:1.65}}>{s}</span></div>;
+              })}
+            </div>
+            <div className="term mt-5" style={{fontSize:11}}>
+              <div>$ node verify.js GST-1500-250-7K3F</div>
+              <div className="k">&gt; hash ok · signature valid · 0 errors</div>
+            </div>
+          </Bracket>
+
+          <Bracket className="p-6">
+            <Eyebrow color="mg">{t.pgpTitle}</Eyebrow>
+            <p className="dim mt-3" style={{fontSize:13,lineHeight:1.65}}>{t.pgpText}</p>
+            <div className="term mt-4" style={{fontSize:11,wordBreak:'break-all'}}>
+              <div className="c">-----BEGIN PGP PUBLIC KEY BLOCK-----</div>
+              <div>fp: <span className="k">{PGP}</span></div>
+              <div className="c">-----END PGP PUBLIC KEY BLOCK-----</div>
+            </div>
+            <div className="mono mt-3" style={{fontSize:10.5,color:'#6b7392',wordBreak:'break-all'}}>
+              live sig: {sig||'…'}
+            </div>
+          </Bracket>
+        </div>
+      </Section>
+
+      <Section className="pt-8">
+        <div className="grid gap-4" style={{gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))'}}>
+          <Bracket className="p-6">
+            <Eyebrow color="au">{t.reserveTitle}</Eyebrow>
+            <p className="dim mt-3" style={{fontSize:13.5,lineHeight:1.7}}>{t.reserveText}</p>
+            <div className="term mt-4" style={{fontSize:10.5,wordBreak:'break-all'}}>
+              <div className="c"># merkle root (quarter)</div>
+              <div className="k">{merkle}</div>
+              <div className="c"># addresses</div>
+              <div>{WALLET.USDT.substring(0,20)}…</div>
+              <div>{WALLET.BTC.substring(0,20)}…</div>
+              <div>{WALLET.LTC.substring(0,20)}…</div>
+            </div>
+          </Bracket>
+          <Bracket className="p-6">
+            <Eyebrow color="rs">{t.rulesTitle}</Eyebrow>
+            <div className="mt-4 flex flex-col gap-2">
+              {t.rules.map(function(r,i){
+                return <div key={i} className="flex gap-3">
+                  <span className="mono" style={{color:'var(--tl)',fontSize:11,flex:'0 0 auto'}}>›</span>
+                  <span className="dim" style={{fontSize:13,lineHeight:1.65}}>{r}</span></div>;
+              })}
+            </div>
+          </Bracket>
+        </div>
+      </Section>
+
+      <Section className="pt-10 pb-10">
+        <Bracket className="p-7" style={{borderColor:'#2b3a2f'}}>
+          <div className="flex flex-wrap items-center justify-between gap-5">
+            <div>
+              <Eyebrow color="tl">OK</Eyebrow>
+              <h2 className="mt-3" style={{fontSize:'clamp(20px,3.4vw,28px)',fontWeight:700}}>{t.ctaTitle}</h2>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <button className="btn btn-au" onClick={function(){app.navigate('/cash');}}>{t.ctaBtn}</button>
+              <a className="btn btn-mg" href={TG} target="_blank" rel="noopener noreferrer">{t.ctaBtn2}</a>
+            </div>
+          </div>
+        </Bracket>
+      </Section>
+    </div>
+  );
+}
+
+/* =============================== FEEDBACK ================================ */
+function Feedback(){
+  const tr=useT();
+  return (
+    <div className="fadeup">
+      <Section className="pt-12 pb-6">
+        <Eyebrow color="mg">{tr.feedback.eyebrow}</Eyebrow>
+        <h1 className="mt-4" style={{fontSize:'clamp(28px,6vw,52px)',fontWeight:700,lineHeight:1.08}}><Scramble text={tr.feedback.title} className="grad"/></h1>
+        <p className="dim mt-5" style={{fontSize:15.5,lineHeight:1.75,maxWidth:760}}>{tr.feedback.sub}</p>
+      </Section>
+      <Section className="pb-8">
+        <div className="grid gap-4" style={{gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))'}}>
+          {tr.feedback.reviews.map(function(r,i){
+            const c=['mg','bl','tl','au','rs','bl'][i%6];
+            return (
+              <Bracket key={i} className="p-5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="mono" style={{width:38,height:38,borderRadius:99,background:'#1a1424',
+                      border:'1px solid var(--line)',display:'flex',alignItems:'center',justifyContent:'center',
+                      fontSize:12,color:'var(--'+c+')'}}>{r[0]}</div>
+                    <div>
+                      <div style={{fontWeight:600,fontSize:13.5}}>{r[0]}</div>
+                      <div className="mono" style={{fontSize:10.5,color:'#6b7392'}}>{r[1]}</div>
+                    </div>
+                  </div>
+                  <Pill color="tl">{tr.feedback.verified}</Pill>
+                </div>
+                <p className="dim mt-4" style={{fontSize:13.5,lineHeight:1.7}}>{r[2]}</p>
+                <div className="mono mt-4" style={{fontSize:10,color:'#5c6480'}}>hash {fnv(r[0]+r[1]+r[2])} · tls ok</div>
+              </Bracket>
+            );
+          })}
+        </div>
+      </Section>
+      <Section className="pb-12">
+        <Bracket className="p-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <Eyebrow color="mg">TELEGRAM</Eyebrow>
+              <p className="dim mt-2" style={{fontSize:14,lineHeight:1.7,maxWidth:600}}>{tr.feedback.sub}</p>
+            </div>
+            <a className="btn btn-mg" href={TG_CH} target="_blank" rel="noopener noreferrer">{tr.feedback.chBtn}</a>
+          </div>
+        </Bracket>
+      </Section>
+    </div>
+  );
+}
+
+/* ================================== FAQ ================================== */
+function Faq(){
+  const tr=useT();
+  const [open,setOpen]=useState(0);
+  return (
+    <div className="fadeup">
+      <Section className="pt-12 pb-6">
+        <Eyebrow color="rs">{tr.faq.eyebrow}</Eyebrow>
+        <h1 className="mt-4" style={{fontSize:'clamp(28px,6vw,52px)',fontWeight:700,lineHeight:1.08}}><Scramble text={tr.faq.title} className="grad"/></h1>
+      </Section>
+      <Section className="pb-12">
+        <div className="flex flex-col gap-3">
+          {tr.faq.items.map(function(qa,i){
+            const c=['au','bl','tl','mg','rs','au','bl','tl'][i%8];
+            return (
+              <Bracket key={i} style={{overflow:'hidden'}}>
+                <button className="w-full flex items-center gap-4 p-5"
+                  style={{background:'transparent',border:0,cursor:'pointer',textAlign:'left'}}
+                  onClick={function(){setOpen(open===i?-1:i);}}>
+                  <span className="mono" style={{fontSize:11,color:'var(--'+c+')'}}>{String(i+1).padStart(2,'0')}</span>
+                  <span style={{fontWeight:600,fontSize:14.5,flex:1,color:'var(--fg)'}}>{qa[0]}</span>
+                  <span className="mono" style={{fontSize:16,color:'var(--au)'}}>{open===i?'−':'+'}</span>
+                </button>
+                {open===i && <div className="fadeup pb-5" style={{paddingLeft:52,paddingRight:20}}>
+                  <p className="dim" style={{fontSize:14,lineHeight:1.75}}>{qa[1]}</p></div>}
+              </Bracket>
+            );
+          })}
+        </div>
+      </Section>
+    </div>
+  );
+}
+
+/* ================================= TRACK ================================= */
+function Track(){
+  const tr=useT();
+  const [code,setCode]=useState('');
+  const [res,setRes]=useState(undefined);
+  function search(){
+    const arr=lsArr('ge-orders');
+    const found=arr.filter(function(o){return o&&o.code&&o.code.toUpperCase()===code.trim().toUpperCase();})[0];
+    if(found){
+      const ok=found.checksum===fnv(found.code+found.total+found.session+found.nonce);
+      setRes(Object.assign({},found,{ok:ok}));
+    } else setRes(null);
+  }
+  return (
+    <div className="fadeup">
+      <Section className="pt-12 pb-6">
+        <Eyebrow color="bl">{tr.track.eyebrow}</Eyebrow>
+        <h1 className="mt-4" style={{fontSize:'clamp(28px,6vw,52px)',fontWeight:700,lineHeight:1.08}}><Scramble text={tr.track.title} className="grad"/></h1>
+        <p className="dim mt-5" style={{fontSize:15.5,lineHeight:1.75,maxWidth:700}}>{tr.track.sub}</p>
+      </Section>
+      <Section className="pb-14">
+        <div className="flex flex-col sm:flex-row gap-3" style={{maxWidth:640}}>
+          <input className="inp" value={code} onChange={function(e){setCode(e.target.value);}} placeholder={tr.track.ph}
+            style={{textTransform:'uppercase'}} onKeyDown={function(e){if(e.key==='Enter')search();}}/>
+          <button className="btn btn-bl" onClick={search}>{tr.track.btn}</button>
+        </div>
+        {res===null && <div className="mono mt-6" style={{fontSize:12,color:'var(--rs)'}}>✕ {tr.track.nf}</div>}
+        {res && (
+          <Bracket className="p-6 mt-6" style={{maxWidth:760}}>
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <Eyebrow color="tl">{tr.track.found}</Eyebrow>
+              <Pill color={res.ok?'tl':'rs'}>{res.ok?tr.track.valid:tr.track.invalid}</Pill>
+            </div>
+            <div className="mono mt-5 flex flex-col gap-2" style={{fontSize:12,color:'#a3abc4'}}>
+              <Row k={tr.checkout.orderCode} v={res.code} c="var(--au)"/>
+              <Row k={tr.track.placed} v={new Date(res.ts).toLocaleString('it-IT')}/>
+              <Row k={tr.common.total} v={eur(res.total)}/>
+              <Row k={tr.checkout.session} v={res.session}/>
+              <Row k={tr.track.checksum} v={res.checksum}/>
+            </div>
+            <div className="hr my-5"/>
+            <Eyebrow color="bl">{tr.track.items}</Eyebrow>
+            <div className="mt-3 flex flex-col gap-2">
+              {(res.items||[]).map(function(it,i){
+                return <div key={i} className="flex justify-between mono" style={{fontSize:12,color:'#c3cadf'}}>
+                  <span>{it.qty}× {it.title}</span><span style={{color:'var(--au)'}}>{eur(it.price*it.qty)}</span></div>;
+              })}
+            </div>
+            <div className="term mt-5" style={{fontSize:11}}>
+              <div>$ node verify.js {res.code}</div>
+              <div className="k">&gt; hash ok · signature {res.ok?'valid':'invalid'} · {res.ok?'0':'1'} errors</div>
+            </div>
+          </Bracket>
+        )}
+      </Section>
+    </div>
+  );
+}
+
+/* ================================= LEGAL ================================= */
+function Legal({which}){
+  const tr=useT();
+  const page=tr.legal[which]||tr.legal.privacy;
+  return (
+    <div className="fadeup">
+      <Section className="pt-12 pb-14">
+        <Eyebrow>{tr.nav.legal}</Eyebrow>
+        <h1 className="mt-4" style={{fontSize:'clamp(26px,5vw,44px)',fontWeight:700}}>{page.t}</h1>
+        <div className="hr my-7"/>
+        <div className="flex flex-col gap-5" style={{maxWidth:820}}>
+          {page.p.map(function(par,i){
+            return <p key={i} className="dim" style={{fontSize:14.5,lineHeight:1.85}}>
+              <span className="mono" style={{fontSize:10.5,color:'var(--au)',marginRight:8}}>{String(i+1).padStart(2,'0')}</span>{par}</p>;
+          })}
+        </div>
+        <div className="mono mt-9" style={{fontSize:10.5,color:'#5c6480'}}>rev {fnv(page.t+page.p.join('')).substring(0,8)} · updated 2026</div>
+      </Section>
+    </div>
+  );
+}
+
+/* =============================== CHECKOUT ================================ */
+function Label({children}){return <div className="mono" style={{fontSize:10,letterSpacing:'.14em',color:'#7b839c',marginBottom:6}}>{children}</div>;}
+function Field({l,v,on,type,full}){
+  return (
+    <div style={full?{gridColumn:'1 / -1'}:undefined}>
+      <Label>{l}</Label>
+      <input className="inp" type={type||'text'} value={v} onChange={on} autoComplete="off" spellCheck="false"/>
+    </div>
+  );
+}
+
+function Checkout(){
+  const tr=useT();
+  const A=useApp();
+  const cart=Array.isArray(A.cart)?A.cart:[];
+  const [step,setStep]=useState(0);
+  const [form,setForm]=useState({name:'',surname:'',address:'',city:'',zip:'',country:'',phone:'+39',email1:'',email2:''});
+  const [pay,setPay]=useState('crypto');
+  const [net,setNet]=useState('USDT');
+  const [amazon,setAmazon]=useState('');
+  const [err,setErr]=useState('');
+  const [order,setOrder]=useState(null);
+  const [proc,setProc]=useState(false);
+  const [plines,setPlines]=useState([]);
+  const [left,setLeft]=useState(1800);
+  const [copied,setCopied]=useState('');
+  const draft=useMemo(function(){return 'DRF-'+hex(8).toUpperCase();},[]);
+  const sess=useMemo(function(){return 'SES-'+hex(10).toUpperCase();},[]);
+
+  const hasNotes=cart.some(function(i){return i.kind==='note';});
+  const hasTr=cart.some(function(i){return i.kind==='transfer';});
+  const total=cart.reduce(function(s,i){return s+i.price*i.qty;},0);
+  const payable=pay==='sepa'?Math.round(total*1.1):pay==='amazon'?Math.round(total*1.2):total;
+  const cartHash=fnv(cart.map(function(i){return i.id+':'+i.qty;}).join('|')+total);
+  const integrity=fnv(JSON.stringify(form)+step+cartHash);
+  const stamp=new Date().toISOString().replace('T',' ').substring(0,19);
+
+  useEffect(function(){
+    if(step!==2||pay!=='crypto') return undefined;
+    const iv=setInterval(function(){setLeft(function(l){return l>0?l-1:0;});},1000);
+    return function(){clearInterval(iv);};
+  },[step,pay]);
+
+  function F(k){ return function(e){ setForm(function(f){return Object.assign({},f,{[k]:e.target.value});}); setErr(''); }; }
+  function copy(txt,tag){
+    try{ if(navigator.clipboard) navigator.clipboard.writeText(txt); }catch(e){}
+    setCopied(tag); A.toast(tr.checkout.copied); setTimeout(function(){setCopied('');},1400);
+  }
+  function validate0(){
+    if(hasNotes){
+      if(!form.name||!form.surname||!form.address||!form.city||!form.zip||!form.country||!form.phone) return tr.checkout.required;
+    }
+    if(hasTr){
+      const e=form.email1.trim();
+      if(!/^[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}$/.test(e)) return tr.checkout.emailInvalid;
+      if(e.toLowerCase()!==form.email2.trim().toLowerCase()) return tr.checkout.emailMismatch;
+    }
+    return '';
+  }
+  function next(){
+    if(step===0){ const e=validate0(); if(e){setErr(e);return;} }
+    setStep(function(s){return s+1;});
+    try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){ window.scrollTo(0,0); }
+  }
+  function back(){setStep(function(s){return Math.max(0,s-1);});}
+
+  function placeOrder(){
+    const tags=cart.map(function(i){return i.tag;}).join('-');
+    const code='GST-'+tags+'-'+randCode(4);
+    const o={code:code,ts:Date.now(),total:total,payable:payable,pay:pay,net:net,email:form.email1,
+      items:cart.map(function(i){return {id:i.id,title:i.title,qty:i.qty,price:i.price};}),
+      session:sess,draft:draft,nonce:hex(14).toUpperCase(),checksum:''};
+    o.checksum=fnv(o.code+o.total+o.session+o.nonce);
+    setOrder(o);
+    const lines=[
+      'opening secure channel .............. ok',
+      'signing manifest with PGP 4096 ...... ok',
+      'broadcasting order '+o.code,
+      'computing merkle root ............... '+fnv(o.code).substring(0,16),
+      'anchoring block #'+(8821+Math.floor(Math.random()*40)),
+      'receipt generated · 0 errors'
+    ];
+    setProc(true); setPlines([]);
+    let k=0;
+    const iv=setInterval(function(){
+      k++; setPlines(lines.slice(0,k));
+      if(k>=lines.length){
+        clearInterval(iv);
+        setTimeout(function(){
+          setProc(false); setStep(3);
+          const arr=lsArr('ge-orders');
+          arr.unshift(o);
+          lsSet('ge-orders',JSON.stringify(arr.slice(0,50)));
+          A.clear();
+        },650);
+      }
+    },360);
+  }
+  function download(){
+    const txt=
+'==================================================\n'+
+' GUSTAVOEURO — CRYPTOGRAPHIC RECEIPT\n'+
+'==================================================\n'+
+'ORDER CODE ...... '+order.code+'\n'+
+'SESSION ......... '+order.session+'\n'+
+'DRAFT ........... '+order.draft+'\n'+
+'TIMESTAMP ....... '+new Date(order.ts).toISOString()+'\n'+
+'NONCE ........... '+order.nonce+'\n'+
+'CHECKSUM ........ '+order.checksum+'\n'+
+'TOTAL ........... EUR '+order.total+'\n'+
+'PAYABLE ......... EUR '+order.payable+'\n'+
+'METHOD .......... '+order.pay+(order.pay==='crypto'?' ('+order.net+')':'')+'\n'+
+'--------------------------------------------------\n'+
+'ITEMS\n'+
+order.items.map(function(i){return ' '+i.qty+'x '+i.title+'  EUR '+(i.price*i.qty);}).join('\n')+'\n'+
+'--------------------------------------------------\n'+
+'PGP SIGNATURE (armored preview)\n'+
+'-----BEGIN PGP SIGNATURE-----\n'+
+'Version: GUSTAVOEURO 4096\n'+
+fnv(order.checksum+'a').toUpperCase()+fnv(order.checksum+'b').toUpperCase()+'\n'+
+fnv(order.checksum+'c').toUpperCase()+fnv(order.checksum+'d').toUpperCase()+'\n'+
+'= '+fnv(order.nonce).substring(0,5)+'\n'+
+'-----END PGP SIGNATURE-----\n'+
+'==================================================\n'+
+'verify: node verify.js '+order.code+'\n'+
+'==================================================';
+    const blob=new Blob([txt],{type:'text/plain'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download=order.code+'.txt';
+    a.click();
+  }
+
+  if(cart.length===0 && !order){
+    return (
+      <Section className="pt-16 pb-20 fadeup">
+        <Bracket className="p-10 text-center">
+          <div className="mono" style={{fontSize:13,color:'#7b839c'}}>{tr.checkout.empty}</div>
+          <button className="btn btn-au mt-5" onClick={function(){A.navigate('/cash');}}>{tr.checkout.goCat}</button>
+        </Bracket>
+      </Section>
+    );
+  }
+
+  return (
+    <div className="fadeup">
+      <Section className="pt-10 pb-4">
+        <Eyebrow>{tr.checkout.eyebrow}</Eyebrow>
+        <h1 className="mt-3" style={{fontSize:'clamp(26px,5vw,44px)',fontWeight:700}}><Scramble text={tr.checkout.title}/></h1>
+      </Section>
+
+      <Section className="pb-5">
+        <div className="flex flex-wrap gap-2">
+          {tr.checkout.steps.map(function(s,i){
+            const c=['au','bl','tl','mg'][i];
+            return <span key={i} className="pill mono" style={{
+              borderColor:i===step?'var(--'+c+')':(i<step?'var(--tl)':'var(--line)'),
+              color:i===step?'var(--'+c+')':(i<step?'var(--tl)':'#6b7392')}}>
+              {String(i+1).padStart(2,'0')} · {s}</span>;
+          })}
+        </div>
+      </Section>
+
+      <Section className="pb-16">
+        <div className="grid gap-5" style={{gridTemplateColumns:'repeat(auto-fit,minmax(320px,1fr))'}}>
+          <div>
+            {step===0 && (
+              <Bracket className="p-5 sm:p-6">
+                {hasNotes && (
+                  <React.Fragment>
+                    <Eyebrow>{tr.checkout.shipping}</Eyebrow>
+                    <p className="mono mt-1 mb-4" style={{fontSize:10.5,color:'#6b7392'}}>// {tr.checkout.shippingNote}</p>
+                    <div className="grid gap-3" style={{gridTemplateColumns:'repeat(auto-fit,minmax(150px,1fr))'}}>
+                      <Field l={tr.checkout.name} v={form.name} on={F('name')}/>
+                      <Field l={tr.checkout.surname} v={form.surname} on={F('surname')}/>
+                      <Field l={tr.checkout.address} v={form.address} on={F('address')} full/>
+                      <Field l={tr.checkout.city} v={form.city} on={F('city')}/>
+                      <Field l={tr.checkout.zip} v={form.zip} on={F('zip')}/>
+                      <Field l={tr.checkout.country} v={form.country} on={F('country')}/>
+                      <div>
+                        <Label>{tr.checkout.phone}</Label>
+                        <div className="flex gap-2">
+                          <select className="inp" style={{width:110}}
+                            value={form.phone.indexOf(' ')>=0?form.phone.split(' ')[0]:form.phone}
+                            onChange={function(e){setForm(function(f){return Object.assign({},f,{phone:e.target.value});});}}>
+                            {PREFIXES.map(function(p){return <option key={p} value={p}>{p}</option>;})}
+                          </select>
+                          <input className="inp"
+                            value={form.phone.indexOf(' ')>=0?form.phone.split(' ').slice(1).join(' '):''}
+                            onChange={function(e){const pre=form.phone.split(' ')[0]||'+39';
+                              setForm(function(f){return Object.assign({},f,{phone:pre+' '+e.target.value});});}}
+                            placeholder="000 000 0000"/>
+                        </div>
+                      </div>
+                    </div>
+                  </React.Fragment>
+                )}
+                {hasTr && (
+                  <div className={hasNotes?'mt-7':''}>
+                    <Eyebrow color="bl">{tr.checkout.emailSec}</Eyebrow>
+                    <p className="mono mt-1 mb-4" style={{fontSize:10.5,color:'#6b7392'}}>// {tr.checkout.emailNote}</p>
+                    <div className="grid gap-3" style={{gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))'}}>
+                      <Field l={tr.checkout.email1} v={form.email1} on={F('email1')} type="email"/>
+                      <Field l={tr.checkout.email2} v={form.email2} on={F('email2')} type="email"/>
+                    </div>
+                  </div>
+                )}
+                {err && <div className="mono mt-4" style={{fontSize:11.5,color:'var(--rs)'}}>✕ {err}</div>}
+              </Bracket>
+            )}
+
+            {step===1 && (
+              <Bracket className="p-5 sm:p-6">
+                <Eyebrow color="tl">{tr.checkout.manifest}</Eyebrow>
+                <div className="term mt-4" style={{fontSize:11.5}}>
+                  <div className="c"># line  hash        qty  amount   item</div>
+                  {cart.map(function(it,i){
+                    const h=fnv(it.id+it.qty+it.price);
+                    return <div key={i}><span className="k">{String(i+1).padStart(2,'0')}</span>&nbsp;&nbsp;{h.substring(0,10)}  {String(it.qty).padStart(2,'0')}   {eur(it.price*it.qty)}   {it.title}</div>;
+                  })}
+                  <div className="c"># merkle root {fnv(cartHash)}</div>
+                  <div className="k">&gt; total {eur(total)}</div>
+                </div>
+                <div className="mt-5">
+                  <Eyebrow color="au">{tr.checkout.signature}</Eyebrow>
+                  <div className="term mt-3" style={{fontSize:10.5}}>
+                    <div>-----BEGIN PGP SIGNATURE-----</div>
+                    <div>{fnv(cartHash+'x').toUpperCase()}{fnv(cartHash+'y').toUpperCase()}</div>
+                    <div>{fnv(cartHash+'z').toUpperCase()}{fnv(cartHash+'w').toUpperCase()}</div>
+                    <div>= {fnv(String(total)).substring(0,5)}</div>
+                    <div>-----END PGP SIGNATURE-----</div>
+                  </div>
+                </div>
+                <div className="flex justify-between mono mt-5" style={{fontSize:13}}>
+                  <span style={{color:'#8b93ad'}}>{tr.checkout.tot}</span>
+                  <span style={{color:'var(--au)',fontWeight:700}}>{eur(total)}</span>
+                </div>
+              </Bracket>
+            )}
+
+            {step===2 && (
+              <Bracket className="p-5 sm:p-6">
+                <Eyebrow>{tr.checkout.method}</Eyebrow>
+                <div className="grid gap-2 mt-4" style={{gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))'}}>
+                  {[['crypto','tl',tr.checkout.crypto,tr.checkout.fee0],
+                    ['sepa','bl',tr.checkout.sepa,tr.checkout.fee10],
+                    ['amazon','mg',tr.checkout.amazon,tr.checkout.fee20]].map(function(m){
+                    return (
+                      <button key={m[0]} className="card p-4" onClick={function(){setPay(m[0]);}}
+                        style={{cursor:'pointer',textAlign:'left',borderColor:pay===m[0]?'var(--'+m[1]+')':'var(--line)'}}>
+                        <div className="flex items-center justify-between">
+                          <span style={{fontWeight:600,fontSize:13.5}}>{m[2]}</span>
+                          {m[0]==='crypto' && <Pill color="tl">{tr.checkout.recommended}</Pill>}
+                        </div>
+                        <div className="mono mt-2" style={{fontSize:10.5,color:'var(--'+m[1]+')'}}>{m[3]}</div>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {pay==='crypto' && (
+                  <div className="mt-6">
+                    <div className="flex gap-2 flex-wrap">
+                      {['USDT','BTC','LTC'].map(function(n,i){
+                        const c=['tl','au','bl'][i];
+                        return <button key={n} className="btn btn-sm" onClick={function(){setNet(n);}}
+                          style={{borderColor:net===n?'var(--'+c+')':'var(--line)',color:net===n?'var(--'+c+')':'#c3cadf'}}>{n}</button>;
+                      })}
+                    </div>
+                    <div className="grid gap-5 mt-5" style={{gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))'}}>
+                      <div>
+                        <div style={{background:'#fff',padding:10,borderRadius:12,width:'fit-content'}}>
+                          <img alt="qr" width={180} height={180}
+                            src={'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(WALLET[net])}/>
+                        </div>
+                        <div className="mono mt-2" style={{fontSize:10.5,color:'#6b7392'}}>{tr.checkout.scan}</div>
+                      </div>
+                      <div className="mono flex flex-col gap-3" style={{fontSize:12}}>
+                        <div>
+                          <div style={{fontSize:10,color:'#7b839c',letterSpacing:'.14em'}}>{tr.checkout.address} · {net}</div>
+                          <div className="flex gap-2 items-center mt-1">
+                            <span style={{wordBreak:'break-all',color:'var(--fg)'}}>{WALLET[net]}</span>
+                            <button className="btn btn-sm" style={{flex:'0 0 auto'}} onClick={function(){copy(WALLET[net],'addr');}}>{copied==='addr'?'✓':tr.checkout.copy}</button>
+                          </div>
+                        </div>
+                        <Row k={tr.checkout.amount} v={eur(payable)} c="var(--au)"/>
+                        <div>
+                          <div style={{fontSize:10,color:'#7b839c',letterSpacing:'.14em'}}>{tr.checkout.memo}</div>
+                          <div className="flex gap-2 items-center mt-1">
+                            <span style={{color:'var(--bl)'}}>{'GE-'+fnv(cartHash).toUpperCase()}</span>
+                            <button className="btn btn-sm" style={{flex:'0 0 auto'}} onClick={function(){copy('GE-'+fnv(cartHash).toUpperCase(),'memo');}}>{copied==='memo'?'✓':tr.checkout.copy}</button>
+                          </div>
+                        </div>
+                        <Row k={tr.checkout.confirmations} v="0/2" c="var(--rs)"/>
+                        <Row k="COUNTDOWN" v={String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0')} c="var(--tl)"/>
+                      </div>
+                    </div>
+                    <div className="term mt-5" style={{fontSize:11}}>
+                      <div className="c"># pending transaction</div>
+                      <div>from  : {net}-WALLET</div>
+                      <div>to    : {WALLET[net].substring(0,16)}…</div>
+                      <div>value : {payable} EUR</div>
+                      <div>memo  : GE-{fnv(cartHash).toUpperCase()}</div>
+                      <div>status: <span className="k">awaiting broadcast</span></div>
+                    </div>
+                  </div>
+                )}
+
+                {pay==='sepa' && (
+                  <div className="mt-6 term" style={{fontSize:12}}>
+                    <div className="k">{tr.checkout.iban}</div>
+                    <div className="c"># +10% handling included in payable</div>
+                    <div>amount: {eur(payable)}</div>
+                    <div>ref   : GE-{fnv(cartHash).toUpperCase()}</div>
+                  </div>
+                )}
+
+                {pay==='amazon' && (
+                  <div className="mt-6">
+                    <Label>{tr.checkout.amazon}</Label>
+                    <input className="inp" inputMode="numeric" maxLength={15} value={amazon}
+                      onChange={function(e){setAmazon(e.target.value.replace(/\D/g,'').slice(0,15));}} placeholder={tr.checkout.amazonPh}/>
+                    <div className="mono mt-3 flex justify-between" style={{fontSize:11,color:amazon.length===15?'var(--tl)':'#7b839c'}}>
+                      <span>{amazon.length}/15</span><span>{tr.checkout.fee20}</span>
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex justify-between mono mt-6" style={{fontSize:13}}>
+                  <span style={{color:'#8b93ad'}}>{tr.checkout.payable}</span>
+                  <span style={{color:'var(--au)',fontWeight:700}}>{eur(payable)}</span>
+                </div>
+              </Bracket>
+            )}
+
+            {step===3 && order && (
+              <Bracket className="p-5 sm:p-6">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <Eyebrow color="tl">{tr.checkout.receipt}</Eyebrow>
+                  <Pill color="tl">✓ {tr.checkout.done}</Pill>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {tr.checkout.badges.map(function(b,i){return <Pill key={b} color={['au','bl','tl','mg','rs'][i%5]}>{b}</Pill>;})}
+                </div>
+                <div className="term mt-5" style={{fontSize:11.5}}>
+                  <div className="k">ORDER CODE ...... {order.code}</div>
+                  <div>SESSION ......... {order.session}</div>
+                  <div>DRAFT ........... {order.draft}</div>
+                  <div>TIMESTAMP ....... {new Date(order.ts).toISOString()}</div>
+                  <div>{tr.checkout.nonce} ........... {order.nonce}</div>
+                  <div>{tr.checkout.checksum} ........ {order.checksum}</div>
+                  <div className="c">-----BEGIN PGP SIGNATURE-----</div>
+                  <div>{fnv(order.checksum+'a').toUpperCase()}{fnv(order.checksum+'b').toUpperCase()}</div>
+                  <div>{fnv(order.checksum+'c').toUpperCase()}{fnv(order.checksum+'d').toUpperCase()}</div>
+                  <div className="c">= {fnv(order.nonce).substring(0,5)}</div>
+                  <div className="c">-----END PGP SIGNATURE-----</div>
+                </div>
+                <Eyebrow color="au" className="mt-5">{tr.checkout.verifyScript}</Eyebrow>
+                <div className="term mt-3" style={{fontSize:11.5}}>
+                  <div>$ node verify.js {order.code}</div>
+                  <div className="k">&gt; hash ok · signature valid · 0 errors</div>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-5">
+                  <button className="btn btn-au" onClick={download}>{tr.checkout.download}</button>
+                  <button className="btn btn-bl" onClick={function(){A.navigate('/track');}}>{tr.nav.track}</button>
+                </div>
+                <div className="card mt-6 p-5" style={{borderColor:'var(--rs)'}}>
+                  <div className="mono" style={{fontSize:12.5,color:'var(--rs)',letterSpacing:'.1em',fontWeight:700}}>{tr.checkout.tgTitle}</div>
+                  <p className="dim mt-2" style={{fontSize:13.5,lineHeight:1.7}}>{tr.checkout.tgText}</p>
+                  <a className="btn btn-au mt-4" href={TG} target="_blank" rel="noopener noreferrer">{tr.checkout.tgBtn}</a>
+                </div>
+              </Bracket>
+            )}
+          </div>
+
+          <div>
+            <Bracket className="p-5" style={{position:'sticky',top:110}}>
+              <Eyebrow color="bl">{tr.checkout.console}</Eyebrow>
+              <div className="mono mt-4 flex flex-col gap-2" style={{fontSize:10.5}}>
+                <Row k={tr.checkout.draft} v={draft} c="var(--au)"/>
+                <Row k={tr.checkout.session} v={sess}/>
+                <Row k={tr.checkout.timestamp} v={stamp}/>
+                <Row k={tr.checkout.cartHash} v={cartHash} c="var(--bl)"/>
+                <Row k={tr.checkout.pgp} v="VALID · 4096" c="var(--tl)"/>
+                <Row k={tr.checkout.node} v={ONION.substring(0,14)+'…'}/>
+                <Row k={tr.checkout.integrity} v={integrity} c="var(--mg)"/>
+              </div>
+              <div className="mt-4"><HexStream rows={3} cols={30}/></div>
+              <div className="hr my-4"/>
+              <div className="flex justify-between mono" style={{fontSize:13}}>
+                <span style={{color:'#8b93ad'}}>{tr.checkout.tot}</span>
+                <span style={{color:'var(--au)',fontWeight:700}}>{eur(total)}</span>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {step>0 && step<3 && <button className="btn" onClick={back}>{tr.checkout.back}</button>}
+                {step<2 && <button className="btn btn-au flex-1" onClick={next} disabled={cart.length===0}>{tr.checkout.cont}</button>}
+                {step===2 && <button className="btn btn-au flex-1" onClick={placeOrder}>{tr.checkout.pay}</button>}
+              </div>
+              <div className="mono mt-3" style={{fontSize:10,color:'#5c6480'}}>{tr.checkout.note}</div>
+            </Bracket>
+          </div>
+        </div>
+      </Section>
+
+      {proc && (
+        <div style={{position:'fixed',inset:0,zIndex:80,background:'rgba(3,4,10,.95)',
+          display:'flex',alignItems:'center',justifyContent:'center',padding:16}}>
+          <div className="card card-br p-6 fadeup" style={{width:'100%',maxWidth:560}}>
+            <Eyebrow color="au">{tr.checkout.processing}</Eyebrow>
+            <div className="term mt-4" style={{fontSize:12}}>
+              {plines.map(function(l,i){return <div key={i}><span className="k">&gt;</span> {l}</div>;})}
+              <div><span className="k">&gt;</span> <span className="caret"/></div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* =============================== NOT FOUND =============================== */
+function NotFound(){
+  const tr=useT();
+  const app=useApp();
+  return (
+    <Section className="pt-20 pb-24 text-center fadeup">
+      <div className="mono grad" style={{fontSize:'clamp(44px,10vw,90px)',fontWeight:700}}>404</div>
+      <div className="mono mt-3" style={{fontSize:12,color:'#7b839c'}}>{tr.notfound.t}</div>
+      <button className="btn btn-au mt-7" onClick={function(){app.navigate('/node');}}>{tr.notfound.b}</button>
+    </Section>
+  );
+}
+
+/* ================================== APP ================================== */
+function App(){
+  const [lang,setLang]=useState(function(){return lsGet('ge-lang','it');});
+  const [route,setRoute]=useState(function(){return window.location.hash.replace(/^#/,'')||'/boot';});
+  const [authed,setAuthed]=useState(function(){return ssGet('ge-in','')==='1';});
+  const [cart,setCart]=useState(function(){return lsArr('ge-cart');});
+  const [drawer,setDrawer]=useState(false);
+  const [menu,setMenu]=useState(false);
+  const [toast,setToast]=useState('');
+  const [flash,setFlash]=useState(0);
+
+  useEffect(function(){
+    function on(){ setRoute(window.location.hash.replace(/^#/,'')||'/boot'); setFlash(function(f){return f+1;}); }
+    window.addEventListener('hashchange',on);
+    return function(){window.removeEventListener('hashchange',on);};
+  },[]);
+  useEffect(function(){ lsSet('ge-lang',lang); try{document.documentElement.lang=lang;}catch(e){} },[lang]);
+  useEffect(function(){ lsSet('ge-cart',JSON.stringify(cart)); },[cart]);
+  useEffect(function(){ try{window.scrollTo(0,0);}catch(e){} },[route]);
+  useEffect(function(){
+    if(!authed && route!=='/gate' && route!=='/boot'){ window.location.hash='#/gate'; }
+  },[authed,route]);
+
+  const navigate=useCallback(function(p){ window.location.hash='#'+p; },[]);
+  const say=useCallback(function(m){ setToast(m); setTimeout(function(){setToast('');},1700); },[]);
+  const add=useCallback(function(item){
+    setCart(function(c){
+      const arr=Array.isArray(c)?c:[];
+      const found=arr.filter(function(x){return x.id===item.id&&x.kind===item.kind;})[0];
+      if(found) return arr.map(function(x){return x===found?Object.assign({},x,{qty:x.qty+1}):x;});
+      return arr.concat([Object.assign({},item,{uid:hex(6),qty:1})]);
+    });
+    say((T[lsGet('ge-lang','it')]||T.it).common.added);
+  },[say]);
+  const remove=useCallback(function(uid){setCart(function(c){return (Array.isArray(c)?c:[]).filter(function(x){return x.uid!==uid;});});},[]);
+  const setQty=useCallback(function(uid,q){setCart(function(c){return (Array.isArray(c)?c:[]).map(function(x){return x.uid===uid?Object.assign({},x,{qty:Math.max(1,q)}):x;});});},[]);
+  const clear=useCallback(function(){setCart([]);},[]);
+  const total=(Array.isArray(cart)?cart:[]).reduce(function(s,i){return s+i.price*i.qty;},0);
+
+  const app={route:route,navigate:navigate,cart:cart,add:add,remove:remove,setQty:setQty,
+    clear:clear,total:total,lang:lang,setLang:setLang,toast:say};
+
+  let page=null;
+  if(route==='/boot'){
+    page=<Boot onDone={function(){ const a=ssGet('ge-in','')==='1'; setAuthed(a); navigate(a?'/node':'/gate'); }}/>;
+  } else if(!authed){
+    page=<Gate onAuth={function(){ setAuthed(true); navigate('/node'); }}/>;
+  } else {
+    switch(route){
+      case '/gate': page=<Gate onAuth={function(){ setAuthed(true); navigate('/node'); }}/>; break;
+      case '/node': page=<Home/>; break;
+      case '/cash': page=<Cash/>; break;
+      case '/paypal': page=<Paypal/>; break;
+      case '/quality': page=<Quality/>; break;
+      case '/trust': page=<Trust/>; break;
+      case '/feedback': page=<Feedback/>; break;
+      case '/faq': page=<Faq/>; break;
+      case '/track': page=<Track/>; break;
+      case '/privacy': page=<Legal which="privacy"/>; break;
+      case '/terms': page=<Legal which="terms"/>; break;
+      case '/cookies': page=<Legal which="cookies"/>; break;
+      case '/checkout': page=<Checkout/>; break;
+      default: page=<NotFound/>;
+    }
+  }
+
+  const bare=(route==='/boot'||!authed);
+
+  return (
+    <AppCtx.Provider value={app}>
+      <LangCtx.Provider value={lang}>
+        <div className="bgfx" aria-hidden="true">
+          <div className="lines"/>
+          <div className="blob b1"/><div className="blob b2"/><div className="blob b3"/><div className="blob b4"/>
+        </div>
+        <div className="fx-vig" aria-hidden="true"/>
+        <div className="fx-scan" aria-hidden="true"/>
+        {flash>0 && <div className="flash" key={flash}/>}
+        <div className="wrap">
+          {!bare && <Header onCart={function(){setDrawer(true);}} onMenu={function(){setMenu(true);}}/>}
+          <main>{page}</main>
+          {!bare && <Footer/>}
+        </div>
+        {drawer && <CartDrawer onClose={function(){setDrawer(false);}}/>}
+        {menu && <MobileMenu onClose={function(){setMenu(false);}}/>}
+        {!bare && <Fab/>}
+        <Toast msg={toast}/>
+      </LangCtx.Provider>
+    </AppCtx.Provider>
+  );
+}
+
+window.__GE_MOUNTED=true;
+ReactDOM.createRoot(document.getElementById('root')).render(<Boundary><App/></Boundary>);
+</script>
+</body>
+</html>
